@@ -173,7 +173,7 @@ function MainComponent() {
             <div className="text-xl md:text-2xl font-bold text-[#2C5F5D] space-y-3">
               <div className="flex items-center justify-center space-x-3">
                 <span className="text-3xl">📅</span>
-                <span>2025年8月15日 - 16日</span>
+                <span>2025年8月22日 11:00~19:00</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <span className="text-3xl">📍</span>
