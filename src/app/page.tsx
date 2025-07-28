@@ -16,7 +16,7 @@ import { SiX } from "react-icons/si";
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
 
-  // TODO: 出演アーティスト情報を後で追加
+  // TODO: 出演バンド情報を後で追加
   /*
   const artists = [
     {
@@ -236,7 +236,7 @@ function MainComponent() {
           <div className="text-center mb-16">
             <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
               <h2 className="text-4xl md:text-5xl font-black">
-                出演アーティスト
+                出演バンド
               </h2>
             </div>
             <p className="text-xl font-bold text-[#2C5F5D]">
@@ -244,14 +244,14 @@ function MainComponent() {
             </p>
           </div>
 
-          {/* TODO: 出演アーティスト一覧を後で追加 */}
+          {/* TODO: 出演バンド一覧を後で追加 */}
           <div className="text-center">
             <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
               <div className="text-8xl mb-6 flex justify-center">
                 <FaMusic className="text-[#FF6B47]" />
               </div>
               <p className="text-2xl font-black text-[#2C5F5D] mb-4">
-                出演アーティスト発表をお楽しみに！
+                出演バンド発表をお楽しみに！
               </p>
               <p className="text-lg font-bold text-[#777777]">
                 近日公開予定！
@@ -260,7 +260,7 @@ function MainComponent() {
           </div>
 
           {/*
-          将来的にアーティスト一覧を表示する際のUI:
+          将来的にバンド一覧を表示する際のUI:
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {artists.map((artist, index) => (
               <div
