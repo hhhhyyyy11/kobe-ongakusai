@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "神戸音学祭 | Kobe Music Festival 2025",
-  description: "2025年8月22日開催！学生主催の音楽フェスティバル。GLION ARENA KOBE TOTTEI PARKで開催される若手から実力派まで多彩なアーティストが集結するイベントです。",
-  keywords: ["神戸音学祭", "音楽フェス", "学生", "神戸", "GLION ARENA", "TOTTEI PARK", "コンサート", "イベント"],
+  title: "神戸音学祭 2025",
+  description: "2025年8月22日開催！学生主催の野外音楽フェス。GLION ARENA KOBE TOTTEI PARKで開催される音楽イベントです。",
+  keywords: ["神戸音学祭", "音楽フェス", "学生", "神戸", "GLION ARENA", "TOTTEI PARK", "コンサート", "イベント", "ライブ", "フェス"],
   authors: [{ name: "神戸音学祭実行委員会" }],
   creator: "神戸音学祭実行委員会",
   publisher: "神戸音学祭実行委員会",
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "神戸音学祭 | Kobe Music Festival 2025",
-    description: "2025年8月22日開催！学生主催の音楽フェスティバル",
+    title: "神戸音学祭 2025",
+    description: "2025年8月22日開催！学生主催の野外音楽フェス",
     url: 'https://kobe-ongakusai.vercel.app',
     siteName: '神戸音学祭',
     locale: 'ja_JP',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "神戸音学祭 | Kobe Music Festival 2025",
-    description: "2025年8月22日開催！学生主催の音楽フェスティバル",
+    title: "神戸音学祭 2025",
+    description: "2025年8月22日開催！学生主催の野外音楽フェス",
     creator: '@K0beOngakusai',
   },
   robots: {
@@ -71,8 +71,8 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'MusicEvent',
-    name: '神戸音学祭 - Kobe Music Festival 2025',
-    description: '学生主催の音楽フェスティバル',
+    name: '神戸音学祭 2025',
+    description: '学生主催の野外音楽フェス',
     startDate: '2025-08-22T11:00:00+09:00',
     endDate: '2025-08-22T19:00:00+09:00',
     location: {
