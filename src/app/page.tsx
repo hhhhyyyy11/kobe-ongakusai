@@ -8,7 +8,6 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaInstagram,
-  FaEnvelope,
   FaBars
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
