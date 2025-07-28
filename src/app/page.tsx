@@ -64,14 +64,14 @@ function MainComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#77c1f2] font-sans">
+    <div className="min-h-screen bg-[#77C1F0] font-sans">
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
         <div className="max-w-6xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Image
-                src="/images/logo.png"
+                src="/images/logo_sub.png"
                 alt="Kobe Ongakusai Logo"
                 width={48}
                 height={48}
@@ -120,7 +120,7 @@ function MainComponent() {
         id="top"
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `url('/images/logo.png')`,
+          backgroundImage: `url('/images/logo_sub.png')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -155,7 +155,7 @@ function MainComponent() {
           {/* Main Logo Display */}
           <div className="mb-8">
             <Image
-              src="/images/logo.png"
+              src="/images/logo_main.jpg"
               alt="Kobe Ongakusai Main Logo"
               width={256}
               height={256}
@@ -378,7 +378,7 @@ function MainComponent() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo_sub.png"
                   alt="Logo"
                   width={48}
                   height={48}
