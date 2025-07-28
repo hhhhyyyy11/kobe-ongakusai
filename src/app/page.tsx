@@ -8,11 +8,13 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaInstagram,
-  FaTwitter,
   FaEnvelope,
   FaBars
 } from "react-icons/fa";
-import { BsMusicNote } from "react-icons/bs";function MainComponent() {
+import { BsMusicNote } from "react-icons/bs";
+import { SiX } from "react-icons/si";
+
+function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
 
   // TODO: 出演アーティスト情報を後で追加
@@ -361,7 +363,7 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
               </div>
               <h3 className="text-2xl font-black text-white mb-4">Instagram</h3>
               <p className="text-lg font-bold text-white mb-8">
-                フィード・ストーリーで最新情報をお届け
+                投稿・ストーリーで最新情報をお届け
               </p>
               <a
                 href="https://www.instagram.com/kobe_ongakusai?igsh=Nmtsa2JhZGpkb3Rv"
@@ -377,9 +379,9 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
             {/* Twitter(X) */}
             <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
               <div className="text-8xl mb-6 flex justify-center">
-                <FaTwitter className="text-blue-400" />
+                <SiX className="text-black" />
               </div>
-              <h3 className="text-2xl font-black text-white mb-4">Twitter(X)</h3>
+              <h3 className="text-2xl font-black text-white mb-4">X（旧Twitter）</h3>
               <p className="text-lg font-bold text-white mb-8">
                 リアルタイムで情報発信・交流
               </p>
@@ -389,7 +391,7 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full border-4 border-[#2C5F5D] hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
               >
-                <FaTwitter />
+                <SiX />
                 <span>@K0beOngakusai</span>
               </a>
             </div>
@@ -486,7 +488,7 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Image
-                  src="/images/logo_sub.png"
+                  src="/images/logo_transparent.png"
                   alt="Logo"
                   width={48}
                   height={48}
@@ -505,13 +507,12 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
                 お問い合わせ
               </h4>
               <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
-                <FaEnvelope /> info@kobeongakusai.com
-              </p>
-              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
-                <FaInstagram /> @kobe_ongakusai
+                <FaInstagram />
+                <a href="https://www.instagram.com/kobe_ongakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@kobe_ongakusai</a>
               </p>
               <p className="text-gray-300 font-bold flex items-center gap-2">
-                <FaTwitter /> @K0beOngakusai
+                <SiX />
+                <a href="https://twitter.com/K0beOngakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@K0beOngakusai</a>
               </p>
             </div>
             <div>
@@ -519,15 +520,16 @@ import { BsMusicNote } from "react-icons/bs";function MainComponent() {
                 アクセス
               </h4>
               <p className="text-gray-300 font-bold">
-                神戸ポートアイランド特設会場
+                GLION ARENA KOBE<br />
+                TOTTEI PARK<br />
                 <br />
-                ポートライナー「中公園駅」徒歩3分
+                JR元町駅から徒歩15分<br />
               </p>
             </div>
           </div>
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
             <p className="font-bold">
-              &copy; 2025 Kobe Ongakusai 実行委員会. All rights reserved.
+              &copy; 2025 神戸音楽祭実行委員会. All rights reserved.
             </p>
           </div>
         </div>
