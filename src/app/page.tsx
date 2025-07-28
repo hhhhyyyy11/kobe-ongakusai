@@ -1,10 +1,24 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaMusic,
+  FaHandshake,
+  FaTicketAlt,
+  FaInstagram,
+  FaEnvelope,
+  FaMobile,
+  FaBars
+} from "react-icons/fa";
+import { BsMusicNote } from "react-icons/bs";
 
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
 
+  // TODO: 出演アーティスト情報を後で追加
+  /*
   const artists = [
     {
       name: "DJ Sakura",
@@ -27,7 +41,10 @@ function MainComponent() {
       genre: "J-Pop",
     },
   ];
+  */
 
+  // TODO: 協賛企業・団体情報を後で追加
+  /*
   const sponsors = [
     {
       name: "Kobe City",
@@ -54,6 +71,7 @@ function MainComponent() {
       logo: "/images/sponsors/kobe-univ.svg",
     },
   ];
+  */
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -107,9 +125,7 @@ function MainComponent() {
             </div>
             {/* Mobile menu button */}
             <button className="md:hidden p-2 rounded-lg bg-[#FF6B47] border-2 border-[#2C5F5D]">
-              <div className="w-6 h-1 bg-white mb-1 rounded"></div>
-              <div className="w-6 h-1 bg-white mb-1 rounded"></div>
-              <div className="w-6 h-1 bg-white rounded"></div>
+              <FaBars className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>
@@ -133,16 +149,16 @@ function MainComponent() {
         <div className="absolute inset-0">
           {/* Musical Notes */}
           <div className="absolute top-24 left-16 text-4xl text-[#2C5F5D] animate-bounce delay-100">
-            ♪
+            <BsMusicNote />
           </div>
           <div className="absolute top-32 right-20 text-3xl text-[#FF6B47] animate-bounce delay-300">
-            ♫
+            <BsMusicNote />
           </div>
           <div className="absolute bottom-32 left-24 text-5xl text-[#2C5F5D] animate-bounce delay-500">
-            ♪
+            <BsMusicNote />
           </div>
           <div className="absolute bottom-40 right-32 text-4xl text-[#FF6B47] animate-bounce delay-700">
-            ♫
+            <BsMusicNote />
           </div>
 
           {/* Circular Elements */}
@@ -172,11 +188,11 @@ function MainComponent() {
             </p>
             <div className="text-xl md:text-2xl font-bold text-[#2C5F5D] space-y-3">
               <div className="flex items-center justify-center space-x-3">
-                <span className="text-3xl">📅</span>
+                <FaCalendarAlt className="text-3xl" />
                 <span>2025年8月22日 11:00~19:00</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
-                <span className="text-3xl">in</span>
+                <FaMapMarkerAlt className="text-3xl" />
                 <div className="text-center">
                   <div>GLION ARENA KOBE</div>
                   <div>TOTTEI PARK</div>
@@ -187,9 +203,10 @@ function MainComponent() {
 
           <button
             onClick={() => scrollToSection("ticket")}
-            className="bg-[#FF6B47] hover:bg-[#FF4524] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] transition-all duration-300 transform hover:scale-110 shadow-2xl"
+            className="bg-gray-400 text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] cursor-not-allowed opacity-60"
+            disabled
           >
-            チケットを予約する
+            準備中...
           </button>
         </div>
 
@@ -224,10 +241,27 @@ function MainComponent() {
               </h2>
             </div>
             <p className="text-xl font-bold text-[#2C5F5D]">
-              若手から実力派まで、多彩なアーティストが集結
+              Coming Soon...
             </p>
           </div>
 
+          {/* TODO: 出演アーティスト一覧を後で追加 */}
+          <div className="text-center">
+            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
+              <div className="text-8xl mb-6 flex justify-center">
+                <FaMusic className="text-[#FF6B47]" />
+              </div>
+              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
+                出演アーティスト発表をお楽しみに！
+              </p>
+              <p className="text-lg font-bold text-[#777777]">
+                近日公開予定！
+              </p>
+            </div>
+          </div>
+
+          {/*
+          将来的にアーティスト一覧を表示する際のUI:
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {artists.map((artist, index) => (
               <div
@@ -254,6 +288,7 @@ function MainComponent() {
               </div>
             ))}
           </div>
+          */}
         </div>
       </section>
 
@@ -267,10 +302,27 @@ function MainComponent() {
               </h2>
             </div>
             <p className="text-xl font-bold text-white">
-              多くの皆様にご支援いただいています
+              Coming Soon...
             </p>
           </div>
 
+          {/* TODO: 協賛企業・団体一覧を後で追加 */}
+          <div className="text-center">
+            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
+              <div className="text-8xl mb-6 flex justify-center">
+                <FaHandshake className="text-[#2C5F5D]" />
+              </div>
+              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
+                協賛企業・団体様を募集中！
+              </p>
+              <p className="text-lg font-bold text-[#777777]">
+                ご支援いただける企業・団体様を心よりお待ちしております
+              </p>
+            </div>
+          </div>
+
+          {/*
+          将来的に協賛企業・団体一覧を表示する際のUI:
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {sponsors.map((sponsor, index) => (
               <div
@@ -287,6 +339,7 @@ function MainComponent() {
               </div>
             ))}
           </div>
+          */}
         </div>
       </section>
 
@@ -303,7 +356,9 @@ function MainComponent() {
           </div>
 
           <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
-            <div className="text-8xl mb-6">📷</div>
+            <div className="text-8xl mb-6 flex justify-center">
+              <FaInstagram className="text-purple-500" />
+            </div>
             <p className="text-xl font-bold text-white mb-8">
               公式Instagramフィードがここに表示されます
             </p>
@@ -324,13 +379,13 @@ function MainComponent() {
         {/* Decorative musical notes */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-10 left-16 text-6xl text-white/20 animate-bounce">
-            ♪
+            <BsMusicNote />
           </div>
           <div className="absolute top-32 right-20 text-5xl text-[#2C5F5D]/20 animate-bounce delay-200">
-            ♫
+            <BsMusicNote />
           </div>
           <div className="absolute bottom-20 left-24 text-7xl text-white/20 animate-bounce delay-400">
-            ♪
+            <BsMusicNote />
           </div>
         </div>
 
@@ -339,9 +394,35 @@ function MainComponent() {
             <h2 className="text-4xl md:text-5xl font-black">チケット予約</h2>
           </div>
           <p className="text-2xl mb-12 text-white font-bold">
-            早期予約で特別価格！お見逃しなく
+            Coming Soon...
           </p>
 
+          {/* TODO: チケット詳細情報を後で追加 */}
+          <div
+            className="bg-white rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl"
+            style={{ borderWidth: "6px" }}
+          >
+            <div className="text-center">
+              <div className="text-8xl mb-6 flex justify-center">
+                <FaTicketAlt className="text-[#FF6B47]" />
+              </div>
+              <p className="text-2xl font-black text-[#FF6B47] mb-4">
+                チケット情報発表をお楽しみに！
+              </p>
+              <p className="text-lg font-bold text-[#777777] mb-6">
+                詳細な料金・販売方法は後日発表いたします
+              </p>
+              <button
+                disabled
+                className="w-full bg-gray-400 text-white text-2xl font-black py-6 px-8 rounded-full border-4 border-[#2C5F5D] cursor-not-allowed opacity-60"
+              >
+                準備中...
+              </button>
+            </div>
+          </div>
+
+          {/*
+          将来的にチケット販売を開始する際のUI:
           <div
             className="bg-white rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl"
             style={{ borderWidth: "6px" }}
@@ -371,6 +452,7 @@ function MainComponent() {
               ※ Googleフォームに移動します
             </p>
           </div>
+          */}
         </div>
       </section>
 
@@ -399,10 +481,12 @@ function MainComponent() {
               <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
                 お問い合わせ
               </h4>
-              <p className="text-gray-300 mb-2 font-bold">
-                📧 info@kobeongakusai.com
+              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
+                <FaEnvelope /> info@kobeongakusai.com
               </p>
-              <p className="text-gray-300 font-bold">📱 @kobeongakusai</p>
+              <p className="text-gray-300 font-bold flex items-center gap-2">
+                <FaMobile /> @kobeongakusai
+              </p>
             </div>
             <div>
               <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
