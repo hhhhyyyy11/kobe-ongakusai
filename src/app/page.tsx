@@ -176,8 +176,11 @@ function MainComponent() {
                 <span>2025年8月22日 11:00~19:00</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
-                <span className="text-3xl">📍</span>
-                <span>神戸ポートアイランド特設会場</span>
+                <span className="text-3xl">in</span>
+                <div className="text-center">
+                  <div>GLION ARENA KOBE</div>
+                  <div>TOTTEI PARK</div>
+                </div>
               </div>
             </div>
           </div>
