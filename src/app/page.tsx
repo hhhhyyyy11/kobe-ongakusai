@@ -8,13 +8,11 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaInstagram,
+  FaTwitter,
   FaEnvelope,
-  FaMobile,
   FaBars
 } from "react-icons/fa";
-import { BsMusicNote } from "react-icons/bs";
-
-function MainComponent() {
+import { BsMusicNote } from "react-icons/bs";function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
 
   // TODO: 出演アーティスト情報を後で追加
@@ -343,33 +341,58 @@ function MainComponent() {
         </div>
       </section>
 
-      {/* Instagram Section */}
+      {/* SNS Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">Instagram</h2>
+            <div className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black">SNS</h2>
             </div>
             <p className="text-xl font-bold text-[#2C5F5D]">
               最新情報をチェック！ #kobeongakusai
             </p>
           </div>
 
-          <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
-            <div className="text-8xl mb-6 flex justify-center">
-              <FaInstagram className="text-purple-500" />
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Instagram */}
+            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
+              <div className="text-8xl mb-6 flex justify-center">
+                <FaInstagram className="text-purple-500" />
+              </div>
+              <h3 className="text-2xl font-black text-white mb-4">Instagram</h3>
+              <p className="text-lg font-bold text-white mb-8">
+                フィード・ストーリーで最新情報をお届け
+              </p>
+              <a
+                href="https://www.instagram.com/kobe_ongakusai?igsh=Nmtsa2JhZGpkb3Rv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full border-4 border-[#2C5F5D] hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <FaInstagram />
+                <span>@kobe_ongakusai</span>
+              </a>
             </div>
-            <p className="text-xl font-bold text-white mb-8">
-              公式Instagramフィードがここに表示されます
-            </p>
-            <a
-              href="https://instagram.com/kobeongakusai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              <span>@kobeongakusai をフォロー</span>
-            </a>
+
+            {/* Twitter(X) */}
+            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
+              <div className="text-8xl mb-6 flex justify-center">
+                <FaTwitter className="text-blue-400" />
+              </div>
+              <h3 className="text-2xl font-black text-white mb-4">Twitter(X)</h3>
+              <p className="text-lg font-bold text-white mb-8">
+                リアルタイムで情報発信・交流
+              </p>
+              <a
+                href="https://twitter.com/K0beOngakusai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full border-4 border-[#2C5F5D] hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                <FaTwitter />
+                <span>@K0beOngakusai</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -484,8 +507,11 @@ function MainComponent() {
               <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
                 <FaEnvelope /> info@kobeongakusai.com
               </p>
+              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
+                <FaInstagram /> @kobe_ongakusai
+              </p>
               <p className="text-gray-300 font-bold flex items-center gap-2">
-                <FaMobile /> @kobeongakusai
+                <FaTwitter /> @K0beOngakusai
               </p>
             </div>
             <div>

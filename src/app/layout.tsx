@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "神戸音学祭 | Kobe Music Festival 2025",
     description: "2025年8月22日開催！学生主催の音楽フェスティバル",
-    creator: '@kobeongakusai',
+    creator: '@K0beOngakusai',
   },
   robots: {
     index: true,
