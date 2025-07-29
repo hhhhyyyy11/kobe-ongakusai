@@ -76,8 +76,11 @@ export default function RootLayout({
     '@type': 'MusicEvent',
     name: '神戸音学祭 2025',
     description: '学生主催の野外音楽フェス',
+    image: 'https://kobe-ongakusai.vercel.app/images/logo_main.jpg',
     startDate: '2025-08-22T11:00:00+09:00',
     endDate: '2025-08-22T19:00:00+09:00',
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
       '@type': 'Place',
       name: 'GLION ARENA KOBE TOTTEI PARK',
@@ -92,11 +95,20 @@ export default function RootLayout({
       name: '神戸音学祭実行委員会',
       url: 'https://kobe-ongakusai.vercel.app',
     },
+    performer: [
+      {
+        '@type': 'Organization',
+        name: '出演者調整中',
+        description: '現在出演アーティストを調整中です',
+      }
+    ],
     offers: {
       '@type': 'Offer',
       price: '3500',
       priceCurrency: 'JPY',
       availability: 'https://schema.org/InStock',
+      url: 'https://kobe-ongakusai.vercel.app',
+      validFrom: '2025-01-01T00:00:00+09:00',
     },
   };
 
