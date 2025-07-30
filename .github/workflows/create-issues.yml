@@ -1,0 +1,77 @@
+name: Create Issues from Markdown Files
+
+on:
+  push:
+    paths:
+      - 'issues_to_create/*.md'
+    branches:
+      - main
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed files
+        id: changed-files
+        run: |
+          # Get the list of added or modified markdown files in issues_to_create/
+          changed_files=$(git diff --name-only --diff-filter=A HEAD~1 HEAD | grep '^issues_to_create/.*\.md$' || true)
+          echo "Changed files: $changed_files"
+
+          # Convert to JSON array for matrix strategy
+          if [ -n "$changed_files" ]; then
+            files_json=$(echo "$changed_files" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+            echo "files=$files_json" >> $GITHUB_OUTPUT
+          else
+            echo "files=[]" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Process markdown files
+        if: steps.changed-files.outputs.files != '[]'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          files='${{ steps.changed-files.outputs.files }}'
+          echo "Processing files: $files"
+
+          for file in $(echo "$files" | jq -r '.[]'); do
+            echo "Processing file: $file"
+
+            if [ ! -f "$file" ]; then
+              echo "File $file does not exist, skipping..."
+              continue
+            fi
+
+            # Read the markdown file
+            title=$(head -n 1 "$file" | sed 's/^# *//')
+            body=$(tail -n +2 "$file")
+
+            # Create issue using GitHub CLI
+            echo "Creating issue with title: $title"
+            issue_url=$(gh issue create --title "$title" --body "$body")
+
+            if [ $? -eq 0 ]; then
+              echo "Successfully created issue: $issue_url"
+
+              # Remove the processed file
+              git config --local user.email "action@github.com"
+              git config --local user.name "GitHub Action"
+              git rm "$file"
+              git commit -m "Remove processed issue file: $file"
+              git push
+
+              echo "Successfully removed file: $file"
+            else
+              echo "Failed to create issue from file: $file"
+              exit 1
+            fi
+          done
