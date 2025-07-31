@@ -8,7 +8,10 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaInstagram,
-  FaBars
+  FaBars,
+  FaEnvelope,
+  FaMicrophone,
+  FaStar
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SiX } from "react-icons/si";
@@ -16,31 +19,49 @@ import { SiX } from "react-icons/si";
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
 
-  // TODO: 出演バンド情報を後で追加
-  /*
-  const artists = [
+  // 出演バンド情報
+  const bands = [
     {
-      name: "DJ Sakura",
-      image: "/images/artists/dj-sakura.jpg",
-      genre: "Electronic Pop",
+      name: "関西学院大学文化総部軽音楽部",
+      image: "/images/artists/kwansei-gakuin.jpg", // TODO: 写真追加予定
     },
     {
-      name: "Kobe Collective",
-      image: "/images/artists/kobe-collective.jpg",
-      genre: "Indie Rock",
+      name: "神戸市外国語大学学部軽音学部",
+      image: "/images/artists/kobe-city-univ-foreign-studies.jpg", // TODO: 写真追加予定
     },
     {
-      name: "Yuki Tanaka",
-      image: "/images/artists/yuki-tanaka.jpg",
-      genre: "Alternative",
+      name: "神戸親和大学軽音学部",
+      image: "/images/artists/kobe-shinwa.jpg", // TODO: 写真追加予定
     },
     {
-      name: "Osaka Waves",
-      image: "/images/artists/osaka-waves.jpg",
-      genre: "J-Pop",
+      name: "神戸大学軽音楽部ROCK",
+      image: "/images/artists/kobe-univ-rock.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "神戸大学軽音サークルFreeBeat",
+      image: "/images/artists/kobe-univ-freebeat.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "神戸大学軽音サークルMMC",
+      image: "/images/artists/kobe-univ-mmc.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "神戸大学軽音サークルSoundS",
+      image: "/images/artists/kobe-univ-sounds.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "同志社大学Lilac Rainbow",
+      image: "/images/artists/doshisha-lilac-rainbow.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "立命館大学Hansel&Gretel",
+      image: "/images/artists/ritsumeikan-hansel-gretel.jpg", // TODO: 写真追加予定
+    },
+    {
+      name: "立命館大学Jack&Beans",
+      image: "/images/artists/ritsumeikan-jack-beans.jpg", // TODO: 写真追加予定
     },
   ];
-  */
 
   // TODO: 協賛企業・団体情報を後で追加
   /*
@@ -104,9 +125,9 @@ function MainComponent() {
             <div className="hidden md:flex space-x-6">
               {[
                 { id: "top", label: "TOP" },
-                { id: "artist", label: "ARTIST" },
+                { id: "artist", label: "出演バンド" },
                 { id: "sponsor", label: "SPONSOR" },
-                { id: "ticket", label: "TICKET" },
+                { id: "ticket", label: "入場について" },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -182,30 +203,36 @@ function MainComponent() {
             className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl mb-8"
             style={{ borderWidth: "6px" }}
           >
-            <p className="text-2xl md:text-3xl font-black mb-6 text-[#2C5F5D]">
-              学生主催の音楽フェスティバル
+            <p className="text-xl md:text-2xl font-black mb-4 text-[#FF6B47]">
+              学生音楽 × 神戸
+            </p>
+            <p className="text-lg md:text-xl font-bold mb-6 text-[#2C5F5D]">
+              関西圏6大学10団体が出演<br />
+              計17大学のメンバーから構成される実行委員会主催の学生音楽フェス！
             </p>
             <div className="text-xl md:text-2xl font-bold text-[#2C5F5D] space-y-3">
               <div className="flex items-center justify-center space-x-3">
                 <FaCalendarAlt className="text-3xl" />
-                <span>2025年8月22日 11:00~19:00</span>
+                <span>2025年8月22日（金）10:00〜19:00</span>
               </div>
               <div className="flex items-center justify-center space-x-3">
                 <FaMapMarkerAlt className="text-3xl" />
                 <div className="text-center">
-                  <div>GLION ARENA KOBE</div>
                   <div>TOTTEI PARK</div>
+                  <div className="text-lg">（神戸市中央区）</div>
                 </div>
+              </div>
+              <div className="bg-[#FF6B47] text-white px-6 py-3 rounded-full text-lg font-black mt-4">
+                入場無料・入退場自由
               </div>
             </div>
           </div>
 
           <button
             onClick={() => scrollToSection("ticket")}
-            className="bg-gray-400 text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] cursor-not-allowed opacity-60"
-            disabled
+            className="bg-[#2C5F5D] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#FF6B47] hover:bg-[#FF6B47] hover:border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
-            準備中...
+            入場について詳しく見る
           </button>
         </div>
 
@@ -239,55 +266,43 @@ function MainComponent() {
                 出演バンド
               </h2>
             </div>
-            <p className="text-xl font-bold text-[#2C5F5D]">
-              Coming Soon...
+            <p className="text-xl font-bold text-[#2C5F5D] mb-8">
+              関西圏6大学10団体によるコピーバンドライブ
             </p>
           </div>
 
-          {/* TODO: 出演バンド一覧を後で追加 */}
-          <div className="text-center">
-            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
-              <div className="text-8xl mb-6 flex justify-center">
-                <FaMusic className="text-[#FF6B47]" />
-              </div>
-              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
-                出演バンド発表をお楽しみに！
-              </p>
-              <p className="text-lg font-bold text-[#777777]">
-                近日公開予定！
-              </p>
-            </div>
-          </div>
-
-          {/*
-          将来的にバンド一覧を表示する際のUI:
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {artists.map((artist, index) => (
+          {/* 出演団体一覧 */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {bands.map((band, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-3 overflow-hidden"
+                className="bg-white rounded-2xl border-4 border-[#2C5F5D] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
               >
-                <div className="aspect-square overflow-hidden">
-                  <Image
-                    src={artist.image}
-                    alt={artist.name}
-                    width={300}
-                    height={300}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6 bg-[#77c1f2]">
-                  <h3 className="text-xl font-black mb-2 text-white">
-                    {artist.name}
+                <div className="text-center">
+                  <h3 className="text-lg font-black text-[#2C5F5D] leading-tight">
+                    {band.name}
                   </h3>
-                  <p className="text-[#2C5F5D] font-bold bg-white px-3 py-1 rounded-full inline-block">
-                    {artist.genre}
-                  </p>
                 </div>
               </div>
             ))}
           </div>
-          */}
+
+          {/* パフォーマンス内容説明 */}
+          <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 mb-8">
+            <div className="text-center mb-6">
+              <div className="text-6xl mb-4 flex justify-center">
+                <FaMusic className="text-[#FF6B47]" />
+              </div>
+              <h3 className="text-2xl font-black text-[#2C5F5D] mb-4">
+                多彩なジャンルのコピーバンドライブ
+              </h3>
+              <p className="text-lg font-bold text-[#777777] leading-relaxed">
+                各団体によるアーティストのコピー曲披露<br />
+                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで<br />
+                ジャンルを問わず多様な演奏をお楽しみいただけます
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -339,6 +354,214 @@ function MainComponent() {
             ))}
           </div>
           */}
+        </div>
+      </section>
+
+      {/* About Section - 神戸音学祭について */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black">
+                神戸音学祭について
+              </h2>
+            </div>
+            <p className="text-xl font-bold text-[#2C5F5D]">
+              学生の、学生による、学生のための野外音楽フェス
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            {/* コンセプト */}
+            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8">
+              <div className="text-center mb-6">
+                <div className="bg-white rounded-full p-4 inline-block mb-4">
+                  <FaMusic className="text-4xl text-[#FF6B47]" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-4">コンセプト</h3>
+              </div>
+              <div className="text-white font-bold space-y-4">
+                <div className="bg-white/20 rounded-2xl p-4">
+                  <p className="text-lg leading-relaxed">
+                    「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
+                  </p>
+                </div>
+                <div className="bg-white/20 rounded-2xl p-4">
+                  <p className="leading-relaxed">
+                    学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 特徴 */}
+            <div className="bg-[#2C5F5D] rounded-3xl border-4 border-[#77c1f2] shadow-xl p-8">
+              <div className="text-center mb-6">
+                <div className="bg-white rounded-full p-4 inline-block mb-4">
+                  <FaHandshake className="text-4xl text-[#2C5F5D]" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-4">イベントの特徴</h3>
+              </div>
+              <div className="text-white font-bold space-y-4">
+                <div className="bg-[#FF6B47] rounded-2xl p-4">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaMusic className="text-white" />
+                    学生主体の運営
+                  </p>
+                  <p className="text-sm">企画・運営、音響PA、スタッフ業務全てを学生で実施</p>
+                </div>
+                <div className="bg-[#77c1f2] rounded-2xl p-4 text-[#2C5F5D]">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaMicrophone className="text-[#2C5F5D]" />
+                    多様な音楽ジャンル
+                  </p>
+                  <p className="text-sm">メジャーからニッチまで幅広いアーティストのコピー演奏</p>
+                </div>
+                <div className="bg-white/20 rounded-2xl p-4">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaStar className="text-white" />
+                    野外フェスの魅力
+                  </p>
+                  <p className="text-sm">学生が全業務を手がける屋外音楽フェスは当イベントの強み</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ストーリー */}
+          <div className="bg-gradient-to-r from-[#77c1f2] to-[#2C5F5D] rounded-3xl border-4 border-[#FF6B47] shadow-xl p-8 text-white">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-black mb-4">プロジェクトストーリー</h3>
+              <p className="text-lg font-bold">神戸をもっと元気にしたいという想いから始まった挑戦</p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  神戸音学祭は、神戸大学の学生である澤田陽介（経営学部3年）と栄陽向太（理学部3年）により企画・立ち上げられた学生主導の音楽フェスティバルです。
+                </p>
+              </div>
+
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne Bright Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
+                </p>
+              </div>
+
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  講義後、澤田が渋谷氏に直接アポイントを取り、自身の「学生の手で大規模な音楽フェスを実現したい」という構想をプレゼンテーション。その熱意にご賛同いただき、本プロジェクトがスタートしました。
+                </p>
+              </div>
+
+              <div className="bg-[#FF6B47] rounded-2xl p-6">
+                <p className="font-black text-center leading-relaxed">
+                  初年度である今回は試行的な位置付けですが、ここを出発点とし、今後はより多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Event Details Section - イベント詳細 */}
+      <section className="py-20 bg-[#77c1f2]">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black">
+                開催概要
+              </h2>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12" style={{ borderWidth: "6px" }}>
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* 基本情報 */}
+              <div className="space-y-6">
+                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaCalendarAlt />
+                    日時
+                  </h3>
+                  <p className="text-lg font-bold">
+                    2025年8月22日（金）<br />
+                    10:00〜19:00
+                  </p>
+                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
+                    ※イベント後にはメリケンパークでの花火打ち上げあり
+                  </p>
+                </div>
+
+                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaMapMarkerAlt />
+                    会場
+                  </h3>
+                  <p className="text-lg font-bold">
+                    TOTTEI PARK<br />
+                    （神戸市中央区新港町2-1）
+                  </p>
+                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
+                    神戸アリーナプロジェクトの一環
+                  </p>
+                </div>
+
+                <div className="bg-[#77c1f2] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaTicketAlt />
+                    料金
+                  </h3>
+                  <p className="text-2xl font-black text-[#FF6B47] mb-2">
+                    無料
+                  </p>
+                  <p className="text-lg font-bold">
+                    入退場自由
+                  </p>
+                </div>
+              </div>
+
+              {/* その他情報 */}
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-[#FF6B47] to-[#2C5F5D] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaMusic />
+                    内容
+                  </h3>
+                  <p className="font-bold leading-relaxed">
+                    コピーバンドライブ<br />
+                    各団体によるアーティストのコピー曲披露
+                  </p>
+                </div>
+
+                <div className="bg-white border-4 border-[#2C5F5D] p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 text-[#2C5F5D]">
+                    お問い合わせ
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <FaInstagram className="text-purple-500 text-xl" />
+                      <a href="https://www.instagram.com/kobe_ongakusai" target="_blank" rel="noopener noreferrer" className="text-[#2C5F5D] font-bold hover:underline">
+                        @kobe_ongakusai
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <SiX className="text-black text-xl" />
+                      <a href="https://twitter.com/K0beOngakusai" target="_blank" rel="noopener noreferrer" className="text-[#2C5F5D] font-bold hover:underline">
+                        @K0beOngakusai
+                      </a>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <FaEnvelope className="text-[#FF6B47] text-xl" />
+                      <a href="mailto:ongakusai.kobe@gmail.com" className="text-[#2C5F5D] font-bold hover:underline">
+                        ongakusai.kobe@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -415,13 +638,9 @@ function MainComponent() {
 
         <div className="max-w-4xl mx-auto px-4 text-center relative">
           <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-8">
-            <h2 className="text-4xl md:text-5xl font-black">チケット予約</h2>
+            <h2 className="text-4xl md:text-5xl font-black">入場について</h2>
           </div>
-          <p className="text-2xl mb-12 text-white font-bold">
-            Coming Soon...
-          </p>
 
-          {/* TODO: チケット詳細情報を後で追加 */}
           <div
             className="bg-white rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl"
             style={{ borderWidth: "6px" }}
@@ -430,53 +649,28 @@ function MainComponent() {
               <div className="text-8xl mb-6 flex justify-center">
                 <FaTicketAlt className="text-[#FF6B47]" />
               </div>
-              <p className="text-2xl font-black text-[#FF6B47] mb-4">
-                チケット情報発表をお楽しみに！
-              </p>
-              <p className="text-lg font-bold text-[#777777] mb-6">
-                詳細な料金・販売方法は後日発表いたします
-              </p>
-              <button
-                disabled
-                className="w-full bg-gray-400 text-white text-2xl font-black py-6 px-8 rounded-full border-4 border-[#2C5F5D] cursor-not-allowed opacity-60"
-              >
-                準備中...
-              </button>
-            </div>
-          </div>
-
-          {/*
-          将来的にチケット販売を開始する際のUI:
-          <div
-            className="bg-white rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl"
-            style={{ borderWidth: "6px" }}
-          >
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-[#77c1f2] p-6 rounded-2xl border-3 border-[#2C5F5D]">
-                <h3 className="text-2xl font-black mb-4 text-white">1日券</h3>
-                <div className="text-4xl font-black text-[#FF6B47] mb-2">
-                  ¥3,500
-                </div>
-                <p className="text-[#2C5F5D] font-bold">学生割引適用価格</p>
+              <div className="bg-gradient-to-r from-[#FF6B47] to-[#2C5F5D] text-white px-8 py-6 rounded-3xl mb-6">
+                <p className="text-4xl font-black mb-2">入場無料</p>
+                <p className="text-xl font-bold">入退場自由</p>
               </div>
-              <div className="bg-[#77c1f2] p-6 rounded-2xl border-3 border-[#2C5F5D]">
-                <h3 className="text-2xl font-black mb-4 text-white">
-                  2日通し券
-                </h3>
-                <div className="text-4xl font-black text-[#FF6B47] mb-2">
-                  ¥6,000
+              <div className="space-y-4">
+                <div className="bg-[#77c1f2] text-white px-6 py-4 rounded-2xl">
+                  <p className="text-lg font-black">予約不要</p>
+                  <p className="font-bold">当日直接会場へお越しください</p>
                 </div>
-                <p className="text-[#2C5F5D] font-bold">1,000円お得！</p>
+                <div className="bg-[#2C5F5D] text-white px-6 py-4 rounded-2xl">
+                  <p className="text-lg font-black">開催時間</p>
+                  <p className="font-bold">10:00〜19:00</p>
+                </div>
+                <div className="bg-gray-100 text-[#2C5F5D] px-6 py-4 rounded-2xl">
+                  <p className="text-sm font-bold">
+                    ※天候等により開催内容が変更となる場合があります<br />
+                    最新情報は公式SNSでお知らせいたします
+                  </p>
+                </div>
               </div>
             </div>
-            <button className="w-full bg-[#FF6B47] hover:bg-[#FF4524] text-white text-2xl font-black py-6 px-8 rounded-full border-4 border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl">
-              チケットを予約する
-            </button>
-            <p className="text-sm text-[#2C5F5D] mt-4 font-bold">
-              ※ Googleフォームに移動します
-            </p>
           </div>
-          */}
         </div>
       </section>
 
@@ -509,9 +703,13 @@ function MainComponent() {
                 <FaInstagram />
                 <a href="https://www.instagram.com/kobe_ongakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@kobe_ongakusai</a>
               </p>
-              <p className="text-gray-300 font-bold flex items-center gap-2">
+              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
                 <SiX />
                 <a href="https://twitter.com/K0beOngakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@K0beOngakusai</a>
+              </p>
+              <p className="text-gray-300 font-bold flex items-center gap-2">
+                <FaEnvelope />
+                <a href="mailto:ongakusai.kobe@gmail.com" className="hover:underline">ongakusai.kobe@gmail.com</a>
               </p>
             </div>
             <div>
@@ -519,16 +717,18 @@ function MainComponent() {
                 アクセス
               </h4>
               <p className="text-gray-300 font-bold">
-                GLION ARENA KOBE<br />
                 TOTTEI PARK<br />
+                神戸市中央区新港町2-1<br />
                 <br />
-                JR元町駅から徒歩15分<br />
+                JR・阪神元町駅から徒歩15分<br />
+                神戸市営地下鉄海岸線<br />
+                みなと元町駅から徒歩8分
               </p>
             </div>
           </div>
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
             <p className="font-bold">
-              &copy; 2025 神戸音楽祭実行委員会. All rights reserved.
+              &copy; 2025 神戸音学祭実行委員会. All rights reserved.
             </p>
           </div>
         </div>
