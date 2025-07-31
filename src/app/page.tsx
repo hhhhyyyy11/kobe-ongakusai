@@ -27,7 +27,7 @@ function MainComponent() {
 
     // スクロール時のアクティブセクション自動検出
     const handleScroll = () => {
-      const sections = ["top", "artist", "about", "sponsor", "ticket"];
+      const sections = ["top", "ticket", "artist", "about"];
       const scrollPosition = window.scrollY + 150; // ヘッダーの高さを考慮
 
       for (const sectionId of sections) {
@@ -96,10 +96,9 @@ function MainComponent() {
             <div className="hidden lg:flex space-x-6">
               {[
                 { id: "top", label: "TOP" },
+                { id: "ticket", label: "開催概要・入場について" },
                 { id: "artist", label: "出演団体" },
                 { id: "about", label: "音楽祭について" },
-                { id: "sponsor", label: "SPONSOR" },
-                { id: "ticket", label: "入場について" },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -130,10 +129,9 @@ function MainComponent() {
               <div className="flex flex-col space-y-3 pt-4">
                 {[
                   { id: "top", label: "TOP" },
+                  { id: "ticket", label: "開催概要・入場について" },
                   { id: "artist", label: "出演団体" },
                   { id: "about", label: "音楽祭について" },
-                  { id: "sponsor", label: "SPONSOR" },
-                  { id: "ticket", label: "入場について" },
                 ].map((item) => (
                   <button
                     key={item.id}
@@ -233,10 +231,10 @@ function MainComponent() {
           </div>
 
           <button
-            onClick={() => scrollToSection("ticket")}
+            onClick={() => scrollToSection("artist")}
             className="bg-[#2C5F5D] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#FF6B47] hover:bg-[#FF6B47] hover:border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl"
           >
-            入場について詳しく見る
+            出演団体を見る
           </button>
         </div>
 
@@ -251,10 +249,104 @@ function MainComponent() {
         </div>
       </section>
 
+      {/* Ticket Section */}
+      <section id="ticket" className="py-20 bg-[#FF6B47] relative">
+        {/* Decorative musical notes */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-10 left-16 text-6xl text-white/20 animate-bounce">
+            <BsMusicNote />
+          </div>
+          <div className="absolute top-32 right-20 text-5xl text-[#2C5F5D]/20 animate-bounce delay-200">
+            <BsMusicNote />
+          </div>
+          <div className="absolute bottom-20 left-24 text-7xl text-white/20 animate-bounce delay-400">
+            <BsMusicNote />
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 relative">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black">開催概要・入場について</h2>
+            </div>
+          </div>
+
+          <div
+            className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12"
+            style={{ borderWidth: "6px" }}
+          >
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* 基本情報 */}
+              <div className="space-y-6">
+                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaCalendarAlt />
+                    日時
+                  </h3>
+                  <p className="text-lg font-bold">
+                    2025年8月22日（金）
+                    <br />
+                    10:00〜19:00
+                  </p>
+                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
+                    ※イベント後にはメリケンパークでの花火打ち上げあり
+                  </p>
+                </div>
+
+                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaMapMarkerAlt />
+                    会場
+                  </h3>
+                  <p className="text-lg font-bold">
+                    TOTTEI PARK
+                    <br />
+                    （神戸市中央区新港町2-1）
+                  </p>
+                </div>
+
+                <div className="bg-[#77c1f2] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaTicketAlt />
+                    料金
+                  </h3>
+                  <p className="text-2xl font-black text-[#FF6B47] mb-2">
+                    無料
+                  </p>
+                  <p className="text-lg font-bold">入退場自由・予約不要</p>
+                </div>
+              </div>
+
+              {/* その他情報 */}
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-[#FF6B47] to-[#2C5F5D] text-white p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
+                    <FaMusic />
+                    内容
+                  </h3>
+                  <p className="font-bold leading-relaxed">
+                    コピーバンドライブ
+                    <br />
+                    各団体によるアーティストのコピー曲披露
+                  </p>
+                </div>
+
+                <div className="bg-white border-4 border-[#2C5F5D] p-6 rounded-2xl">
+                  <h3 className="text-xl font-black mb-4 text-[#2C5F5D]">
+                    お問い合わせ
+                  </h3>
+                  <ContactLinks />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Artist Section */}
       <section id="artist" className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#77c1f2]">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-[#FF6B47]">
           <svg viewBox="0 0 1200 120" className="w-full h-full">
             <path
               d="M0,60 C300,0 900,120 1200,60 L1200,120 L0,120 Z"
@@ -310,6 +402,135 @@ function MainComponent() {
         </div>
       </section>
 
+      {/* SNS Section */}
+      <SNSSection isClient={isClient} />
+
+      {/* About Section - 神戸音学祭について */}
+      <section id="about" className="py-20 bg-[#77c1f2]">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+              <h2 className="text-4xl md:text-5xl font-black">
+                神戸音学祭について
+              </h2>
+            </div>
+            <p className="text-xl font-bold text-white">
+              学生の、学生による、学生のための野外音楽フェス
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            {/* コンセプト */}
+            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8">
+              <div className="text-center mb-6">
+                <div className="bg-[#77c1f2] rounded-full p-4 inline-block mb-4">
+                  <FaMusic className="text-4xl text-white" />
+                </div>
+                <h3 className="text-2xl font-black text-[#2C5F5D] mb-4">
+                  コンセプト
+                </h3>
+              </div>
+              <div className="text-[#2C5F5D] font-bold space-y-4">
+                <div className="bg-[#77c1f2]/15 rounded-2xl p-4">
+                  <p className="text-lg leading-relaxed">
+                    「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
+                  </p>
+                </div>
+                <div className="bg-[#77c1f2]/15 rounded-2xl p-4">
+                  <p className="leading-relaxed">
+                    学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
+                  </p>
+                  <p className="text-sm mt-2 text-center opacity-80">
+                    ※神戸アリーナプロジェクトの一環
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 特徴 */}
+            <div className="bg-[#2C5F5D] rounded-3xl border-4 border-white shadow-xl p-8">
+              <div className="text-center mb-6">
+                <div className="bg-white rounded-full p-4 inline-block mb-4">
+                  <FaHandshake className="text-4xl text-[#2C5F5D]" />
+                </div>
+                <h3 className="text-2xl font-black text-white mb-4">
+                  イベントの特徴
+                </h3>
+              </div>
+              <div className="text-white font-bold space-y-4">
+                <div className="bg-[#FF6B47] rounded-2xl p-4">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaMusic className="text-white" />
+                    学生主体の運営
+                  </p>
+                  <p className="text-sm">
+                    企画・運営、音響PA、スタッフ業務全てを学生で実施
+                  </p>
+                </div>
+                <div className="bg-[#77c1f2] rounded-2xl p-4 text-[#2C5F5D]">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaMicrophone className="text-[#2C5F5D]" />
+                    多様な音楽ジャンル
+                  </p>
+                  <p className="text-sm">
+                    メジャーからニッチまで幅広いアーティストのコピー演奏
+                  </p>
+                </div>
+                <div className="bg-white/20 rounded-2xl p-4">
+                  <p className="font-black mb-2 flex items-center gap-2">
+                    <FaStar className="text-white" />
+                    野外フェスの魅力
+                  </p>
+                  <p className="text-sm">
+                    学生が全業務を手がける屋外音楽フェスは当イベントの強み
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ストーリー */}
+          <div className="bg-gradient-to-r from-[#2C5F5D] to-[#FF6B47] rounded-3xl border-4 border-white shadow-xl p-8 text-white">
+            <div className="text-center mb-8">
+              <h3 className="text-3xl font-black mb-4">
+                プロジェクトストーリー
+              </h3>
+              <p className="text-lg font-bold">
+                神戸をもっと元気にしたいという想いから始まった挑戦
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-6">
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  神戸音学祭は、神戸大学の学生である澤田陽介（経営学部3年）と栄陽向太（理学部3年）により企画・立ち上げられた学生主導の音楽フェスティバルです。
+                </p>
+              </div>
+
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne
+                  Bright
+                  Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
+                </p>
+              </div>
+
+              <div className="bg-white/20 rounded-2xl p-6">
+                <p className="font-bold leading-relaxed">
+                  講義後、澤田が渋谷氏に直接アポイントを取り、自身の「学生の手で大規模な音楽フェスを実現したい」という構想をプレゼンテーション。その熱意にご賛同いただき、本プロジェクトがスタートしました。
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-6 text-[#2C5F5D]">
+                <p className="font-black text-center leading-relaxed">
+                  初年度である今回は試行的な位置付けですが、ここを出発点とし、今後はより多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Sponsor Section */}
       <section id="sponsor" className="py-20 bg-[#77c1f2] relative">
         <div className="max-w-6xl mx-auto px-4">
@@ -359,267 +580,52 @@ function MainComponent() {
         </div>
       </section>
 
-      {/* About Section - 神戸音学祭について */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">
-                神戸音学祭について
-              </h2>
-            </div>
-            <p className="text-xl font-bold text-[#2C5F5D]">
-              学生の、学生による、学生のための野外音楽フェス
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 mb-12">
-            {/* コンセプト */}
-            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8">
-              <div className="text-center mb-6">
-                <div className="bg-white rounded-full p-4 inline-block mb-4">
-                  <FaMusic className="text-4xl text-[#FF6B47]" />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4">
-                  コンセプト
-                </h3>
-              </div>
-              <div className="text-white font-bold space-y-4">
-                <div className="bg-white/15 rounded-2xl p-4">
-                  <p className="text-lg leading-relaxed">
-                    「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
-                  </p>
-                </div>
-                <div className="bg-white/15 rounded-2xl p-4">
-                  <p className="leading-relaxed">
-                    学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
-                  </p>
-                  <p className="text-sm mt-2 text-center opacity-80">
-                    ※神戸アリーナプロジェクトの一環
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 特徴 */}
-            <div className="bg-[#2C5F5D] rounded-3xl border-4 border-[#77c1f2] shadow-xl p-8">
-              <div className="text-center mb-6">
-                <div className="bg-white rounded-full p-4 inline-block mb-4">
-                  <FaHandshake className="text-4xl text-[#2C5F5D]" />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4">
-                  イベントの特徴
-                </h3>
-              </div>
-              <div className="text-white font-bold space-y-4">
-                <div className="bg-[#FF6B47] rounded-2xl p-4">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMusic className="text-white" />
-                    学生主体の運営
-                  </p>
-                  <p className="text-sm">
-                    企画・運営、音響PA、スタッフ業務全てを学生で実施
-                  </p>
-                </div>
-                <div className="bg-[#77c1f2] rounded-2xl p-4 text-[#2C5F5D]">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMicrophone className="text-[#2C5F5D]" />
-                    多様な音楽ジャンル
-                  </p>
-                  <p className="text-sm">
-                    メジャーからニッチまで幅広いアーティストのコピー演奏
-                  </p>
-                </div>
-                <div className="bg-white/20 rounded-2xl p-4">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaStar className="text-white" />
-                    野外フェスの魅力
-                  </p>
-                  <p className="text-sm">
-                    学生が全業務を手がける屋外音楽フェスは当イベントの強み
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ストーリー */}
-          <div className="bg-gradient-to-r from-[#77c1f2] to-[#2C5F5D] rounded-3xl border-4 border-[#FF6B47] shadow-xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-black mb-4">
-                プロジェクトストーリー
-              </h3>
-              <p className="text-lg font-bold">
-                神戸をもっと元気にしたいという想いから始まった挑戦
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-6">
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  神戸音学祭は、神戸大学の学生である澤田陽介（経営学部3年）と栄陽向太（理学部3年）により企画・立ち上げられた学生主導の音楽フェスティバルです。
-                </p>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne
-                  Bright
-                  Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
-                </p>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  講義後、澤田が渋谷氏に直接アポイントを取り、自身の「学生の手で大規模な音楽フェスを実現したい」という構想をプレゼンテーション。その熱意にご賛同いただき、本プロジェクトがスタートしました。
-                </p>
-              </div>
-
-              <div className="bg-[#FF6B47] rounded-2xl p-6">
-                <p className="font-black text-center leading-relaxed">
-                  初年度である今回は試行的な位置付けですが、ここを出発点とし、今後はより多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Event Details Section - イベント詳細 */}
-      <section className="py-20 bg-[#77c1f2]">
+      {/* Sponsor Section */}
+      <section id="sponsor" className="py-20 bg-[#77c1f2] relative">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">開催概要</h2>
+              <h2 className="text-4xl md:text-5xl font-black">
+                協賛企業・団体
+              </h2>
             </div>
+            <p className="text-xl font-bold text-white">Coming Soon...</p>
           </div>
 
-          <div
-            className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12"
-            style={{ borderWidth: "6px" }}
-          >
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* 基本情報 */}
-              <div className="space-y-6">
-                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaCalendarAlt />
-                    日時
-                  </h3>
-                  <p className="text-lg font-bold">
-                    2025年8月22日（金）
-                    <br />
-                    10:00〜19:00
-                  </p>
-                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
-                    ※イベント後にはメリケンパークでの花火打ち上げあり
-                  </p>
-                </div>
-
-                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaMapMarkerAlt />
-                    会場
-                  </h3>
-                  <p className="text-lg font-bold">
-                    TOTTEI PARK
-                    <br />
-                    （神戸市中央区新港町2-1）
-                  </p>
-                </div>
-
-                <div className="bg-[#77c1f2] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaTicketAlt />
-                    料金
-                  </h3>
-                  <p className="text-2xl font-black text-[#FF6B47] mb-2">
-                    無料
-                  </p>
-                  <p className="text-lg font-bold">入退場自由</p>
-                </div>
-              </div>
-
-              {/* その他情報 */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-[#FF6B47] to-[#2C5F5D] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaMusic />
-                    内容
-                  </h3>
-                  <p className="font-bold leading-relaxed">
-                    コピーバンドライブ
-                    <br />
-                    各団体によるアーティストのコピー曲披露
-                  </p>
-                </div>
-
-                <div className="bg-white border-4 border-[#2C5F5D] p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 text-[#2C5F5D]">
-                    お問い合わせ
-                  </h3>
-                  <ContactLinks />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SNS Section */}
-      <SNSSection isClient={isClient} />
-
-      {/* Ticket Section */}
-      <section id="ticket" className="py-20 bg-[#FF6B47] relative">
-        {/* Decorative musical notes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-16 text-6xl text-white/20 animate-bounce">
-            <BsMusicNote />
-          </div>
-          <div className="absolute top-32 right-20 text-5xl text-[#2C5F5D]/20 animate-bounce delay-200">
-            <BsMusicNote />
-          </div>
-          <div className="absolute bottom-20 left-24 text-7xl text-white/20 animate-bounce delay-400">
-            <BsMusicNote />
-          </div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 text-center relative">
-          <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-8">
-            <h2 className="text-4xl md:text-5xl font-black">入場について</h2>
-          </div>
-
-          <div
-            className="bg-white rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl"
-            style={{ borderWidth: "6px" }}
-          >
-            <div className="text-center">
+          {/* TODO: 協賛企業・団体一覧を後で追加 */}
+          <div className="text-center">
+            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
               <div className="text-8xl mb-6 flex justify-center">
-                <FaTicketAlt className="text-[#FF6B47]" />
+                <FaHandshake className="text-[#2C5F5D]" />
               </div>
-              <div className="bg-gradient-to-r from-[#FF6B47] to-[#2C5F5D] text-white px-8 py-6 rounded-3xl mb-6">
-                <p className="text-4xl font-black mb-2">入場無料</p>
-                <p className="text-xl font-bold">入退場自由</p>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-[#77c1f2] text-white px-6 py-4 rounded-2xl">
-                  <p className="text-lg font-black">予約不要</p>
-                  <p className="font-bold">当日直接会場へお越しください</p>
-                </div>
-                <div className="bg-[#2C5F5D] text-white px-6 py-4 rounded-2xl">
-                  <p className="text-lg font-black">開催時間</p>
-                  <p className="font-bold">10:00〜19:00</p>
-                </div>
-                <div className="bg-gray-100 text-[#2C5F5D] px-6 py-4 rounded-2xl">
-                  <p className="text-sm font-bold">
-                    ※天候等により開催内容が変更となる場合があります
-                    <br />
-                    最新情報は公式SNSでお知らせいたします
-                  </p>
-                </div>
-              </div>
+              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
+                協賛企業・団体様を募集中！
+              </p>
+              <p className="text-lg font-bold text-[#777777]">
+                ご支援いただける企業・団体様を心よりお待ちしております
+              </p>
             </div>
           </div>
+
+          {/*
+          将来的に協賛企業・団体一覧を表示する際のUI:
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            {sponsors.map((sponsor, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300 flex items-center justify-center group"
+              >
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={150}
+                  height={80}
+                  className="max-w-full h-auto group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+          */}
         </div>
       </section>
 
