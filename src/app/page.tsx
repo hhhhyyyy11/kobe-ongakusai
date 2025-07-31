@@ -20,17 +20,56 @@ import { bands } from "@/constants/bands";
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
   const [isClient, setIsClient] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsClient(true);
+
+    // スクロール時のアクティブセクション自動検出
+    const handleScroll = () => {
+      const sections = ["top", "artist", "about", "sponsor", "ticket"];
+      const scrollPosition = window.scrollY + 150; // ヘッダーの高さを考慮
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(sectionId);
+            break;
+          }
+        }
+      }
+    };
+
+    // モバイルメニュー外部クリック時の閉じる処理
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('nav')) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("click", handleClickOutside);
+
+    // 初期状態でアクティブセクションを設定
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setIsMobileMenuOpen(false); // モバイルメニューを閉じる
   };
 
   return (
@@ -54,10 +93,11 @@ function MainComponent() {
                 神戸音学祭
               </div>
             </div>
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden lg:flex space-x-6">
               {[
                 { id: "top", label: "TOP" },
-                { id: "artist", label: "出演バンド" },
+                { id: "artist", label: "出演団体" },
+                { id: "about", label: "音楽祭について" },
                 { id: "sponsor", label: "SPONSOR" },
                 { id: "ticket", label: "入場について" },
               ].map((item) => (
@@ -76,17 +116,48 @@ function MainComponent() {
               ))}
             </div>
             {/* Mobile menu button */}
-            <button className="md:hidden p-2 rounded-lg bg-[#FF6B47] border-2 border-[#2C5F5D]">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg bg-[#FF6B47] border-2 border-[#2C5F5D] transition-colors duration-300"
+            >
               <FaBars className="w-6 h-6 text-white" />
             </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="lg:hidden mt-4 pb-4 border-t-2 border-[#2C5F5D]/20">
+              <div className="flex flex-col space-y-3 pt-4">
+                {[
+                  { id: "top", label: "TOP" },
+                  { id: "artist", label: "出演団体" },
+                  { id: "about", label: "音楽祭について" },
+                  { id: "sponsor", label: "SPONSOR" },
+                  { id: "ticket", label: "入場について" },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 ${
+                      activeSection === item.id
+                        ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
+                        : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
+                    }`}
+                    style={{ borderWidth: "3px" }}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </nav>
 
       {/* Main Visual Section */}
       <section
         id="top"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32"
         style={{
           backgroundImage: `url('/images/logo_sub.png')`,
           backgroundSize: "cover",
@@ -195,10 +266,10 @@ function MainComponent() {
         <div className="max-w-6xl mx-auto px-4 pt-16">
           <div className="text-center mb-16">
             <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">出演バンド</h2>
+              <h2 className="text-4xl md:text-5xl font-black">出演団体</h2>
             </div>
             <p className="text-xl font-bold text-[#2C5F5D] mb-8">
-              関西圏6大学10団体によるコピーバンドライブ
+              関西圏6大学10団体から出演
             </p>
           </div>
 
@@ -289,7 +360,7 @@ function MainComponent() {
       </section>
 
       {/* About Section - 神戸音学祭について */}
-      <section className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
