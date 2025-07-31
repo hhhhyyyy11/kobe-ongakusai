@@ -42,4 +42,4 @@ export const bands = [
   },
 ];
 
-export type Band = typeof bands[0];
+export type Band = (typeof bands)[0];

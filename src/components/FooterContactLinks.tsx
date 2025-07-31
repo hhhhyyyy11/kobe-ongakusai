@@ -1,7 +1,7 @@
-import React from 'react';
-import { FaInstagram, FaEnvelope } from 'react-icons/fa';
-import { SiX } from 'react-icons/si';
-import { SNS_INFO } from '@/constants/sns';
+import React from "react";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { SiX } from "react-icons/si";
+import { SNS_INFO } from "@/constants/sns";
 
 export const FooterContactLinks: React.FC = () => {
   return (
@@ -30,10 +30,7 @@ export const FooterContactLinks: React.FC = () => {
       </p>
       <p className="text-gray-300 font-bold flex items-center gap-2">
         <FaEnvelope />
-        <a
-          href="mailto:ongakusai.kobe@gmail.com"
-          className="hover:underline"
-        >
+        <a href="mailto:ongakusai.kobe@gmail.com" className="hover:underline">
           ongakusai.kobe@gmail.com
         </a>
       </p>

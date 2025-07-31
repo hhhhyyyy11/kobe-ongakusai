@@ -9,7 +9,7 @@ import {
   FaTicketAlt,
   FaBars,
   FaMicrophone,
-  FaStar
+  FaStar,
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
@@ -35,7 +35,6 @@ function MainComponent() {
 
   return (
     <div className="min-h-screen bg-[#77C1F0] font-sans">
-
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
         <div className="max-w-6xl mx-auto px-4 py-3">
@@ -140,7 +139,8 @@ function MainComponent() {
               学生音楽 × 神戸
             </p>
             <p className="text-lg md:text-xl font-bold mb-6 text-[#2C5F5D]">
-              関西圏6大学10団体が出演<br />
+              関西圏6大学10団体が出演
+              <br />
               計17大学のメンバーから構成される実行委員会主催の学生音楽フェス！
             </p>
             <div className="text-xl md:text-2xl font-bold text-[#2C5F5D] space-y-3">
@@ -195,9 +195,7 @@ function MainComponent() {
         <div className="max-w-6xl mx-auto px-4 pt-16">
           <div className="text-center mb-16">
             <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">
-                出演バンド
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-black">出演バンド</h2>
             </div>
             <p className="text-xl font-bold text-[#2C5F5D] mb-8">
               関西圏6大学10団体によるコピーバンドライブ
@@ -230,8 +228,10 @@ function MainComponent() {
                 多彩なジャンルのコピーバンドライブ
               </h3>
               <p className="text-lg font-bold text-[#777777] leading-relaxed">
-                各団体によるアーティストのコピー曲披露<br />
-                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで<br />
+                各団体によるアーティストのコピー曲披露
+                <br />
+                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
+                <br />
                 ジャンルを問わず多様な演奏をお楽しみいただけます
               </p>
             </div>
@@ -248,9 +248,7 @@ function MainComponent() {
                 協賛企業・団体
               </h2>
             </div>
-            <p className="text-xl font-bold text-white">
-              Coming Soon...
-            </p>
+            <p className="text-xl font-bold text-white">Coming Soon...</p>
           </div>
 
           {/* TODO: 協賛企業・団体一覧を後で追加 */}
@@ -311,7 +309,9 @@ function MainComponent() {
                 <div className="bg-white rounded-full p-4 inline-block mb-4">
                   <FaMusic className="text-4xl text-[#FF6B47]" />
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4">コンセプト</h3>
+                <h3 className="text-2xl font-black text-white mb-4">
+                  コンセプト
+                </h3>
               </div>
               <div className="text-white font-bold space-y-4">
                 <div className="bg-white/15 rounded-2xl p-4">
@@ -336,7 +336,9 @@ function MainComponent() {
                 <div className="bg-white rounded-full p-4 inline-block mb-4">
                   <FaHandshake className="text-4xl text-[#2C5F5D]" />
                 </div>
-                <h3 className="text-2xl font-black text-white mb-4">イベントの特徴</h3>
+                <h3 className="text-2xl font-black text-white mb-4">
+                  イベントの特徴
+                </h3>
               </div>
               <div className="text-white font-bold space-y-4">
                 <div className="bg-[#FF6B47] rounded-2xl p-4">
@@ -344,21 +346,27 @@ function MainComponent() {
                     <FaMusic className="text-white" />
                     学生主体の運営
                   </p>
-                  <p className="text-sm">企画・運営、音響PA、スタッフ業務全てを学生で実施</p>
+                  <p className="text-sm">
+                    企画・運営、音響PA、スタッフ業務全てを学生で実施
+                  </p>
                 </div>
                 <div className="bg-[#77c1f2] rounded-2xl p-4 text-[#2C5F5D]">
                   <p className="font-black mb-2 flex items-center gap-2">
                     <FaMicrophone className="text-[#2C5F5D]" />
                     多様な音楽ジャンル
                   </p>
-                  <p className="text-sm">メジャーからニッチまで幅広いアーティストのコピー演奏</p>
+                  <p className="text-sm">
+                    メジャーからニッチまで幅広いアーティストのコピー演奏
+                  </p>
                 </div>
                 <div className="bg-white/20 rounded-2xl p-4">
                   <p className="font-black mb-2 flex items-center gap-2">
                     <FaStar className="text-white" />
                     野外フェスの魅力
                   </p>
-                  <p className="text-sm">学生が全業務を手がける屋外音楽フェスは当イベントの強み</p>
+                  <p className="text-sm">
+                    学生が全業務を手がける屋外音楽フェスは当イベントの強み
+                  </p>
                 </div>
               </div>
             </div>
@@ -367,8 +375,12 @@ function MainComponent() {
           {/* ストーリー */}
           <div className="bg-gradient-to-r from-[#77c1f2] to-[#2C5F5D] rounded-3xl border-4 border-[#FF6B47] shadow-xl p-8 text-white">
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-black mb-4">プロジェクトストーリー</h3>
-              <p className="text-lg font-bold">神戸をもっと元気にしたいという想いから始まった挑戦</p>
+              <h3 className="text-3xl font-black mb-4">
+                プロジェクトストーリー
+              </h3>
+              <p className="text-lg font-bold">
+                神戸をもっと元気にしたいという想いから始まった挑戦
+              </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
@@ -380,7 +392,9 @@ function MainComponent() {
 
               <div className="bg-white/20 rounded-2xl p-6">
                 <p className="font-bold leading-relaxed">
-                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne Bright Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
+                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne
+                  Bright
+                  Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
                 </p>
               </div>
 
@@ -405,13 +419,14 @@ function MainComponent() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">
-                開催概要
-              </h2>
+              <h2 className="text-4xl md:text-5xl font-black">開催概要</h2>
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12" style={{ borderWidth: "6px" }}>
+          <div
+            className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12"
+            style={{ borderWidth: "6px" }}
+          >
             <div className="grid md:grid-cols-2 gap-8">
               {/* 基本情報 */}
               <div className="space-y-6">
@@ -421,7 +436,8 @@ function MainComponent() {
                     日時
                   </h3>
                   <p className="text-lg font-bold">
-                    2025年8月22日（金）<br />
+                    2025年8月22日（金）
+                    <br />
                     10:00〜19:00
                   </p>
                   <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
@@ -435,7 +451,8 @@ function MainComponent() {
                     会場
                   </h3>
                   <p className="text-lg font-bold">
-                    TOTTEI PARK<br />
+                    TOTTEI PARK
+                    <br />
                     （神戸市中央区新港町2-1）
                   </p>
                 </div>
@@ -448,9 +465,7 @@ function MainComponent() {
                   <p className="text-2xl font-black text-[#FF6B47] mb-2">
                     無料
                   </p>
-                  <p className="text-lg font-bold">
-                    入退場自由
-                  </p>
+                  <p className="text-lg font-bold">入退場自由</p>
                 </div>
               </div>
 
@@ -462,7 +477,8 @@ function MainComponent() {
                     内容
                   </h3>
                   <p className="font-bold leading-relaxed">
-                    コピーバンドライブ<br />
+                    コピーバンドライブ
+                    <br />
                     各団体によるアーティストのコピー曲披露
                   </p>
                 </div>
@@ -525,7 +541,8 @@ function MainComponent() {
                 </div>
                 <div className="bg-gray-100 text-[#2C5F5D] px-6 py-4 rounded-2xl">
                   <p className="text-sm font-bold">
-                    ※天候等により開催内容が変更となる場合があります<br />
+                    ※天候等により開催内容が変更となる場合があります
+                    <br />
                     最新情報は公式SNSでお知らせいたします
                   </p>
                 </div>
@@ -567,11 +584,15 @@ function MainComponent() {
                 アクセス
               </h4>
               <p className="text-gray-300 font-bold">
-                TOTTEI PARK<br />
-                神戸市中央区新港町2-1<br />
+                TOTTEI PARK
                 <br />
-                JR・阪神元町駅から徒歩15分<br />
-                神戸市営地下鉄海岸線<br />
+                神戸市中央区新港町2-1
+                <br />
+                <br />
+                JR・阪神元町駅から徒歩15分
+                <br />
+                神戸市営地下鉄海岸線
+                <br />
                 みなと元町駅から徒歩8分
               </p>
             </div>

@@ -1,6 +1,6 @@
-import React from 'react';
-import { InstagramEmbed } from './InstagramEmbed';
-import { TwitterEmbed } from './TwitterEmbed';
+import React from "react";
+import { InstagramEmbed } from "./InstagramEmbed";
+import { TwitterEmbed } from "./TwitterEmbed";
 
 interface SNSSectionProps {
   isClient: boolean;

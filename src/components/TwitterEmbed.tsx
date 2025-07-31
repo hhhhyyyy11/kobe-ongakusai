@@ -1,6 +1,6 @@
-import React from 'react';
-import { SiX } from 'react-icons/si';
-import { SNS_INFO } from '@/constants/sns';
+import React from "react";
+import { SiX } from "react-icons/si";
+import { SNS_INFO } from "@/constants/sns";
 
 interface TwitterEmbedProps {
   isClient: boolean;
@@ -14,7 +14,9 @@ export const TwitterEmbed: React.FC<TwitterEmbedProps> = ({ isClient }) => {
       <div className="text-center mb-4">
         <div className="flex items-center justify-center gap-2 mb-3">
           <SiX className="text-2xl text-gray-600" />
-          <h3 className="text-lg font-bold text-gray-700">{twitter.displayName}</h3>
+          <h3 className="text-lg font-bold text-gray-700">
+            {twitter.displayName}
+          </h3>
         </div>
         <a
           href={twitter.url}
@@ -33,7 +35,9 @@ export const TwitterEmbed: React.FC<TwitterEmbedProps> = ({ isClient }) => {
               <div className="flex items-center gap-2">
                 <SiX className="text-lg text-black" />
                 <div>
-                  <h4 className="font-bold text-gray-700 text-sm">@{twitter.handle}</h4>
+                  <h4 className="font-bold text-gray-700 text-sm">
+                    @{twitter.handle}
+                  </h4>
                   <p className="text-xs text-gray-500">{twitter.description}</p>
                 </div>
               </div>

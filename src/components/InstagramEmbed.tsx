@@ -1,6 +1,6 @@
-import React from 'react';
-import { FaInstagram } from 'react-icons/fa';
-import { SNS_INFO } from '@/constants/sns';
+import React from "react";
+import { FaInstagram } from "react-icons/fa";
+import { SNS_INFO } from "@/constants/sns";
 
 export const InstagramEmbed: React.FC = () => {
   const { instagram } = SNS_INFO;
@@ -11,8 +11,12 @@ export const InstagramEmbed: React.FC = () => {
         <div className="flex items-center justify-center gap-3 mb-4">
           <FaInstagram className="text-5xl text-purple-500" />
           <div>
-            <h3 className="text-3xl font-black text-[#2C5F5D]">{instagram.displayName}</h3>
-            <p className="text-lg font-bold text-purple-600">{instagram.description}</p>
+            <h3 className="text-3xl font-black text-[#2C5F5D]">
+              {instagram.displayName}
+            </h3>
+            <p className="text-lg font-bold text-purple-600">
+              {instagram.description}
+            </p>
           </div>
         </div>
         <a
@@ -31,7 +35,7 @@ export const InstagramEmbed: React.FC = () => {
           src={instagram.embedUrl}
           width="100%"
           height="600"
-          style={{ border: 'none' }}
+          style={{ border: "none" }}
           scrolling="no"
           className="w-full"
           title="Instagram Feed"

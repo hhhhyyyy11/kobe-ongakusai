@@ -1,7 +1,7 @@
-import React from 'react';
-import { FaInstagram, FaEnvelope } from 'react-icons/fa';
-import { SiX } from 'react-icons/si';
-import { SNS_INFO } from '@/constants/sns';
+import React from "react";
+import { FaInstagram, FaEnvelope } from "react-icons/fa";
+import { SiX } from "react-icons/si";
+import { SNS_INFO } from "@/constants/sns";
 
 export const ContactLinks: React.FC = () => {
   return (
