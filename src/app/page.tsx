@@ -188,7 +188,7 @@ function MainComponent() {
           <div className="absolute top-40 right-16 w-16 h-16 bg-[#FF6B47]/30 rounded-full border-3 border-[#2C5F5D] animate-pulse delay-400"></div>
         </div>
 
-        <div className="relative text-center px-4 max-w-5xl mx-auto z-10">
+        <div className="relative text-center px-4 max-w-5xl mx-auto z-10 pb-8">
           {/* Main Logo Display */}
           <div className="mb-8">
             <Image
@@ -236,16 +236,6 @@ function MainComponent() {
           >
             出演団体を見る
           </button>
-        </div>
-
-        {/* Wave Pattern at Bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-white">
-          <svg viewBox="0 0 1200 120" className="w-full h-full">
-            <path
-              d="M0,60 C300,120 900,0 1200,60 L1200,120 L0,120 Z"
-              fill="rgba(255,255,255,0.2)"
-            />
-          </svg>
         </div>
       </section>
 
