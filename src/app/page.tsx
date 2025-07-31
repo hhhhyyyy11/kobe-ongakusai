@@ -359,6 +359,27 @@ function MainComponent() {
                 className="bg-white rounded-2xl border-4 border-[#2C5F5D] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
               >
                 <div className="text-center">
+                  {/* 団体写真 */}
+                  <div className="mb-4 h-48 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
+                    {band.image ? (
+                      <Image
+                        src={band.image}
+                        alt={band.name}
+                        width={200}
+                        height={150}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center justify-center h-full">
+                        <div className="text-4xl mb-2 text-gray-400">
+                          <FaMusic />
+                        </div>
+                        <p className="text-sm font-bold text-gray-500">
+                          Coming Soon
+                        </p>
+                      </div>
+                    )}
+                  </div>
                   <h3 className="text-lg font-black text-[#2C5F5D] leading-tight">
                     {band.name}
                   </h3>
