@@ -38,7 +38,6 @@ export const TwitterEmbed: React.FC<TwitterEmbedProps> = ({ isClient }) => {
                   <h4 className="font-bold text-gray-700 text-sm">
                     @{twitter.handle}
                   </h4>
-                  <p className="text-xs text-gray-500">{twitter.description}</p>
                 </div>
               </div>
             </div>

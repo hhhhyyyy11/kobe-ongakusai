@@ -14,9 +14,6 @@ export const InstagramEmbed: React.FC = () => {
             <h3 className="text-3xl font-black text-[#2C5F5D]">
               {instagram.displayName}
             </h3>
-            <p className="text-lg font-bold text-purple-600">
-              {instagram.description}
-            </p>
           </div>
         </div>
         <a

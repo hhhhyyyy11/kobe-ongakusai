@@ -15,7 +15,7 @@ export const SNSSection: React.FC<SNSSectionProps> = ({ isClient }) => {
             <h2 className="text-4xl md:text-5xl font-black">SNS</h2>
           </div>
           <p className="text-xl font-bold text-[#2C5F5D]">
-            最新情報をInstagramでチェック！ #神戸音学祭
+            最新情報をSNSでチェック！ #神戸音学祭
           </p>
         </div>
 

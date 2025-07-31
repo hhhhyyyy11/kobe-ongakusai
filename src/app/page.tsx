@@ -13,7 +13,6 @@ import {
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
-import { ContactLinks } from "@/components/ContactLinks";
 import { FooterContactLinks } from "@/components/FooterContactLinks";
 import { bands } from "@/constants/bands";
 
@@ -73,7 +72,7 @@ function MainComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#77C1F0] font-sans">
+    <div className="min-h-screen bg-[#94cef5] font-sans">
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
         <div className="max-w-6xl mx-auto px-4 py-3">
@@ -168,24 +167,25 @@ function MainComponent() {
 
         {/* Decorative Elements */}
         <div className="absolute inset-0">
-          {/* Musical Notes */}
-          <div className="absolute top-24 left-16 text-4xl text-[#2C5F5D] animate-bounce delay-100">
+          {/* Musical Notes - Scattered around for festive feel */}
+          <div className="absolute top-28 left-12 md:top-30 md:left-16 text-3xl md:text-4xl text-[#2C5F5D] animate-bounce delay-100">
             <BsMusicNote />
           </div>
-          <div className="absolute top-32 right-20 text-3xl text-[#FF6B47] animate-bounce delay-300">
+          <div className="absolute top-32 right-20 md:top-40 md:right-24 text-2xl md:text-3xl text-[#FF6B47] animate-bounce delay-300">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-32 left-24 text-5xl text-[#2C5F5D] animate-bounce delay-500">
+          <div className="absolute bottom-32 left-24 md:bottom-40 md:left-32 text-4xl md:text-5xl text-[#2C5F5D] animate-bounce delay-500">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-40 right-32 text-4xl text-[#FF6B47] animate-bounce delay-700">
+          <div className="absolute bottom-20 right-16 md:bottom-24 md:right-20 text-3xl md:text-4xl text-[#FF6B47] animate-bounce delay-700">
             <BsMusicNote />
           </div>
-
-          {/* Circular Elements */}
-          <div className="absolute top-20 left-10 w-24 h-24 bg-[#FF6B47]/20 rounded-full border-4 border-[#2C5F5D] animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-20 h-20 bg-white/30 rounded-full border-4 border-[#2C5F5D] animate-pulse delay-200"></div>
-          <div className="absolute top-40 right-16 w-16 h-16 bg-[#FF6B47]/30 rounded-full border-3 border-[#2C5F5D] animate-pulse delay-400"></div>
+          <div className="absolute top-1/2 left-8 md:left-12 text-2xl md:text-3xl text-[#FF6B47]/70 animate-bounce delay-900">
+            <BsMusicNote />
+          </div>
+          <div className="absolute top-1/3 right-8 md:right-12 text-2xl md:text-3xl text-[#2C5F5D]/70 animate-bounce delay-1100">
+            <BsMusicNote />
+          </div>
         </div>
 
         <div className="relative text-center px-4 max-w-5xl mx-auto z-10 pb-8">
@@ -241,22 +241,19 @@ function MainComponent() {
 
       {/* Ticket Section */}
       <section id="ticket" className="py-20 bg-[#FF6B47] relative">
-        {/* Decorative musical notes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 left-16 text-6xl text-white/20 animate-bounce">
-            <BsMusicNote />
-          </div>
-          <div className="absolute top-32 right-20 text-5xl text-[#2C5F5D]/20 animate-bounce delay-200">
-            <BsMusicNote />
-          </div>
-          <div className="absolute bottom-20 left-24 text-7xl text-white/20 animate-bounce delay-400">
-            <BsMusicNote />
-          </div>
+        {/* Wave Pattern at Top */}
+        <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
+          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
+              fill="#FF6B47"
+            />
+          </svg>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+            <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] my-6">
               <h2 className="text-4xl md:text-5xl font-black">開催概要・入場について</h2>
             </div>
           </div>
@@ -265,67 +262,66 @@ function MainComponent() {
             className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12"
             style={{ borderWidth: "6px" }}
           >
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* 基本情報 */}
-              <div className="space-y-6">
-                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaCalendarAlt />
-                    日時
-                  </h3>
-                  <p className="text-lg font-bold">
-                    2025年8月22日（金）
-                    <br />
-                    10:00〜19:00
-                  </p>
-                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
-                    ※イベント後にはメリケンパークでの花火打ち上げあり
-                  </p>
+            {/* 基本情報を中央配置 */}
+            <div className="max-w-4xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* 日時情報 */}
+                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="text-center">
+                    <FaCalendarAlt className="text-4xl mb-4 mx-auto" />
+                    <h3 className="text-xl font-black mb-4">日時</h3>
+                    <p className="text-lg font-bold mb-2">
+                      2025年8月22日（金）
+                    </p>
+                    <p className="text-base font-bold">
+                      10:00〜19:00
+                    </p>
+                    <div className="mt-4 bg-white/20 rounded-lg p-3">
+                      <p className="text-sm font-bold">
+                        ※イベント後には<br />メリケンパークでの<br />花火打ち上げあり
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaMapMarkerAlt />
-                    会場
-                  </h3>
-                  <p className="text-lg font-bold">
-                    TOTTEI PARK
-                    <br />
-                    （神戸市中央区新港町2-1）
-                  </p>
+                {/* 会場情報 */}
+                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="text-center">
+                    <FaMapMarkerAlt className="text-4xl mb-4 mx-auto" />
+                    <h3 className="text-xl font-black mb-4">会場</h3>
+                    <p className="text-lg font-bold mb-2">
+                      TOTTEI PARK
+                    </p>
+                    <p className="text-base font-bold text-gray-300">
+                      神戸市中央区新港町2-1
+                    </p>
+                    <div className="mt-4 bg-white/20 rounded-lg p-3">
+                      <p className="text-sm font-bold">
+                        JR・阪神元町駅<br />徒歩15分<br />
+                        地下鉄みなと元町駅<br />徒歩8分
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="bg-[#77c1f2] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaTicketAlt />
-                    料金
-                  </h3>
-                  <p className="text-2xl font-black text-[#FF6B47] mb-2">
-                    無料
-                  </p>
-                  <p className="text-lg font-bold">入退場自由・予約不要</p>
-                </div>
-              </div>
-
-              {/* その他情報 */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-[#FF6B47] to-[#2C5F5D] text-white p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 flex items-center gap-3">
-                    <FaMusic />
-                    内容
-                  </h3>
-                  <p className="font-bold leading-relaxed">
-                    コピーバンドライブ
-                    <br />
-                    各団体によるアーティストのコピー曲披露
-                  </p>
-                </div>
-
-                <div className="bg-white border-4 border-[#2C5F5D] p-6 rounded-2xl">
-                  <h3 className="text-xl font-black mb-4 text-[#2C5F5D]">
-                    お問い合わせ
-                  </h3>
-                  <ContactLinks />
+                {/* 入場情報 */}
+                <div className="bg-white border-4 border-[#94cef5] text-[#2C5F5D] p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                  <div className="text-center">
+                    <FaTicketAlt className="text-4xl mb-4 mx-auto text-[#2C5F5D]" />
+                    <h3 className="text-xl font-black mb-4">入場について</h3>
+                    <p className="text-lg font-black mb-2">
+                      入退場自由・予約不要
+                    </p>
+                    <p className="text-3xl font-black text-[#FF6B47] mb-2">
+                      無料
+                    </p>
+                    <div className="mt-4 bg-[#94cef5]/10 rounded-lg p-3">
+                      <p className="text-sm font-bold">
+                        気軽にお立ち寄りください<br />
+                        途中参加・途中退場OK
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -337,9 +333,9 @@ function MainComponent() {
       <section id="artist" className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-[#FF6B47]">
-          <svg viewBox="0 0 1200 120" className="w-full h-full">
+          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
             <path
-              d="M0,60 C300,0 900,120 1200,60 L1200,120 L0,120 Z"
+              d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
               fill="white"
             />
           </svg>
@@ -396,7 +392,7 @@ function MainComponent() {
       <SNSSection isClient={isClient} />
 
       {/* About Section - 神戸音学祭について */}
-      <section id="about" className="py-20 bg-[#77c1f2]">
+      <section id="about" className="py-20 bg-[#94cef5]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
@@ -413,7 +409,7 @@ function MainComponent() {
             {/* コンセプト */}
             <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8">
               <div className="text-center mb-6">
-                <div className="bg-[#77c1f2] rounded-full p-4 inline-block mb-4">
+                <div className="bg-[#94cef5] rounded-full p-4 inline-block mb-4">
                   <FaMusic className="text-4xl text-white" />
                 </div>
                 <h3 className="text-2xl font-black text-[#2C5F5D] mb-4">
@@ -421,12 +417,12 @@ function MainComponent() {
                 </h3>
               </div>
               <div className="text-[#2C5F5D] font-bold space-y-4">
-                <div className="bg-[#77c1f2]/15 rounded-2xl p-4">
+                <div className="bg-[#94cef5]/15 rounded-2xl p-4">
                   <p className="text-lg leading-relaxed">
                     「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
                   </p>
                 </div>
-                <div className="bg-[#77c1f2]/15 rounded-2xl p-4">
+                <div className="bg-[#94cef5]/15 rounded-2xl p-4">
                   <p className="leading-relaxed">
                     学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
                   </p>
@@ -457,7 +453,7 @@ function MainComponent() {
                     企画・運営、音響PA、スタッフ業務全てを学生で実施
                   </p>
                 </div>
-                <div className="bg-[#77c1f2] rounded-2xl p-4 text-[#2C5F5D]">
+                <div className="bg-[#94cef5] rounded-2xl p-4 text-[#2C5F5D]">
                   <p className="font-black mb-2 flex items-center gap-2">
                     <FaMicrophone className="text-[#2C5F5D]" />
                     多様な音楽ジャンル
@@ -522,7 +518,7 @@ function MainComponent() {
       </section>
 
       {/* Sponsor Section */}
-      <section id="sponsor" className="py-20 bg-[#77c1f2] relative">
+      <section id="sponsor" className="py-20 bg-[#94cef5] relative">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
@@ -583,7 +579,7 @@ function MainComponent() {
                   height={48}
                   className="w-12 h-12 rounded-full border-2 border-white"
                 />
-                <h3 className="text-2xl font-black text-[#77c1f2]">
+                <h3 className="text-2xl font-black text-[#94cef5]">
                   神戸音学祭
                 </h3>
               </div>
