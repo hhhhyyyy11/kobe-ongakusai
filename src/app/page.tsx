@@ -7,91 +7,23 @@ import {
   FaMusic,
   FaHandshake,
   FaTicketAlt,
-  FaInstagram,
   FaBars,
-  FaEnvelope,
   FaMicrophone,
   FaStar
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
-import { SiX } from "react-icons/si";
+import { SNSSection } from "@/components/SNSSection";
+import { ContactLinks } from "@/components/ContactLinks";
+import { FooterContactLinks } from "@/components/FooterContactLinks";
+import { bands } from "@/constants/bands";
 
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
+  const [isClient, setIsClient] = React.useState(false);
 
-  // 出演バンド情報
-  const bands = [
-    {
-      name: "関西学院大学文化総部軽音楽部",
-      image: "/images/artists/kwansei-gakuin.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸市外国語大学学部軽音学部",
-      image: "/images/artists/kobe-city-univ-foreign-studies.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸親和大学軽音学部",
-      image: "/images/artists/kobe-shinwa.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸大学軽音楽部ROCK",
-      image: "/images/artists/kobe-univ-rock.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸大学軽音サークルFreeBeat",
-      image: "/images/artists/kobe-univ-freebeat.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸大学軽音サークルMMC",
-      image: "/images/artists/kobe-univ-mmc.png", // TODO: 写真追加予定
-    },
-    {
-      name: "神戸大学軽音サークルSoundS",
-      image: "/images/artists/kobe-univ-sounds.png", // TODO: 写真追加予定
-    },
-    {
-      name: "同志社大学Lilac Rainbow",
-      image: "/images/artists/doshisha-lilac-rainbow.png", // TODO: 写真追加予定
-    },
-    {
-      name: "立命館大学Hansel&Gretel",
-      image: "/images/artists/ritsumeikan-hansel-gretel.png", // TODO: 写真追加予定
-    },
-    {
-      name: "立命館大学Jack&Beans",
-      image: "/images/artists/ritsumeikan-jack-beans.png", // TODO: 写真追加予定
-    },
-  ];
-
-  // TODO: 協賛企業・団体情報を後で追加
-  /*
-  const sponsors = [
-    {
-      name: "Kobe City",
-      logo: "/images/sponsors/kobe-city.svg",
-    },
-    {
-      name: "Music Store",
-      logo: "/images/sponsors/music-store.svg",
-    },
-    {
-      name: "Youth Center",
-      logo: "/images/sponsors/youth-center.svg",
-    },
-    {
-      name: "Local Radio",
-      logo: "/images/sponsors/local-radio.svg",
-    },
-    {
-      name: "Student Union",
-      logo: "/images/sponsors/student-union.svg",
-    },
-    {
-      name: "Kobe University",
-      logo: "/images/sponsors/kobe-univ.svg",
-    },
-  ];
-  */
+  React.useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -103,6 +35,7 @@ function MainComponent() {
 
   return (
     <div className="min-h-screen bg-[#77C1F0] font-sans">
+
       {/* Navigation Bar */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
         <div className="max-w-6xl mx-auto px-4 py-3">
@@ -538,26 +471,7 @@ function MainComponent() {
                   <h3 className="text-xl font-black mb-4 text-[#2C5F5D]">
                     お問い合わせ
                   </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-3">
-                      <FaInstagram className="text-purple-500 text-xl" />
-                      <a href="https://www.instagram.com/kobe_ongakusai" target="_blank" rel="noopener noreferrer" className="text-[#2C5F5D] font-bold hover:underline">
-                        @kobe_ongakusai
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <SiX className="text-black text-xl" />
-                      <a href="https://twitter.com/K0beOngakusai" target="_blank" rel="noopener noreferrer" className="text-[#2C5F5D] font-bold hover:underline">
-                        @K0beOngakusai
-                      </a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <FaEnvelope className="text-[#FF6B47] text-xl" />
-                      <a href="mailto:ongakusai.kobe@gmail.com" className="text-[#2C5F5D] font-bold hover:underline">
-                        ongakusai.kobe@gmail.com
-                      </a>
-                    </div>
-                  </div>
+                  <ContactLinks />
                 </div>
               </div>
             </div>
@@ -566,60 +480,7 @@ function MainComponent() {
       </section>
 
       {/* SNS Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">SNS</h2>
-            </div>
-            <p className="text-xl font-bold text-[#2C5F5D]">
-              最新情報をチェック！ #kobeongakusai
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Instagram */}
-            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
-              <div className="text-8xl mb-6 flex justify-center">
-                <FaInstagram className="text-purple-500" />
-              </div>
-              <h3 className="text-2xl font-black text-white mb-4">Instagram</h3>
-              <p className="text-lg font-bold text-white mb-8">
-                投稿・ストーリーで最新情報をお届け
-              </p>
-              <a
-                href="https://www.instagram.com/kobe_ongakusai?igsh=Nmtsa2JhZGpkb3Rv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-full border-4 border-[#2C5F5D] hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                <FaInstagram />
-                <span>@kobe_ongakusai</span>
-              </a>
-            </div>
-
-            {/* Twitter(X) */}
-            <div className="bg-[#77c1f2] rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 text-center">
-              <div className="text-8xl mb-6 flex justify-center">
-                <SiX className="text-black" />
-              </div>
-              <h3 className="text-2xl font-black text-white mb-4">X（旧Twitter）</h3>
-              <p className="text-lg font-bold text-white mb-8">
-                リアルタイムで情報発信・交流
-              </p>
-              <a
-                href="https://twitter.com/K0beOngakusai"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full border-4 border-[#2C5F5D] hover:from-blue-600 hover:to-blue-700 transition-all duration-300 font-black text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
-              >
-                <SiX />
-                <span>@K0beOngakusai</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <SNSSection isClient={isClient} />
 
       {/* Ticket Section */}
       <section id="ticket" className="py-20 bg-[#FF6B47] relative">
@@ -699,18 +560,7 @@ function MainComponent() {
               <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
                 お問い合わせ
               </h4>
-              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
-                <FaInstagram />
-                <a href="https://www.instagram.com/kobe_ongakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@kobe_ongakusai</a>
-              </p>
-              <p className="text-gray-300 mb-2 font-bold flex items-center gap-2">
-                <SiX />
-                <a href="https://twitter.com/K0beOngakusai" target="_blank" rel="noopener noreferrer" className="hover:underline">@K0beOngakusai</a>
-              </p>
-              <p className="text-gray-300 font-bold flex items-center gap-2">
-                <FaEnvelope />
-                <a href="mailto:ongakusai.kobe@gmail.com" className="hover:underline">ongakusai.kobe@gmail.com</a>
-              </p>
+              <FooterContactLinks />
             </div>
             <div>
               <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
