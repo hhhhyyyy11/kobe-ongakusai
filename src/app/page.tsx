@@ -23,43 +23,43 @@ function MainComponent() {
   const bands = [
     {
       name: "関西学院大学文化総部軽音楽部",
-      image: "/images/artists/kwansei-gakuin.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kwansei-gakuin.png", // TODO: 写真追加予定
     },
     {
       name: "神戸市外国語大学学部軽音学部",
-      image: "/images/artists/kobe-city-univ-foreign-studies.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-city-univ-foreign-studies.png", // TODO: 写真追加予定
     },
     {
       name: "神戸親和大学軽音学部",
-      image: "/images/artists/kobe-shinwa.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-shinwa.png", // TODO: 写真追加予定
     },
     {
       name: "神戸大学軽音楽部ROCK",
-      image: "/images/artists/kobe-univ-rock.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-univ-rock.png", // TODO: 写真追加予定
     },
     {
       name: "神戸大学軽音サークルFreeBeat",
-      image: "/images/artists/kobe-univ-freebeat.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-univ-freebeat.png", // TODO: 写真追加予定
     },
     {
       name: "神戸大学軽音サークルMMC",
-      image: "/images/artists/kobe-univ-mmc.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-univ-mmc.png", // TODO: 写真追加予定
     },
     {
       name: "神戸大学軽音サークルSoundS",
-      image: "/images/artists/kobe-univ-sounds.jpg", // TODO: 写真追加予定
+      image: "/images/artists/kobe-univ-sounds.png", // TODO: 写真追加予定
     },
     {
       name: "同志社大学Lilac Rainbow",
-      image: "/images/artists/doshisha-lilac-rainbow.jpg", // TODO: 写真追加予定
+      image: "/images/artists/doshisha-lilac-rainbow.png", // TODO: 写真追加予定
     },
     {
       name: "立命館大学Hansel&Gretel",
-      image: "/images/artists/ritsumeikan-hansel-gretel.jpg", // TODO: 写真追加予定
+      image: "/images/artists/ritsumeikan-hansel-gretel.png", // TODO: 写真追加予定
     },
     {
       name: "立命館大学Jack&Beans",
-      image: "/images/artists/ritsumeikan-jack-beans.jpg", // TODO: 写真追加予定
+      image: "/images/artists/ritsumeikan-jack-beans.png", // TODO: 写真追加予定
     },
   ];
 
@@ -109,11 +109,11 @@ function MainComponent() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Image
-                src="/images/logo_sub.png"
+                src="/images/logo_transparent.png"
                 alt="Kobe Ongakusai Logo"
-                width={48}
-                height={48}
-                className="w-12 h-12 rounded-full border-2 border-[#2C5F5D]"
+                width={64}
+                height={64}
+                className="w-16 h-16 rounded-full"
               />
               <div
                 className="text-xl font-black text-[#2C5F5D]"
@@ -191,7 +191,7 @@ function MainComponent() {
           {/* Main Logo Display */}
           <div className="mb-8">
             <Image
-              src="/images/logo_main.jpg"
+              src="/images/logo_transparent.png"
               alt="Kobe Ongakusai Main Logo"
               width={256}
               height={256}
@@ -381,14 +381,17 @@ function MainComponent() {
                 <h3 className="text-2xl font-black text-white mb-4">コンセプト</h3>
               </div>
               <div className="text-white font-bold space-y-4">
-                <div className="bg-white/20 rounded-2xl p-4">
+                <div className="bg-white/15 rounded-2xl p-4">
                   <p className="text-lg leading-relaxed">
                     「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
                   </p>
                 </div>
-                <div className="bg-white/20 rounded-2xl p-4">
+                <div className="bg-white/15 rounded-2xl p-4">
                   <p className="leading-relaxed">
                     学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
+                  </p>
+                  <p className="text-sm mt-2 text-center opacity-80">
+                    ※神戸アリーナプロジェクトの一環
                   </p>
                 </div>
               </div>
@@ -501,9 +504,6 @@ function MainComponent() {
                   <p className="text-lg font-bold">
                     TOTTEI PARK<br />
                     （神戸市中央区新港町2-1）
-                  </p>
-                  <p className="text-sm mt-2 bg-white/20 rounded-lg p-2">
-                    神戸アリーナプロジェクトの一環
                   </p>
                 </div>
 
