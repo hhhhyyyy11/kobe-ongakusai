@@ -580,55 +580,6 @@ function MainComponent() {
         </div>
       </section>
 
-      {/* Sponsor Section */}
-      <section id="sponsor" className="py-20 bg-[#77c1f2] relative">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">
-                協賛企業・団体
-              </h2>
-            </div>
-            <p className="text-xl font-bold text-white">Coming Soon...</p>
-          </div>
-
-          {/* TODO: 協賛企業・団体一覧を後で追加 */}
-          <div className="text-center">
-            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
-              <div className="text-8xl mb-6 flex justify-center">
-                <FaHandshake className="text-[#2C5F5D]" />
-              </div>
-              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
-                協賛企業・団体様を募集中！
-              </p>
-              <p className="text-lg font-bold text-[#777777]">
-                ご支援いただける企業・団体様を心よりお待ちしております
-              </p>
-            </div>
-          </div>
-
-          {/*
-          将来的に協賛企業・団体一覧を表示する際のUI:
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {sponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300 flex items-center justify-center group"
-              >
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={150}
-                  height={80}
-                  className="max-w-full h-auto group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-          */}
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="bg-[#2C5F5D] text-white py-12">
         <div className="max-w-6xl mx-auto px-4">
