@@ -164,7 +164,7 @@ function MainComponent() {
               出演団体を見る
             </button>
             <Link
-              href="/setList"
+              href="/set-list"
               className="bg-[#FF6B47] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] hover:bg-[#2C5F5D] hover:border-[#FF6B47] transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               セットリストを見る

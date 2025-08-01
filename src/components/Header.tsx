@@ -102,9 +102,9 @@ export function Header({
             )}
 
             <Link
-              href="/setList"
+              href="/set-list"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
-                isActive("/setList")
+                isActive("/set-list")
                   ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
                   : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
               }`}
@@ -192,9 +192,9 @@ export function Header({
               )}
 
               <Link
-                href="/setList"
+                href="/set-list"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
-                  isActive("/setList")
+                  isActive("/set-list")
                     ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
                     : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
                 }`}
