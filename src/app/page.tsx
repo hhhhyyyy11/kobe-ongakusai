@@ -43,34 +43,33 @@ function MainComponent() {
   */
 
   // TODO: 協賛企業・団体情報を後で追加
-  /*
   const sponsors = [
     {
-      name: "Kobe City",
-      logo: "/images/sponsors/kobe-city.svg",
+      name: "One Bright KOBE",
+      logo: "/images/sponsors/one-bright-kobe.jpg",
     },
     {
-      name: "Music Store",
-      logo: "/images/sponsors/music-store.svg",
+      name: "KINGSX",
+      logo: "/images/sponsors/kingsx.jpg",
     },
-    {
-      name: "Youth Center",
-      logo: "/images/sponsors/youth-center.svg",
-    },
-    {
-      name: "Local Radio",
-      logo: "/images/sponsors/local-radio.svg",
-    },
-    {
-      name: "Student Union",
-      logo: "/images/sponsors/student-union.svg",
-    },
-    {
-      name: "Kobe University",
-      logo: "/images/sponsors/kobe-univ.svg",
-    },
+    // {
+    //   name: "Youth Center",
+    //   logo: "/images/sponsors/youth-center.svg",
+    // },
+    // {
+    //   name: "Local Radio",
+    //   logo: "/images/sponsors/local-radio.svg",
+    // },
+    // {
+    //   name: "Student Union",
+    //   logo: "/images/sponsors/student-union.svg",
+    // },
+    // {
+    //   name: "Kobe University",
+    //   logo: "/images/sponsors/kobe-univ.svg",
+    // },
   ];
-  */
+  
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -301,46 +300,41 @@ function MainComponent() {
               </h2>
             </div>
             <p className="text-xl font-bold text-white">
-              Coming Soon...
+              ご支援いただける企業様はこちらのメールアドレスまでご連絡ください！
+            </p>
+            <p>
+              ongakusai.kobe@gmail.com
             </p>
           </div>
 
-          {/* TODO: 協賛企業・団体一覧を後で追加 */}
+          {/* 協賛企業・団体一覧を表示（ロゴだけ） */}
           <div className="text-center">
-            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
-              <div className="text-8xl mb-6 flex justify-center">
+            <div className="min-h-80 bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-12">
+              <div className="text-8xl mb-12 flex justify-center">
                 <FaHandshake className="text-[#2C5F5D]" />
               </div>
-              <p className="text-2xl font-black text-[#2C5F5D] mb-4">
-                協賛企業・団体様を募集中！
-              </p>
-              <p className="text-lg font-bold text-[#777777]">
-                ご支援いただける企業・団体様を心よりお待ちしております
-              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {sponsors.map((sponsor, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300 flex items-center justify-center group"
+                  >
+                    <Image
+                      src={sponsor.logo}
+                      alt={sponsor.name}
+                      width={150}
+                      height={80}
+                      className="max-w-full h-auto group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-
-          {/*
-          将来的に協賛企業・団体一覧を表示する際のUI:
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {sponsors.map((sponsor, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300 flex items-center justify-center group"
-              >
-                <Image
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  width={150}
-                  height={80}
-                  className="max-w-full h-auto group-hover:brightness-0 group-hover:invert transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-          */}
         </div>
       </section>
+
 
       {/* SNS Section */}
       <section className="py-20 bg-white">
