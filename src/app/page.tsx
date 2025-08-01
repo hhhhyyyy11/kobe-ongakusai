@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FaCalendarAlt,
   FaMapMarkerAlt,
@@ -8,12 +9,10 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaBars,
-  FaMicrophone,
-  FaStar,
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
-import { FooterContactLinks } from "@/components/FooterContactLinks";
+import { Footer } from "@/components/Footer";
 import { bands } from "@/constants/bands";
 
 function MainComponent() {
@@ -26,7 +25,7 @@ function MainComponent() {
 
     // スクロール時のアクティブセクション自動検出
     const handleScroll = () => {
-      const sections = ["top", "ticket", "artist", "about"];
+      const sections = ["top", "ticket", "artist"];
       const scrollPosition = window.scrollY + 150; // ヘッダーの高さを考慮
 
       for (const sectionId of sections) {
@@ -97,7 +96,6 @@ function MainComponent() {
                 { id: "top", label: "TOP" },
                 { id: "ticket", label: "開催概要・入場について" },
                 { id: "artist", label: "出演団体" },
-                { id: "about", label: "音楽祭について" },
               ].map((item) => (
                 <button
                   key={item.id}
@@ -112,6 +110,22 @@ function MainComponent() {
                   {item.label}
                 </button>
               ))}
+
+              {/* External Links */}
+              <Link
+                href="/setList"
+                className="px-6 py-3 rounded-full font-black text-lg border-3 text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg transition-all duration-300"
+                style={{ borderWidth: "3px" }}
+              >
+                セットリスト
+              </Link>
+              <Link
+                href="/about"
+                className="px-6 py-3 rounded-full font-black text-lg border-3 text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg transition-all duration-300"
+                style={{ borderWidth: "3px" }}
+              >
+                音楽祭について
+              </Link>
             </div>
             {/* Mobile menu button */}
             <button
@@ -130,7 +144,6 @@ function MainComponent() {
                   { id: "top", label: "TOP" },
                   { id: "ticket", label: "開催概要・入場について" },
                   { id: "artist", label: "出演団体" },
-                  { id: "about", label: "音楽祭について" },
                 ].map((item) => (
                   <button
                     key={item.id}
@@ -145,6 +158,22 @@ function MainComponent() {
                     {item.label}
                   </button>
                 ))}
+
+                {/* External Links for Mobile */}
+                <Link
+                  href="/setList"
+                  className="w-full px-4 py-3 rounded-2xl font-black text-lg border-3 text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300"
+                  style={{ borderWidth: "3px" }}
+                >
+                  セットリスト
+                </Link>
+                <Link
+                  href="/about"
+                  className="w-full px-4 py-3 rounded-2xl font-black text-lg border-3 text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300"
+                  style={{ borderWidth: "3px" }}
+                >
+                  音楽祭について
+                </Link>
               </div>
             </div>
           )}
@@ -196,7 +225,7 @@ function MainComponent() {
               alt="Kobe Ongakusai Main Logo"
               width={256}
               height={256}
-              className="w-48 h-48 md:w-64 md:h-64 mx-auto"
+              className="w-48 h-48 md:w-80 md:h-80 mx-auto"
             />
           </div>
 
@@ -230,12 +259,20 @@ function MainComponent() {
             </div>
           </div>
 
-          <button
-            onClick={() => scrollToSection("artist")}
-            className="bg-[#2C5F5D] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#FF6B47] hover:bg-[#FF6B47] hover:border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl"
-          >
-            出演団体を見る
-          </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => scrollToSection("artist")}
+              className="bg-[#2C5F5D] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#FF6B47] hover:bg-[#FF6B47] hover:border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl"
+            >
+              出演団体を見る
+            </button>
+            <Link
+              href="/setList"
+              className="bg-[#FF6B47] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] hover:bg-[#2C5F5D] hover:border-[#FF6B47] transition-all duration-300 transform hover:scale-105 shadow-xl"
+            >
+              セットリストを見る
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -412,132 +449,6 @@ function MainComponent() {
       {/* SNS Section */}
       <SNSSection isClient={isClient} />
 
-      {/* About Section - 神戸音学祭について */}
-      <section id="about" className="py-20 bg-[#94cef5]">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">
-                神戸音学祭について
-              </h2>
-            </div>
-            <p className="text-xl font-bold text-white">
-              学生の、学生による、学生のための野外音楽フェス
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 mb-12">
-            {/* コンセプト */}
-            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8">
-              <div className="text-center mb-6">
-                <div className="bg-[#94cef5] rounded-full p-4 inline-block mb-4">
-                  <FaMusic className="text-4xl text-white" />
-                </div>
-                <h3 className="text-2xl font-black text-[#2C5F5D] mb-4">
-                  コンセプト
-                </h3>
-              </div>
-              <div className="text-[#2C5F5D] font-bold space-y-4">
-                <div className="bg-[#94cef5]/15 rounded-2xl p-4">
-                  <p className="text-lg leading-relaxed">
-                    「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
-                  </p>
-                </div>
-                <div className="bg-[#94cef5]/15 rounded-2xl p-4">
-                  <p className="leading-relaxed">
-                    学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
-                  </p>
-                  <p className="text-sm mt-2 text-center opacity-80">
-                    ※神戸アリーナプロジェクトの一環
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* 特徴 */}
-            <div className="bg-[#2C5F5D] rounded-3xl border-4 border-white shadow-xl p-8">
-              <div className="text-center mb-6">
-                <div className="bg-white rounded-full p-4 inline-block mb-4">
-                  <FaHandshake className="text-4xl text-[#2C5F5D]" />
-                </div>
-                <h3 className="text-2xl font-black text-white mb-4">
-                  イベントの特徴
-                </h3>
-              </div>
-              <div className="text-white font-bold space-y-4">
-                <div className="bg-[#FF6B47] rounded-2xl p-4">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMusic className="text-white" />
-                    学生主体の運営
-                  </p>
-                  <p className="text-sm">
-                    企画・運営、音響PA、スタッフ業務全てを学生で実施
-                  </p>
-                </div>
-                <div className="bg-[#94cef5] rounded-2xl p-4 text-[#2C5F5D]">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaMicrophone className="text-[#2C5F5D]" />
-                    多様な音楽ジャンル
-                  </p>
-                  <p className="text-sm">
-                    メジャーからニッチまで幅広いアーティストのコピー演奏
-                  </p>
-                </div>
-                <div className="bg-white/20 rounded-2xl p-4">
-                  <p className="font-black mb-2 flex items-center gap-2">
-                    <FaStar className="text-white" />
-                    野外フェスの魅力
-                  </p>
-                  <p className="text-sm">
-                    学生が全業務を手がける屋外音楽フェスは当イベントの強み
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ストーリー */}
-          <div className="bg-gradient-to-r from-[#2C5F5D] to-[#FF6B47] rounded-3xl border-4 border-white shadow-xl p-8 text-white">
-            <div className="text-center mb-8">
-              <h3 className="text-3xl font-black mb-4">
-                プロジェクトストーリー
-              </h3>
-              <p className="text-lg font-bold">
-                神戸をもっと元気にしたいという想いから始まった挑戦
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-6">
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  神戸音学祭は、神戸大学の学生である澤田陽介（経営学部3年）と栄陽向太（理学部3年）により企画・立ち上げられた学生主導の音楽フェスティバルです。
-                </p>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  本イベントは、「神戸をもっと元気にしたい」という想いを掲げるOne
-                  Bright
-                  Kobe代表・渋谷氏の講義に、澤田が受講生として参加したことをきっかけに始動しました。
-                </p>
-              </div>
-
-              <div className="bg-white/20 rounded-2xl p-6">
-                <p className="font-bold leading-relaxed">
-                  講義後、澤田が渋谷氏に直接アポイントを取り、自身の「学生の手で大規模な音楽フェスを実現したい」という構想をプレゼンテーション。その熱意にご賛同いただき、本プロジェクトがスタートしました。
-                </p>
-              </div>
-
-              <div className="bg-white rounded-2xl p-6 text-[#2C5F5D]">
-                <p className="font-black text-center leading-relaxed">
-                  初年度である今回は試行的な位置付けですが、ここを出発点とし、今後はより多くの関係者や地域を巻き込みながら、神戸を代表するイベントへと発展させていくことを目指しています。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Sponsor Section */}
       <section id="sponsor" className="py-20 bg-[#94cef5] relative">
         <div className="max-w-6xl mx-auto px-4">
@@ -588,57 +499,7 @@ function MainComponent() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#2C5F5D] text-white py-12">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <Image
-                  src="/images/logo_transparent.png"
-                  alt="Logo"
-                  width={48}
-                  height={48}
-                  className="w-12 h-12 rounded-full border-2 border-white"
-                />
-                <h3 className="text-2xl font-black text-[#94cef5]">
-                  神戸音学祭
-                </h3>
-              </div>
-              <p className="text-gray-300 font-bold">
-                学生が作る、学生のための音楽フェスティバル
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
-                お問い合わせ
-              </h4>
-              <FooterContactLinks />
-            </div>
-            <div>
-              <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
-                アクセス
-              </h4>
-              <p className="text-gray-300 font-bold">
-                TOTTEI PARK
-                <br />
-                神戸市中央区新港町2-1
-                <br />
-                <br />
-                JR・阪神元町駅から徒歩15分
-                <br />
-                神戸市営地下鉄海岸線
-                <br />
-                みなと元町駅から徒歩8分
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-400">
-            <p className="font-bold">
-              &copy; 2025 神戸音学祭実行委員会. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
