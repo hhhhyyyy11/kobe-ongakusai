@@ -37,7 +37,7 @@ export function Footer() {
                 ホーム
               </Link>
               <Link
-                href="/setList"
+                href="/set-list"
                 className="block text-gray-300 hover:text-white font-bold transition-colors"
               >
                 セットリスト
