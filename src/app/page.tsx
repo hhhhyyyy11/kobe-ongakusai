@@ -8,17 +8,16 @@ import {
   FaMusic,
   FaHandshake,
   FaTicketAlt,
-  FaBars,
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { bands } from "@/constants/bands";
 
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
   const [isClient, setIsClient] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
 
   React.useEffect(() => {
     setIsClient(true);
@@ -46,7 +45,7 @@ function MainComponent() {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
       if (!target.closest('nav')) {
-        setIsMobileMenuOpen(false);
+        // モバイルメニューの処理は CommonHeader で管理
       }
     };
 
@@ -67,118 +66,16 @@ function MainComponent() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsMobileMenuOpen(false); // モバイルメニューを閉じる
   };
 
   return (
     <div className="min-h-screen bg-[#94cef5] font-sans">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Image
-                src="/images/logo_transparent.png"
-                alt="Kobe Ongakusai Logo"
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full"
-              />
-              <div
-                className="text-xl font-black text-[#2C5F5D]"
-                style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-              >
-                神戸音学祭
-              </div>
-            </div>
-            <div className="hidden lg:flex space-x-6">
-              {[
-                { id: "top", label: "TOP" },
-                { id: "ticket", label: "開催概要・入場について" },
-                { id: "artist", label: "出演団体" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
-                    activeSection === item.id
-                      ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
-                      : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
-                  }`}
-                  style={{ borderWidth: "3px" }}
-                >
-                  {item.label}
-                </button>
-              ))}
-
-              {/* External Links */}
-              <Link
-                href="/setList"
-                className="px-6 py-3 rounded-full font-black text-lg border-3 text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg transition-all duration-300"
-                style={{ borderWidth: "3px" }}
-              >
-                セットリスト
-              </Link>
-              <Link
-                href="/about"
-                className="px-6 py-3 rounded-full font-black text-lg border-3 text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg transition-all duration-300"
-                style={{ borderWidth: "3px" }}
-              >
-                音楽祭について
-              </Link>
-            </div>
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg bg-[#FF6B47] border-2 border-[#2C5F5D] transition-colors duration-300"
-            >
-              <FaBars className="w-6 h-6 text-white" />
-            </button>
-          </div>
-
-          {/* Mobile Navigation Menu */}
-          {isMobileMenuOpen && (
-            <div className="lg:hidden mt-4 pb-4 border-t-2 border-[#2C5F5D]/20">
-              <div className="flex flex-col space-y-3 pt-4">
-                {[
-                  { id: "top", label: "TOP" },
-                  { id: "ticket", label: "開催概要・入場について" },
-                  { id: "artist", label: "出演団体" },
-                ].map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 ${
-                      activeSection === item.id
-                        ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
-                        : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
-                    }`}
-                    style={{ borderWidth: "3px" }}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-
-                {/* External Links for Mobile */}
-                <Link
-                  href="/setList"
-                  className="w-full px-4 py-3 rounded-2xl font-black text-lg border-3 text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300"
-                  style={{ borderWidth: "3px" }}
-                >
-                  セットリスト
-                </Link>
-                <Link
-                  href="/about"
-                  className="w-full px-4 py-3 rounded-2xl font-black text-lg border-3 text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300"
-                  style={{ borderWidth: "3px" }}
-                >
-                  音楽祭について
-                </Link>
-              </div>
-            </div>
-          )}
-        </div>
-      </nav>
+      <Header
+        activeSection={activeSection}
+        scrollToSection={scrollToSection}
+        showScrollNavigation={true}
+      />
 
       {/* Main Visual Section */}
       <section
@@ -225,7 +122,7 @@ function MainComponent() {
               alt="Kobe Ongakusai Main Logo"
               width={256}
               height={256}
-              className="w-48 h-48 md:w-80 md:h-80 mx-auto"
+              className="w-72 h-72 md:w-80 md:h-80 mx-auto"
             />
           </div>
 

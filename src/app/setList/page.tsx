@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { FaMusic, FaClock, FaHome, FaStar } from "react-icons/fa";
+import { FaMusic, FaClock, FaStar } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 interface PerformanceItem {
   time: string;
@@ -37,35 +36,7 @@ function SetListPage() {
   return (
     <div className="min-h-screen bg-[#94cef5] font-sans">
       {/* Navigation Bar */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
-        <div className="max-w-6xl mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-              <Image
-                src="/images/logo_transparent.png"
-                alt="Kobe Ongakusai Logo"
-                width={64}
-                height={64}
-                className="w-16 h-16 rounded-full"
-              />
-              <div
-                className="text-xl font-black text-[#2C5F5D]"
-                style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-              >
-                神戸音学祭
-              </div>
-            </Link>
-            <Link
-              href="/"
-              className="flex items-center space-x-2 px-6 py-3 rounded-full font-black text-lg border-3 bg-[#FF6B47] text-white border-[#2C5F5D] hover:bg-[#2C5F5D] hover:border-[#FF6B47] transition-all duration-300"
-              style={{ borderWidth: "3px" }}
-            >
-              <FaHome />
-              <span>HOME</span>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Header showScrollNavigation={false} />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
