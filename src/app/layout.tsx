@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   title: "神戸音学祭 2025",
   description:
     "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス。TOTTEI PARKで開催される入場無料の音楽イベントです。",
+  applicationName: "神戸音学祭",
   keywords: [
     "神戸音学祭",
     "音楽フェス",
@@ -89,7 +90,7 @@ export const metadata: Metadata = {
         url: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
         width: 1200,
         height: 630,
-        alt: "神戸音学祭 2025",
+        alt: "神戸音学祭 2025 - 学生主催の野外音楽フェス",
       },
     ],
   },
@@ -98,6 +99,7 @@ export const metadata: Metadata = {
     title: "神戸音学祭 2025",
     description: "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
     creator: "@K0beOngakusai",
+    site: "@K0beOngakusai",
     images: ["https://kobe-ongakusai.vercel.app/images/logo_main.jpg"],
   },
   robots: {
@@ -110,6 +112,10 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  other: {
+    "site-name": "神戸音学祭 2025",
+    "application-name": "神戸音学祭",
   },
   verification: {
     google: "FJtH2J5vLz-_MLCjiSdj-34OBYIpbLooUjBCGf3JKUs",
