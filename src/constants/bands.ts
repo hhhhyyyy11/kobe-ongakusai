@@ -25,7 +25,7 @@ export const bands: Array<{
   },
   {
     name: "神戸大学軽音サークルMMC",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kobe-univ-mmc.jpg",
   },
   {
     name: "神戸大学軽音サークルSoundS",
