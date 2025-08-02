@@ -110,7 +110,7 @@ export function Header({
               }`}
               style={{ borderWidth: "3px" }}
             >
-              セットリスト
+              タイムテーブル
             </Link>
             <Link
               href="/about"
@@ -204,7 +204,7 @@ export function Header({
                 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                セットリスト
+                タイムテーブル
               </Link>
               <Link
                 href="/about"
