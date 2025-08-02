@@ -64,7 +64,7 @@ function SetListPage() {
               </div>
             </div>
             <h1 className="text-4xl md:text-6xl font-black text-[#2C5F5D] mb-6">
-              セットリスト
+              タイムテーブル
             </h1>
             <p className="text-xl md:text-2xl font-bold text-[#FF6B47] mb-4">
               2025年8月22日（金）開催予定
