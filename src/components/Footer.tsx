@@ -40,7 +40,7 @@ export function Footer() {
                 href="/set-list"
                 className="block text-gray-300 hover:text-white font-bold transition-colors"
               >
-                セットリスト
+                タイムテーブル
               </Link>
               <Link
                 href="/about"
