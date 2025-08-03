@@ -45,29 +45,13 @@ function MainComponent() {
   // TODO: 協賛企業・団体情報を後で追加
   const sponsors = [
     {
-      name: "One Bright KOBE",
-      logo: "/images/sponsors/one-bright-kobe.jpg",
-    },
-    {
       name: "KINGSX",
       logo: "/images/sponsors/kingsx.jpg",
     },
-    // {
-    //   name: "Youth Center",
-    //   logo: "/images/sponsors/youth-center.svg",
-    // },
-    // {
-    //   name: "Local Radio",
-    //   logo: "/images/sponsors/local-radio.svg",
-    // },
-    // {
-    //   name: "Student Union",
-    //   logo: "/images/sponsors/student-union.svg",
-    // },
-    // {
-    //   name: "Kobe University",
-    //   logo: "/images/sponsors/kobe-univ.svg",
-    // },
+    {
+      name: "BLUEPORT",
+      logo: "/images/sponsors/blueport.png",
+    },
   ];
   
 
@@ -318,14 +302,14 @@ function MainComponent() {
                 {sponsors.map((sponsor, index) => (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white transition-all duration-300 flex items-center justify-center group"
+                    className="bg-white rounded-2xl p-6 border-3 border-[#2C5F5D] flex items-center justify-center"
                   >
                     <Image
                       src={sponsor.logo}
                       alt={sponsor.name}
                       width={150}
                       height={80}
-                      className="max-w-full h-auto group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      className="max-w-full h-auto"
                     />
                   </div>
                 ))}
