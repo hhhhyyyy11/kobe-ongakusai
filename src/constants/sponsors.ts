@@ -5,15 +5,15 @@ export const sponsors: Array<{
 }> = [
   {
     name: "one-bright-kobe",
-    image: "/images/sponsors/one-bright-kobe.avif", // TODO: 写真追加予定
+    image: "/images/sponsors/one-bright-kobe.avif",
   },
   {
     name: "KINGSX",
-    image: "/images/sponsors/kingsx.jpg", // TODO: 写真追加予定
+    image: "/images/sponsors/kingsx.jpg", 
   },
   {
     name: "KOBE BLUEPORT",
-    image: "/images/sponsors/blueport.png", // TODO: 写真追加予定
+    image: "/images/sponsors/blueport.png", 
   },
 ];
 export type Band = (typeof sponsors)[0];

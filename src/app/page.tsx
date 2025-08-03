@@ -358,7 +358,6 @@ function MainComponent() {
             </div>
           </div>
 
-          {/* TODO: 協賛企業・団体一覧を後で追加 */}
           <div className="text-center">
             <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl md:p-12 p-4">
               <div className="text-8xl mb-6 flex justify-center">
@@ -370,7 +369,6 @@ function MainComponent() {
               <p className="md:text-2xl text-lg font-bold text-[#777777] mb-10">
                 ongakusai.kobe@gmail.com
               </p>
-              {/* 協賛企業・団体のロゴ一覧 */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
                 {sponsors.map((sponsor, index) => (
                   <div
