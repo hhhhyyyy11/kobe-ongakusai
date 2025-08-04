@@ -52,14 +52,6 @@
     background-color: color-mix(in srgb, var(--kobe-orange) 20%, transparent);
   }
 
-  .bg-kobe-light-blue\/15 {
-    background-color: color-mix(
-      in srgb,
-      var(--kobe-light-blue) 15%,
-      transparent
-    );
-  }
-
   .text-kobe-light-blue {
     color: var(--kobe-light-blue);
   }
