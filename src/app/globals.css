@@ -33,11 +33,19 @@
   }
 
   .bg-kobe-light-blue\/20 {
-    background-color: color-mix(in srgb, var(--kobe-light-blue) 20%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--kobe-light-blue) 20%,
+      transparent
+    );
   }
 
   .bg-kobe-dark-teal\/20 {
-    background-color: color-mix(in srgb, var(--kobe-dark-teal) 20%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--kobe-dark-teal) 20%,
+      transparent
+    );
   }
 
   .bg-kobe-orange\/20 {
@@ -45,7 +53,11 @@
   }
 
   .bg-kobe-light-blue\/15 {
-    background-color: color-mix(in srgb, var(--kobe-light-blue) 15%, transparent);
+    background-color: color-mix(
+      in srgb,
+      var(--kobe-light-blue) 15%,
+      transparent
+    );
   }
 
   .text-kobe-light-blue {
@@ -79,17 +91,20 @@
   /* グラデーション用のカスタムカラー */
   .from-kobe-light-blue {
     --tw-gradient-from: var(--kobe-light-blue);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+    --tw-gradient-stops:
+      var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .from-kobe-dark-teal {
     --tw-gradient-from: var(--kobe-dark-teal);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+    --tw-gradient-stops:
+      var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .from-kobe-orange {
     --tw-gradient-from: var(--kobe-orange);
-    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
+    --tw-gradient-stops:
+      var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .to-kobe-light-blue {
