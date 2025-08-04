@@ -397,6 +397,7 @@ function MainComponent() {
                     rel="noopener noreferrer"
                     className="bg-white rounded-2xl p-2 border-3 border-[#2C5F5D] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group max-w-40 w-full h-32"
                     title={`${sponsor.name}のホームページを開く`}
+                    aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
                   >
                     <Image
                       src={sponsor.image}
