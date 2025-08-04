@@ -32,6 +32,22 @@
     background-color: var(--kobe-orange);
   }
 
+  .bg-kobe-light-blue\/20 {
+    background-color: rgba(148, 206, 245, 0.2);
+  }
+
+  .bg-kobe-dark-teal\/20 {
+    background-color: rgba(44, 95, 93, 0.2);
+  }
+
+  .bg-kobe-orange\/20 {
+    background-color: rgba(255, 107, 71, 0.2);
+  }
+
+  .bg-kobe-light-blue\/15 {
+    background-color: rgba(148, 206, 245, 0.15);
+  }
+
   .text-kobe-light-blue {
     color: var(--kobe-light-blue);
   }
@@ -58,6 +74,34 @@
 
   .border-kobe-orange {
     border-color: var(--kobe-orange);
+  }
+
+  /* グラデーション用のカスタムカラー */
+  .from-kobe-light-blue {
+    --tw-gradient-from: #94cef5;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(148, 206, 245, 0));
+  }
+
+  .from-kobe-dark-teal {
+    --tw-gradient-from: #2C5F5D;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(44, 95, 93, 0));
+  }
+
+  .from-kobe-orange {
+    --tw-gradient-from: #FF6B47;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 107, 71, 0));
+  }
+
+  .to-kobe-light-blue {
+    --tw-gradient-to: #94cef5;
+  }
+
+  .to-kobe-dark-teal {
+    --tw-gradient-to: #2C5F5D;
+  }
+
+  .to-kobe-orange {
+    --tw-gradient-to: #FF6B47;
   }
 
   /* Hover状態のカスタムカラー */

@@ -75,12 +75,12 @@ function AboutPage() {
                 </h3>
               </div>
               <div className="text-kobe-dark-teal font-bold space-y-4">
-                <div className="bg-kobe-light-blue/15 rounded-2xl p-4">
+                <div className="bg-kobe-light-blue/20 rounded-2xl p-4">
                   <p className="text-lg leading-relaxed">
                     「学生音楽から神戸市を盛り上げる、学生の、学生による、学生のための野外音楽フェス」をスローガンに掲げています。
                   </p>
                 </div>
-                <div className="bg-kobe-light-blue/15 rounded-2xl p-4">
+                <div className="bg-kobe-light-blue/20 rounded-2xl p-4">
                   <p className="leading-relaxed">
                     学生が作り出すエネルギッシュなパワーを音楽を通して表現することで、神戸への刺激として盛り上げに寄与することを目指しています。
                   </p>
@@ -134,7 +134,12 @@ function AboutPage() {
           </div>
 
           {/* ストーリー */}
-          <div className="bg-gradient-to-r from-kobe-dark-teal to-kobe-orange rounded-3xl border-4 border-white shadow-xl p-8 text-white">
+          <div
+            className="rounded-3xl border-4 border-white shadow-xl p-8 text-white"
+            style={{
+              background: "linear-gradient(to right, #2C5F5D, #FF6B47)",
+            }}
+          >
             <div className="text-center mb-8">
               <h3 className="text-3xl font-black mb-4">
                 プロジェクトストーリー

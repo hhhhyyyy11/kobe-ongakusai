@@ -177,7 +177,12 @@ function SetListPage() {
           {/* Special Events */}
           <div className="space-y-6">
             {/* 主催挨拶 */}
-            <div className="bg-gradient-to-r from-kobe-dark-teal to-kobe-orange rounded-2xl border-4 border-white shadow-xl p-6 text-white">
+            <div
+              className="rounded-2xl border-4 border-white shadow-xl p-6 text-white"
+              style={{
+                background: "linear-gradient(to right, #2C5F5D, #FF6B47)",
+              }}
+            >
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-3 mb-4">
                   <FaMusic className="text-3xl" />
@@ -190,7 +195,12 @@ function SetListPage() {
             </div>
 
             {/* 花火 */}
-            <div className="bg-gradient-to-r from-kobe-orange to-kobe-light-blue rounded-2xl border-4 border-kobe-dark-teal shadow-xl p-6 text-white">
+            <div
+              className="rounded-2xl border-4 border-kobe-dark-teal shadow-xl p-6 text-white"
+              style={{
+                background: "linear-gradient(to right, #FF6B47, #94cef5)",
+              }}
+            >
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-3 mb-4">
                   <FaStar className="text-3xl" />
