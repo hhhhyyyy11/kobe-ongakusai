@@ -3,7 +3,7 @@ name: Create Issues from Markdown Files
 on:
   push:
     paths:
-      - 'issues_to_create/*.md'
+      - "issues_to_create/*.md"
     branches:
       - main
 

@@ -17,18 +17,14 @@ export function Footer() {
                 height={48}
                 className="w-12 h-12 rounded-full border-2 border-white"
               />
-              <h3 className="text-2xl font-black text-[#94cef5]">
-                神戸音学祭
-              </h3>
+              <h3 className="text-2xl font-black text-[#94cef5]">神戸音学祭</h3>
             </div>
             <p className="text-gray-300 font-bold">
               学生が作る、学生のための音楽フェスティバル
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
-              ページ
-            </h4>
+            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">ページ</h4>
             <div className="space-y-2">
               <Link
                 href="/"
@@ -57,9 +53,7 @@ export function Footer() {
             <FooterContactLinks />
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
-              アクセス
-            </h4>
+            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">アクセス</h4>
             <p className="text-gray-300 font-bold">
               TOTTEI PARK
               <br />

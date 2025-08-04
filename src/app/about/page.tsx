@@ -1,11 +1,6 @@
 "use client";
 import React from "react";
-import {
-  FaMusic,
-  FaHandshake,
-  FaMicrophone,
-  FaStar,
-} from "react-icons/fa";
+import { FaMusic, FaHandshake, FaMicrophone, FaStar } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -55,7 +50,11 @@ function AboutPage() {
       <section className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
-          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1200 120"
+            className="w-full h-full"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
               fill="white"

@@ -9,11 +9,11 @@ export const sponsors: Array<{
   },
   {
     name: "KINGSX",
-    image: "/images/sponsors/kingsx.jpg", 
+    image: "/images/sponsors/kingsx.jpg",
   },
   {
     name: "KOBE BLUEPORT",
-    image: "/images/sponsors/blueport.png", 
+    image: "/images/sponsors/blueport.png",
   },
 ];
-export type Band = (typeof sponsors)[0];
+export type Sponsor = (typeof sponsors)[0];
