@@ -261,7 +261,7 @@ function MainComponent() {
                     <p className="text-3xl font-black text-kobe-orange mb-2">
                       無料
                     </p>
-                    <div className="mt-4 bg-kobe-light-blue/10 rounded-lg p-3">
+                    <div className="mt-4 bg-kobe-light-blue/20 rounded-lg p-3">
                       <p className="text-sm font-bold">
                         気軽にお立ち寄りください
                         <br />
