@@ -84,7 +84,7 @@ npm run type-check
 - Pull Request の作成・更新時
 - main/develop ブランチへの push 時
 
-このにより、コード品質の維持とデプロイの安全性が確保されています。
+これにより、コード品質の維持とデプロイの安全性が確保されています。
 
 ## Vercelでのデプロイ
 
