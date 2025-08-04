@@ -5,7 +5,7 @@ import { FooterContactLinks } from "./FooterContactLinks";
 
 export function Footer() {
   return (
-    <footer className="bg-[#2C5F5D] text-white py-12">
+    <footer className="bg-kobe-dark-teal text-white py-12">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
@@ -17,14 +17,16 @@ export function Footer() {
                 height={48}
                 className="w-12 h-12 rounded-full border-2 border-white"
               />
-              <h3 className="text-2xl font-black text-[#94cef5]">神戸音学祭</h3>
+              <h3 className="text-2xl font-black text-kobe-light-blue">
+                神戸音学祭
+              </h3>
             </div>
             <p className="text-gray-300 font-bold">
               学生が作る、学生のための音楽フェスティバル
             </p>
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">ページ</h4>
+            <h4 className="text-lg font-black mb-4 text-kobe-orange">ページ</h4>
             <div className="space-y-2">
               <Link
                 href="/"
@@ -47,13 +49,15 @@ export function Footer() {
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">
+            <h4 className="text-lg font-black mb-4 text-kobe-orange">
               お問い合わせ
             </h4>
             <FooterContactLinks />
           </div>
           <div>
-            <h4 className="text-lg font-black mb-4 text-[#FF6B47]">アクセス</h4>
+            <h4 className="text-lg font-black mb-4 text-kobe-orange">
+              アクセス
+            </h4>
             <p className="text-gray-300 font-bold">
               TOTTEI PARK
               <br />

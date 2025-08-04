@@ -12,7 +12,7 @@ export const ContactLinks: React.FC = () => {
           href={SNS_INFO.instagram.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#2C5F5D] font-bold hover:underline"
+          className="text-kobe-dark-teal font-bold hover:underline"
         >
           @{SNS_INFO.instagram.handle}
         </a>
@@ -23,16 +23,16 @@ export const ContactLinks: React.FC = () => {
           href={SNS_INFO.twitter.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#2C5F5D] font-bold hover:underline"
+          className="text-kobe-dark-teal font-bold hover:underline"
         >
           @{SNS_INFO.twitter.handle}
         </a>
       </div>
       <div className="flex items-center gap-3">
-        <FaEnvelope className="text-[#2C5F5D] text-xl" />
+        <FaEnvelope className="text-kobe-dark-teal text-xl" />
         <a
           href="mailto:ongakusai.kobe@gmail.com"
-          className="text-[#2C5F5D] font-bold hover:underline"
+          className="text-kobe-dark-teal font-bold hover:underline"
         >
           ongakusai.kobe@gmail.com
         </a>

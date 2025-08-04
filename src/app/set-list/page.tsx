@@ -70,7 +70,7 @@ const performanceSchedule: PerformanceItem[] = [
 
 function SetListPage() {
   return (
-    <div className="min-h-screen bg-[#94cef5] font-sans">
+    <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
       <Header showScrollNavigation={false} />
 
@@ -78,34 +78,34 @@ function SetListPage() {
       <section className="relative pt-32 pb-16 overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-28 left-12 text-3xl text-[#2C5F5D] animate-bounce delay-100">
+          <div className="absolute top-28 left-12 text-3xl text-kobe-dark-teal animate-bounce delay-100">
             <BsMusicNote />
           </div>
-          <div className="absolute top-32 right-20 text-2xl text-[#FF6B47] animate-bounce delay-300">
+          <div className="absolute top-32 right-20 text-2xl text-kobe-orange animate-bounce delay-300">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-32 left-24 text-4xl text-[#2C5F5D] animate-bounce delay-500">
+          <div className="absolute bottom-32 left-24 text-4xl text-kobe-dark-teal animate-bounce delay-500">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-20 right-16 text-3xl text-[#FF6B47] animate-bounce delay-700">
+          <div className="absolute bottom-20 right-16 text-3xl text-kobe-orange animate-bounce delay-700">
             <BsMusicNote />
           </div>
         </div>
 
         <div className="max-w-6xl mx-auto px-4 text-center relative z-10">
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl">
+          <div className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl">
             <div className="flex justify-center mb-6">
-              <div className="bg-[#FF6B47] rounded-full p-4">
+              <div className="bg-kobe-orange rounded-full p-4">
                 <FaMusic className="text-6xl text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black text-[#2C5F5D] mb-6">
+            <h1 className="text-4xl md:text-6xl font-black text-kobe-dark-teal mb-6">
               タイムテーブル
             </h1>
-            <p className="text-xl md:text-2xl font-bold text-[#FF6B47] mb-4">
+            <p className="text-xl md:text-2xl font-bold text-kobe-orange mb-4">
               2025年8月22日（金）開催予定
             </p>
-            <div className="flex items-center justify-center space-x-4 text-lg font-bold text-[#2C5F5D]">
+            <div className="flex items-center justify-center space-x-4 text-lg font-bold text-kobe-dark-teal">
               <div className="flex items-center space-x-2">
                 <FaClock />
                 <span>10:00開演 - 19:00終演</span>
@@ -118,7 +118,7 @@ function SetListPage() {
       {/* Performance Schedule */}
       <section className="py-16 bg-white relative">
         {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-light-blue">
           <svg
             viewBox="0 0 1200 120"
             className="w-full h-full"
@@ -133,12 +133,12 @@ function SetListPage() {
 
         <div className="max-w-4xl mx-auto px-4 pt-16">
           <div className="text-center mb-12">
-            <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+            <div className="inline-block bg-kobe-orange text-white px-8 py-4 rounded-full border-4 border-kobe-dark-teal mb-6">
               <h2 className="text-3xl md:text-4xl font-black">
                 演奏スケジュール
               </h2>
             </div>
-            <p className="text-lg font-bold text-[#2C5F5D]">
+            <p className="text-lg font-bold text-kobe-dark-teal">
               各団体30分のパフォーマンス（転換時間込み）
             </p>
           </div>
@@ -148,11 +148,11 @@ function SetListPage() {
             {performanceSchedule.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl border-4 border-[#2C5F5D] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
+                className="bg-white rounded-2xl border-4 border-kobe-dark-teal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
               >
                 <div className="grid md:grid-cols-3 gap-4 items-center">
                   <div className="text-center md:text-left">
-                    <div className="bg-[#FF6B47] text-white px-4 py-2 rounded-full inline-block">
+                    <div className="bg-kobe-orange text-white px-4 py-2 rounded-full inline-block">
                       <span className="font-black text-lg flex items-center gap-2">
                         <FaClock />
                         {item.time}
@@ -160,12 +160,12 @@ function SetListPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <h3 className="text-xl md:text-2xl font-black text-[#2C5F5D] mb-2">
+                    <h3 className="text-xl md:text-2xl font-black text-kobe-dark-teal mb-2">
                       {item.artist}
                     </h3>
                   </div>
                   <div className="text-center md:text-right">
-                    <div className="bg-[#2C5F5D] text-white px-4 py-2 rounded-full inline-block">
+                    <div className="bg-kobe-dark-teal text-white px-4 py-2 rounded-full inline-block">
                       <span className="font-bold text-sm">{item.band}</span>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ function SetListPage() {
           {/* Special Events */}
           <div className="space-y-6">
             {/* 主催挨拶 */}
-            <div className="bg-gradient-to-r from-[#2C5F5D] to-[#FF6B47] rounded-2xl border-4 border-white shadow-xl p-6 text-white">
+            <div className="bg-gradient-to-r from-kobe-dark-teal to-kobe-orange rounded-2xl border-4 border-white shadow-xl p-6 text-white">
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-3 mb-4">
                   <FaMusic className="text-3xl" />
@@ -190,7 +190,7 @@ function SetListPage() {
             </div>
 
             {/* 花火 */}
-            <div className="bg-gradient-to-r from-[#FF6B47] to-[#94cef5] rounded-2xl border-4 border-[#2C5F5D] shadow-xl p-6 text-white">
+            <div className="bg-gradient-to-r from-kobe-orange to-kobe-light-blue rounded-2xl border-4 border-kobe-dark-teal shadow-xl p-6 text-white">
               <div className="text-center">
                 <div className="flex items-center justify-center space-x-3 mb-4">
                   <FaStar className="text-3xl" />
@@ -207,12 +207,12 @@ function SetListPage() {
           </div>
 
           {/* Important Notice */}
-          <div className="mt-12 bg-[#94cef5]/20 rounded-2xl border-4 border-[#2C5F5D] p-6">
+          <div className="mt-12 bg-kobe-light-blue/20 rounded-2xl border-4 border-kobe-dark-teal p-6">
             <div className="text-center">
-              <h3 className="text-xl font-black text-[#2C5F5D] mb-4">
+              <h3 className="text-xl font-black text-kobe-dark-teal mb-4">
                 ご来場の皆様へ
               </h3>
-              <div className="space-y-2 text-[#2C5F5D] font-bold">
+              <div className="space-y-2 text-kobe-dark-teal font-bold">
                 <p>
                   • 演奏順序・時間は当日の状況により変更される場合があります
                 </p>

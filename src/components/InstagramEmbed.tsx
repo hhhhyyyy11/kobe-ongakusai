@@ -6,12 +6,12 @@ export const InstagramEmbed: React.FC = () => {
   const { instagram } = SNS_INFO;
 
   return (
-    <div className="lg:col-span-2 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-6">
+    <div className="lg:col-span-2 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-6">
       <div className="text-center mb-6">
         <div className="flex items-center justify-center gap-3 mb-4">
           <FaInstagram className="text-5xl text-purple-500" />
           <div>
-            <h3 className="text-3xl font-black text-[#2C5F5D]">
+            <h3 className="text-3xl font-black text-kobe-dark-teal">
               {instagram.displayName}
             </h3>
           </div>

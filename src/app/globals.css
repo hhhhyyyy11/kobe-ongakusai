@@ -3,19 +3,98 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* 神戸音学祭カスタムカラー変数 */
+  --kobe-light-blue: #94cef5;
+  --kobe-dark-teal: #2C5F5D;
+  --kobe-orange: #FF6B47;
+  --kobe-gray: #777777;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+/* 神戸音学祭のカスタムカラー */
+@layer utilities {
+  .bg-kobe-light-blue {
+    background-color: var(--kobe-light-blue);
+  }
+
+  .bg-kobe-dark-teal {
+    background-color: var(--kobe-dark-teal);
+  }
+
+  .bg-kobe-orange {
+    background-color: var(--kobe-orange);
+  }
+
+  .text-kobe-light-blue {
+    color: var(--kobe-light-blue);
+  }
+
+  .text-kobe-dark-teal {
+    color: var(--kobe-dark-teal);
+  }
+
+  .text-kobe-orange {
+    color: var(--kobe-orange);
+  }
+
+  .text-kobe-gray {
+    color: var(--kobe-gray);
+  }
+
+  .border-kobe-light-blue {
+    border-color: var(--kobe-light-blue);
+  }
+
+  .border-kobe-dark-teal {
+    border-color: var(--kobe-dark-teal);
+  }
+
+  .border-kobe-orange {
+    border-color: var(--kobe-orange);
+  }
+
+  /* Hover状態のカスタムカラー */
+  .hover\:bg-kobe-light-blue:hover {
+    background-color: var(--kobe-light-blue);
+  }
+
+  .hover\:bg-kobe-dark-teal:hover {
+    background-color: var(--kobe-dark-teal);
+  }
+
+  .hover\:bg-kobe-orange:hover {
+    background-color: var(--kobe-orange);
+  }
+
+  .hover\:text-kobe-light-blue:hover {
+    color: var(--kobe-light-blue);
+  }
+
+  .hover\:text-kobe-dark-teal:hover {
+    color: var(--kobe-dark-teal);
+  }
+
+  .hover\:text-kobe-orange:hover {
+    color: var(--kobe-orange);
+  }
+
+  .hover\:border-kobe-light-blue:hover {
+    border-color: var(--kobe-light-blue);
+  }
+
+  .hover\:border-kobe-dark-teal:hover {
+    border-color: var(--kobe-dark-teal);
+  }
+
+  .hover\:border-kobe-orange:hover {
+    border-color: var(--kobe-orange);
   }
 }
 
