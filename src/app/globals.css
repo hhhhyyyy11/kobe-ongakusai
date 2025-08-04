@@ -33,19 +33,19 @@
   }
 
   .bg-kobe-light-blue\/20 {
-    background-color: rgba(148, 206, 245, 0.2);
+    background-color: color-mix(in srgb, var(--kobe-light-blue) 20%, transparent);
   }
 
   .bg-kobe-dark-teal\/20 {
-    background-color: rgba(44, 95, 93, 0.2);
+    background-color: color-mix(in srgb, var(--kobe-dark-teal) 20%, transparent);
   }
 
   .bg-kobe-orange\/20 {
-    background-color: rgba(255, 107, 71, 0.2);
+    background-color: color-mix(in srgb, var(--kobe-orange) 20%, transparent);
   }
 
   .bg-kobe-light-blue\/15 {
-    background-color: rgba(148, 206, 245, 0.15);
+    background-color: color-mix(in srgb, var(--kobe-light-blue) 15%, transparent);
   }
 
   .text-kobe-light-blue {
@@ -78,33 +78,30 @@
 
   /* グラデーション用のカスタムカラー */
   .from-kobe-light-blue {
-    --tw-gradient-from: #94cef5;
-    --tw-gradient-stops:
-      var(--tw-gradient-from), var(--tw-gradient-to, rgba(148, 206, 245, 0));
+    --tw-gradient-from: var(--kobe-light-blue);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .from-kobe-dark-teal {
-    --tw-gradient-from: #2c5f5d;
-    --tw-gradient-stops:
-      var(--tw-gradient-from), var(--tw-gradient-to, rgba(44, 95, 93, 0));
+    --tw-gradient-from: var(--kobe-dark-teal);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .from-kobe-orange {
-    --tw-gradient-from: #ff6b47;
-    --tw-gradient-stops:
-      var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 107, 71, 0));
+    --tw-gradient-from: var(--kobe-orange);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent);
   }
 
   .to-kobe-light-blue {
-    --tw-gradient-to: #94cef5;
+    --tw-gradient-to: var(--kobe-light-blue);
   }
 
   .to-kobe-dark-teal {
-    --tw-gradient-to: #2c5f5d;
+    --tw-gradient-to: var(--kobe-dark-teal);
   }
 
   .to-kobe-orange {
-    --tw-gradient-to: #ff6b47;
+    --tw-gradient-to: var(--kobe-orange);
   }
 
   /* Hover状態のカスタムカラー */
