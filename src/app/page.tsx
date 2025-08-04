@@ -382,14 +382,21 @@ function MainComponent() {
               <p className="md:text-2xl text-xl font-black text-[#2C5F5D] mb-2">
                 ご支援いただける企業様・団体様はこちらのメールアドレスまでご連絡ください！
               </p>
-              <p className="md:text-2xl text-lg font-bold text-[#777777] mb-10">
+              <p className="md:text-2xl text-lg font-bold text-[#777777] mb-6">
                 ongakusai.kobe@gmail.com
+              </p>
+              <p className="md:text-lg text-base font-bold text-[#2C5F5D] mb-10">
+                ※ロゴをクリックすると各企業・団体のホームページに移動します
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
                 {sponsors.map((sponsor, index) => (
-                  <div
+                  <Link
                     key={index}
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-white rounded-2xl p-2 border-3 border-[#2C5F5D] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group max-w-40 w-full h-32"
+                    title={`${sponsor.name}のホームページを開く`}
                   >
                     <Image
                       src={sponsor.image}
@@ -398,7 +405,7 @@ function MainComponent() {
                       height={80}
                       className="max-w-full h-auto object-contain"
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>
