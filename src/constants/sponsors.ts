@@ -20,6 +20,11 @@ export const sponsors: Array<{
     link: "http://www.blue-port.jp/",
   },
   {
+    name: "ROOTS'66",
+    image: "/images/sponsors/roots66.jpg",
+    link: "https://livebar-roots66.com/",
+  },
+  {
     name: "ベースオントップ神戸",
     image: "/images/sponsors/bass-on-top.png",
     link: "https://www.bassontop.co.jp/studio_sannomiya/",
