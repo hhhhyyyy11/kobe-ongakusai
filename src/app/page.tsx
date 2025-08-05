@@ -70,7 +70,7 @@ function MainComponent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#94cef5] font-sans">
+    <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
       <Header
         activeSection={activeSection}
@@ -95,22 +95,22 @@ function MainComponent() {
         {/* Decorative Elements */}
         <div className="absolute inset-0">
           {/* Musical Notes - Scattered around for festive feel */}
-          <div className="absolute top-28 left-12 md:top-30 md:left-16 text-3xl md:text-4xl text-[#2C5F5D] animate-bounce delay-100">
+          <div className="absolute top-28 left-12 md:top-30 md:left-16 text-3xl md:text-4xl text-kobe-dark-teal animate-bounce delay-100">
             <BsMusicNote />
           </div>
-          <div className="absolute top-32 right-20 md:top-40 md:right-24 text-2xl md:text-3xl text-[#FF6B47] animate-bounce delay-300">
+          <div className="absolute top-32 right-20 md:top-40 md:right-24 text-2xl md:text-3xl text-kobe-orange animate-bounce delay-300">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-32 left-24 md:bottom-40 md:left-32 text-4xl md:text-5xl text-[#2C5F5D] animate-bounce delay-500">
+          <div className="absolute bottom-32 left-24 md:bottom-40 md:left-32 text-4xl md:text-5xl text-kobe-dark-teal animate-bounce delay-500">
             <BsMusicNote />
           </div>
-          <div className="absolute bottom-20 right-16 md:bottom-24 md:right-20 text-3xl md:text-4xl text-[#FF6B47] animate-bounce delay-700">
+          <div className="absolute bottom-20 right-16 md:bottom-24 md:right-20 text-3xl md:text-4xl text-kobe-orange animate-bounce delay-700">
             <BsMusicNote />
           </div>
-          <div className="absolute top-1/2 left-8 md:left-12 text-2xl md:text-3xl text-[#FF6B47]/70 animate-bounce delay-900">
+          <div className="absolute top-1/2 left-8 md:left-12 text-2xl md:text-3xl text-kobe-orange/70 animate-bounce delay-900">
             <BsMusicNote />
           </div>
-          <div className="absolute top-1/3 right-8 md:right-12 text-2xl md:text-3xl text-[#2C5F5D]/70 animate-bounce delay-1100">
+          <div className="absolute top-1/3 right-8 md:right-12 text-2xl md:text-3xl text-kobe-dark-teal/70 animate-bounce delay-1100">
             <BsMusicNote />
           </div>
         </div>
@@ -128,18 +128,18 @@ function MainComponent() {
           </div>
 
           <div
-            className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-[#2C5F5D] shadow-2xl mb-8"
+            className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 border-6 border-kobe-dark-teal shadow-2xl mb-8"
             style={{ borderWidth: "6px" }}
           >
-            <p className="text-xl md:text-2xl font-black mb-4 text-[#FF6B47]">
+            <p className="text-xl md:text-2xl font-black mb-4 text-kobe-orange">
               学生音楽 × 神戸
             </p>
-            <p className="text-lg md:text-xl font-bold mb-6 text-[#2C5F5D]">
+            <p className="text-lg md:text-xl font-bold mb-6 text-kobe-dark-teal">
               関西圏6大学10団体が出演
               <br />
               計17大学のメンバーから構成される実行委員会主催の学生音楽フェス！
             </p>
-            <div className="text-xl md:text-2xl font-bold text-[#2C5F5D] space-y-3">
+            <div className="text-xl md:text-2xl font-bold text-kobe-dark-teal space-y-3">
               <div className="flex items-center justify-center space-x-3">
                 <FaCalendarAlt className="text-3xl" />
                 <span>2025年8月22日（金）10:00〜19:00</span>
@@ -151,7 +151,7 @@ function MainComponent() {
                   <div className="text-lg">（神戸市中央区）</div>
                 </div>
               </div>
-              <div className="bg-[#FF6B47] text-white px-6 py-3 rounded-full text-lg font-black mt-4">
+              <div className="bg-kobe-orange text-white px-6 py-3 rounded-full text-lg font-black mt-4">
                 入場無料・入退場自由
               </div>
             </div>
@@ -160,13 +160,13 @@ function MainComponent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection("artist")}
-              className="bg-[#2C5F5D] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#FF6B47] hover:bg-[#FF6B47] hover:border-[#2C5F5D] transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               出演団体を見る
             </button>
             <Link
               href="/set-list"
-              className="bg-[#FF6B47] text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-[#2C5F5D] hover:bg-[#2C5F5D] hover:border-[#FF6B47] transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               タイムテーブルを見る
             </Link>
@@ -175,9 +175,9 @@ function MainComponent() {
       </section>
 
       {/* Ticket Section */}
-      <section id="ticket" className="py-20 bg-[#FF6B47] relative">
+      <section id="ticket" className="py-20 bg-kobe-orange relative">
         {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-light-blue">
           <svg
             viewBox="0 0 1200 120"
             className="w-full h-full"
@@ -192,7 +192,7 @@ function MainComponent() {
 
         <div className="max-w-6xl mx-auto px-4 relative">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] my-6">
+            <div className="inline-block bg-white text-kobe-orange px-8 py-4 rounded-full border-4 border-kobe-dark-teal my-6">
               <h2 className="text-4xl md:text-5xl font-black">
                 開催概要・入場について
               </h2>
@@ -200,14 +200,14 @@ function MainComponent() {
           </div>
 
           <div
-            className="bg-white rounded-3xl border-6 border-[#2C5F5D] shadow-2xl p-8 md:p-12"
+            className="bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl p-8 md:p-12"
             style={{ borderWidth: "6px" }}
           >
             {/* 基本情報を中央配置 */}
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-6">
                 {/* 日時情報 */}
-                <div className="bg-[#FF6B47] text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="bg-kobe-orange text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="text-center">
                     <FaCalendarAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">日時</h3>
@@ -228,7 +228,7 @@ function MainComponent() {
                 </div>
 
                 {/* 会場情報 */}
-                <div className="bg-[#2C5F5D] text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="bg-kobe-dark-teal text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="text-center">
                     <FaMapMarkerAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">会場</h3>
@@ -251,17 +251,17 @@ function MainComponent() {
                 </div>
 
                 {/* 入場情報 */}
-                <div className="bg-white border-4 border-[#94cef5] text-[#2C5F5D] p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
+                <div className="bg-white border-4 border-kobe-light-blue text-kobe-dark-teal p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
                   <div className="text-center">
-                    <FaTicketAlt className="text-4xl mb-4 mx-auto text-[#2C5F5D]" />
+                    <FaTicketAlt className="text-4xl mb-4 mx-auto text-kobe-dark-teal" />
                     <h3 className="text-xl font-black mb-4">入場について</h3>
                     <p className="text-lg font-black mb-2">
                       入退場自由・予約不要
                     </p>
-                    <p className="text-3xl font-black text-[#FF6B47] mb-2">
+                    <p className="text-3xl font-black text-kobe-orange mb-2">
                       無料
                     </p>
-                    <div className="mt-4 bg-[#94cef5]/10 rounded-lg p-3">
+                    <div className="mt-4 bg-kobe-light-blue/20 rounded-lg p-3">
                       <p className="text-sm font-bold">
                         気軽にお立ち寄りください
                         <br />
@@ -279,7 +279,7 @@ function MainComponent() {
       {/* Artist Section */}
       <section id="artist" className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-[#FF6B47]">
+        <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-orange">
           <svg
             viewBox="0 0 1200 120"
             className="w-full h-full"
@@ -294,10 +294,10 @@ function MainComponent() {
 
         <div className="max-w-6xl mx-auto px-4 pt-16">
           <div className="text-center mb-16">
-            <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+            <div className="inline-block bg-kobe-orange text-white px-8 py-4 rounded-full border-4 border-kobe-dark-teal mb-6">
               <h2 className="text-4xl md:text-5xl font-black">出演団体</h2>
             </div>
-            <p className="text-xl font-bold text-[#2C5F5D] mb-8">
+            <p className="text-xl font-bold text-kobe-dark-teal mb-8">
               関西圏6大学10団体から出演
             </p>
           </div>
@@ -307,7 +307,7 @@ function MainComponent() {
             {bands.map((band, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl border-4 border-[#2C5F5D] shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
+                className="bg-white rounded-2xl border-4 border-kobe-dark-teal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
               >
                 <div className="text-center">
                   {/* 団体写真 */}
@@ -331,7 +331,7 @@ function MainComponent() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-lg font-black text-[#2C5F5D] leading-tight">
+                  <h3 className="text-lg font-black text-kobe-dark-teal leading-tight">
                     {band.name}
                   </h3>
                 </div>
@@ -340,15 +340,15 @@ function MainComponent() {
           </div>
 
           {/* パフォーマンス内容説明 */}
-          <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl p-8 mb-8">
+          <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8 mb-8">
             <div className="text-center mb-6">
               <div className="text-6xl mb-4 flex justify-center">
-                <FaMusic className="text-[#FF6B47]" />
+                <FaMusic className="text-kobe-orange" />
               </div>
-              <h3 className="text-2xl font-black text-[#2C5F5D] mb-4">
+              <h3 className="text-2xl font-black text-kobe-dark-teal mb-4">
                 多彩なジャンルのコピーバンドライブ
               </h3>
-              <p className="text-lg font-bold text-[#777777] leading-relaxed">
+              <p className="text-lg font-bold text-kobe-gray leading-relaxed">
                 各団体によるアーティストのコピー曲披露
                 <br />
                 多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
@@ -364,10 +364,10 @@ function MainComponent() {
       <SNSSection isClient={isClient} />
 
       {/* Sponsor Section */}
-      <section id="sponsor" className="py-20 bg-[#94cef5] relative">
+      <section id="sponsor" className="py-20 bg-kobe-light-blue relative">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-6">
-            <div className="inline-block bg-white text-[#2C5F5D] px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
+            <div className="inline-block bg-white text-kobe-dark-teal px-8 py-4 rounded-full border-4 border-kobe-dark-teal mb-6">
               <h2 className="text-4xl md:text-5xl font-black">
                 協賛企業・団体
               </h2>
@@ -375,17 +375,17 @@ function MainComponent() {
           </div>
 
           <div className="text-center">
-            <div className="bg-white rounded-3xl border-4 border-[#2C5F5D] shadow-xl md:p-12 p-4">
+            <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl md:p-12 p-4">
               <div className="text-8xl mb-6 flex justify-center">
-                <FaHandshake className="text-[#2C5F5D]" />
+                <FaHandshake className="text-kobe-dark-teal" />
               </div>
-              <p className="md:text-2xl text-xl font-black text-[#2C5F5D] mb-2">
+              <p className="md:text-2xl text-xl font-black text-kobe-dark-teal mb-2">
                 ご支援いただける企業様・団体様はこちらのメールアドレスまでご連絡ください！
               </p>
-              <p className="md:text-2xl text-lg font-bold text-[#777777] mb-6">
+              <p className="md:text-2xl text-lg font-bold text-kobe-gray mb-6">
                 ongakusai.kobe@gmail.com
               </p>
-              <p className="md:text-lg text-base font-bold text-[#2C5F5D] mb-10">
+              <p className="md:text-lg text-base font-bold text-kobe-dark-teal mb-10">
                 ※ロゴをクリックすると各企業・団体のホームページに移動します
               </p>
               <div className="flex flex-wrap gap-6 justify-center items-center">
@@ -395,7 +395,7 @@ function MainComponent() {
                     href={sponsor.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white rounded-2xl p-2 border-3 border-[#2C5F5D] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32"
+                    className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32"
                     title={`${sponsor.name}のホームページを開く`}
                     aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
                   >

@@ -46,7 +46,7 @@ export function Header({
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-[#2C5F5D]">
+    <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-kobe-dark-teal">
       <div className="max-w-6xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link
@@ -61,7 +61,7 @@ export function Header({
               className="w-16 h-16 rounded-full"
             />
             <div
-              className="text-xl font-black text-[#2C5F5D]"
+              className="text-xl font-black text-kobe-dark-teal"
               style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
             >
               神戸音学祭
@@ -81,8 +81,8 @@ export function Header({
                   onClick={() => handleScrollToSection(item.id)}
                   className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                     activeSection === item.id
-                      ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
-                      : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
+                      ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                      : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
                   }`}
                   style={{ borderWidth: "3px" }}
                 >
@@ -96,8 +96,8 @@ export function Header({
                 href="/"
                 className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                   isActive("/")
-                    ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
-                    : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
+                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                    : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
                 }`}
                 style={{ borderWidth: "3px" }}
               >
@@ -109,8 +109,8 @@ export function Header({
               href="/set-list"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/set-list")
-                  ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
-                  : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
+                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
               style={{ borderWidth: "3px" }}
             >
@@ -120,8 +120,8 @@ export function Header({
               href="/about"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
                 isActive("/about")
-                  ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg transform scale-105"
-                  : "text-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white border-[#2C5F5D] hover:shadow-lg"
+                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
               style={{ borderWidth: "3px" }}
             >
@@ -134,8 +134,8 @@ export function Header({
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`lg:hidden p-2 rounded-lg transition-all duration-300 transform ${
               isMobileMenuOpen
-                ? "bg-[#2C5F5D] scale-105 border-2 border-[#FF6B47]"
-                : "bg-[#FF6B47] hover:scale-110 border-2 border-[#2C5F5D]"
+                ? "bg-kobe-dark-teal scale-105 border-2 border-kobe-orange"
+                : "bg-kobe-orange hover:scale-110 border-2 border-kobe-dark-teal"
             }`}
           >
             <FaBars
@@ -152,7 +152,7 @@ export function Header({
             isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="mt-4 pb-4 border-t-2 border-[#2C5F5D]/20">
+          <div className="mt-4 pb-4 border-t-2 border-kobe-dark-teal/20">
             <div
               className={`flex flex-col space-y-3 pt-4 transform transition-all duration-500 ease-in-out ${
                 isMobileMenuOpen
@@ -172,8 +172,8 @@ export function Header({
                     onClick={() => handleScrollToSection(item.id)}
                     className={`w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                       activeSection === item.id
-                        ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
-                        : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
+                        ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                        : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                     }`}
                     style={{
                       borderWidth: "3px",
@@ -190,8 +190,8 @@ export function Header({
                   href="/"
                   className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                     isActive("/")
-                      ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
-                      : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
+                      ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                      : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                   }`}
                   style={{ borderWidth: "3px" }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -204,8 +204,8 @@ export function Header({
                 href="/set-list"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/set-list")
-                    ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
-                    : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
+                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                 }`}
                 style={{
                   borderWidth: "3px",
@@ -219,8 +219,8 @@ export function Header({
                 href="/about"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
                   isActive("/about")
-                    ? "bg-[#FF6B47] text-white border-[#2C5F5D] shadow-lg"
-                    : "text-[#2C5F5D] bg-white/50 border-[#2C5F5D] hover:bg-[#FF6B47] hover:text-white"
+                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                 }`}
                 style={{
                   borderWidth: "3px",
