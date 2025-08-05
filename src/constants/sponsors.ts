@@ -6,7 +6,7 @@ export const sponsors: Array<{
 }> = [
   {
     name: "株式会社One Bright KOBE",
-    image: "/images/sponsors/one-bright-kobe.avif",
+    image: "/images/sponsors/one-bright-kobe.png",
     link: "https://www.totteikobe.jp/company",
   },
   {
@@ -18,6 +18,11 @@ export const sponsors: Array<{
     name: "KOBE BLUEPORT",
     image: "/images/sponsors/blueport.png",
     link: "http://www.blue-port.jp/",
+  },
+  {
+    name: "ベースオントップ神戸",
+    image: "/images/sponsors/bass-on-top.png",
+    link: "https://www.bassontop.co.jp/studio_sannomiya/",
   },
 ];
 export type Sponsor = (typeof sponsors)[0];
