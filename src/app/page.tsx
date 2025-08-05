@@ -45,7 +45,7 @@ function MainComponent() {
     // モバイルメニュー外部クリック時の閉じる処理
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
-      if (!target.closest('nav')) {
+      if (!target.closest("nav")) {
         // モバイルメニューの処理は CommonHeader で管理
       }
     };
@@ -178,7 +178,11 @@ function MainComponent() {
       <section id="ticket" className="py-20 bg-[#FF6B47] relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
-          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1200 120"
+            className="w-full h-full"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
               fill="#FF6B47"
@@ -189,7 +193,9 @@ function MainComponent() {
         <div className="max-w-6xl mx-auto px-4 relative">
           <div className="text-center mb-16">
             <div className="inline-block bg-white text-[#FF6B47] px-8 py-4 rounded-full border-4 border-[#2C5F5D] my-6">
-              <h2 className="text-4xl md:text-5xl font-black">開催概要・入場について</h2>
+              <h2 className="text-4xl md:text-5xl font-black">
+                開催概要・入場について
+              </h2>
             </div>
           </div>
 
@@ -208,12 +214,14 @@ function MainComponent() {
                     <p className="text-lg font-bold mb-2">
                       2025年8月22日（金）
                     </p>
-                    <p className="text-base font-bold">
-                      10:00〜19:00
-                    </p>
+                    <p className="text-base font-bold">10:00〜19:00</p>
                     <div className="mt-4 bg-white/20 rounded-lg p-3">
                       <p className="text-sm font-bold">
-                        ※イベント後には<br />メリケンパークでの<br />花火打ち上げあり
+                        ※イベント後には
+                        <br />
+                        メリケンパークでの
+                        <br />
+                        花火打ち上げあり
                       </p>
                     </div>
                   </div>
@@ -224,16 +232,19 @@ function MainComponent() {
                   <div className="text-center">
                     <FaMapMarkerAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">会場</h3>
-                    <p className="text-lg font-bold mb-2">
-                      TOTTEI PARK
-                    </p>
+                    <p className="text-lg font-bold mb-2">TOTTEI PARK</p>
                     <p className="text-base font-bold text-gray-300">
                       神戸市中央区新港町2-1
                     </p>
                     <div className="mt-4 bg-white/20 rounded-lg p-3">
                       <p className="text-sm font-bold">
-                        JR・阪神元町駅<br />徒歩15分<br />
-                        地下鉄みなと元町駅<br />徒歩8分
+                        JR・阪神元町駅
+                        <br />
+                        徒歩15分
+                        <br />
+                        地下鉄みなと元町駅
+                        <br />
+                        徒歩8分
                       </p>
                     </div>
                   </div>
@@ -252,7 +263,8 @@ function MainComponent() {
                     </p>
                     <div className="mt-4 bg-[#94cef5]/10 rounded-lg p-3">
                       <p className="text-sm font-bold">
-                        気軽にお立ち寄りください<br />
+                        気軽にお立ち寄りください
+                        <br />
                         途中参加・途中退場OK
                       </p>
                     </div>
@@ -268,7 +280,11 @@ function MainComponent() {
       <section id="artist" className="py-20 bg-white relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-[#FF6B47]">
-          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1200 120"
+            className="w-full h-full"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
               fill="white"
@@ -366,14 +382,22 @@ function MainComponent() {
               <p className="md:text-2xl text-xl font-black text-[#2C5F5D] mb-2">
                 ご支援いただける企業様・団体様はこちらのメールアドレスまでご連絡ください！
               </p>
-              <p className="md:text-2xl text-lg font-bold text-[#777777] mb-10">
+              <p className="md:text-2xl text-lg font-bold text-[#777777] mb-6">
                 ongakusai.kobe@gmail.com
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 justify-items-center">
+              <p className="md:text-lg text-base font-bold text-[#2C5F5D] mb-10">
+                ※ロゴをクリックすると各企業・団体のホームページに移動します
+              </p>
+              <div className="flex flex-wrap gap-6 justify-center items-center">
                 {sponsors.map((sponsor, index) => (
-                  <div
+                  <Link
                     key={index}
-                    className="bg-white rounded-2xl p-2 border-3 border-[#2C5F5D] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group max-w-40 w-full h-32"
+                    href={sponsor.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-2xl p-2 border-3 border-[#2C5F5D] hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32"
+                    title={`${sponsor.name}のホームページを開く`}
+                    aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
                   >
                     <Image
                       src={sponsor.image}
@@ -382,7 +406,7 @@ function MainComponent() {
                       height={80}
                       className="max-w-full h-auto object-contain"
                     />
-                  </div>
+                  </Link>
                 ))}
               </div>
             </div>

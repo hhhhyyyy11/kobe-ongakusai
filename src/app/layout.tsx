@@ -80,7 +80,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "神戸音学祭 2025",
-    description: "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
+    description:
+      "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
     url: "https://kobe-ongakusai.vercel.app",
     siteName: "神戸音学祭 2025",
     locale: "ja_JP",
@@ -97,7 +98,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "神戸音学祭 2025",
-    description: "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
+    description:
+      "2025年8月22日開催！関西圏6大学10団体が出演する学生主催の野外音楽フェス",
     creator: "@K0beOngakusai",
     site: "@K0beOngakusai",
     images: ["https://kobe-ongakusai.vercel.app/images/logo_main.jpg"],

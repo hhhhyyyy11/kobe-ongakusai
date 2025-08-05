@@ -13,22 +13,58 @@ interface PerformanceItem {
 
 const performanceSchedule: PerformanceItem[] = [
   { time: "10:00~10:30", artist: "レキシ", band: "神戸大学軽音楽部 ROCK" },
-  { time: "10:30~11:00", artist: "Blue Encount", band: "神戸市外国語大学学部軽音楽部" },
+  {
+    time: "10:30~11:00",
+    artist: "Blue Encount",
+    band: "神戸市外国語大学学部軽音楽部",
+  },
   { time: "11:00~11:30", artist: "King Gnu", band: "立命館大学 Hansel&Gretel" },
-  { time: "11:30~12:00", artist: "Avril Lavigne", band: "関西学院大学文化総部軽音楽部" },
-  { time: "12:00~12:30", artist: "Baby Metal", band: "同志社大学 Lilac Rainbow" },
+  {
+    time: "11:30~12:00",
+    artist: "Avril Lavigne",
+    band: "関西学院大学文化総部軽音楽部",
+  },
+  {
+    time: "12:00~12:30",
+    artist: "Baby Metal",
+    band: "同志社大学 Lilac Rainbow",
+  },
   { time: "12:30~13:00", artist: "ハヌマーン", band: "神戸大学 MMC" },
-  { time: "13:00~13:30", artist: "さよならポエジー", band: "立命館大学 Hansel&Gretel" },
+  {
+    time: "13:00~13:30",
+    artist: "さよならポエジー",
+    band: "立命館大学 Hansel&Gretel",
+  },
   { time: "13:30~14:00", artist: "東京事変", band: "神戸大学 MMC" },
-  { time: "14:00~14:30", artist: "明日、照らす", band: "神戸大学軽音楽部 ROCK" },
+  {
+    time: "14:00~14:30",
+    artist: "明日、照らす",
+    band: "神戸大学軽音楽部 ROCK",
+  },
   { time: "14:30~15:00", artist: "GLAY", band: "神戸大学 FreeBeat" },
-  { time: "15:00~15:30", artist: "BUMP OF CHICKEN", band: "関西学院大学文化総部軽音楽部" },
+  {
+    time: "15:00~15:30",
+    artist: "BUMP OF CHICKEN",
+    band: "関西学院大学文化総部軽音楽部",
+  },
   { time: "15:30~16:00", artist: "B'z", band: "立命館大学 Jack&Beans" },
-  { time: "16:00~16:30", artist: "The Oral Cigarette", band: "神戸親和大学軽音楽部" },
-  { time: "16:30~17:00", artist: "[Alexandros]", band: "神戸市外国語大学学部軽音楽部" },
+  {
+    time: "16:00~16:30",
+    artist: "The Oral Cigarette",
+    band: "神戸親和大学軽音楽部",
+  },
+  {
+    time: "16:30~17:00",
+    artist: "[Alexandros]",
+    band: "神戸市外国語大学学部軽音楽部",
+  },
   { time: "17:00~17:30", artist: "rega", band: "立命館大学 Jack&Beans" },
   { time: "17:30~18:00", artist: "QOOPiE", band: "神戸大学 SoundS" },
-  { time: "18:00~18:30", artist: "Homecomings", band: "関西学院大学文化総部軽音楽部" },
+  {
+    time: "18:00~18:30",
+    artist: "Homecomings",
+    band: "関西学院大学文化総部軽音楽部",
+  },
   { time: "18:30~19:00", artist: "back number", band: "神戸大学 FreeBeat" },
 ];
 
@@ -83,7 +119,11 @@ function SetListPage() {
       <section className="py-16 bg-white relative">
         {/* Wave Pattern at Top */}
         <div className="absolute top-0 left-0 right-0 h-16 bg-[#94cef5]">
-          <svg viewBox="0 0 1200 120" className="w-full h-full" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1200 120"
+            className="w-full h-full"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
               fill="white"
@@ -94,7 +134,9 @@ function SetListPage() {
         <div className="max-w-4xl mx-auto px-4 pt-16">
           <div className="text-center mb-12">
             <div className="inline-block bg-[#FF6B47] text-white px-8 py-4 rounded-full border-4 border-[#2C5F5D] mb-6">
-              <h2 className="text-3xl md:text-4xl font-black">演奏スケジュール</h2>
+              <h2 className="text-3xl md:text-4xl font-black">
+                演奏スケジュール
+              </h2>
             </div>
             <p className="text-lg font-bold text-[#2C5F5D]">
               各団体30分のパフォーマンス（転換時間込み）
@@ -124,9 +166,7 @@ function SetListPage() {
                   </div>
                   <div className="text-center md:text-right">
                     <div className="bg-[#2C5F5D] text-white px-4 py-2 rounded-full inline-block">
-                      <span className="font-bold text-sm">
-                        {item.band}
-                      </span>
+                      <span className="font-bold text-sm">{item.band}</span>
                     </div>
                   </div>
                 </div>
@@ -173,9 +213,13 @@ function SetListPage() {
                 ご来場の皆様へ
               </h3>
               <div className="space-y-2 text-[#2C5F5D] font-bold">
-                <p>• 演奏順序・時間は当日の状況により変更される場合があります</p>
+                <p>
+                  • 演奏順序・時間は当日の状況により変更される場合があります
+                </p>
                 <p>• 入退場は自由です。お好きな時間にお楽しみください</p>
-                <p>• 雨天決行予定ですが、悪天候の場合は中止となる可能性があります</p>
+                <p>
+                  • 雨天決行予定ですが、悪天候の場合は中止となる可能性があります
+                </p>
               </div>
             </div>
           </div>

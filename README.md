@@ -42,6 +42,50 @@ npm run dev
 
 ブラウザで [http://localhost:3000](http://localhost:3000) を開いてサイトを確認できます。
 
+## 利用可能なスクリプト
+
+```bash
+# 開発サーバーの起動
+npm run dev
+
+# 本番用ビルド
+npm run build
+
+# 本番サーバーの起動
+npm start
+
+# ESLint チェック
+npm run lint
+
+# コードフォーマット
+npm run format
+
+# フォーマットチェック（自動修正なし）
+npm run format:check
+
+# TypeScript 型チェック
+npm run type-check
+```
+
+## CI/CD パイプライン
+
+プロジェクトには GitHub Actions を使用した CI/CD パイプラインが設定されています：
+
+### 自動実行されるチェック
+
+- **フォーマットチェック**: Prettier によるコードフォーマットの確認
+- **型チェック**: TypeScript の型安全性確認
+- **リントチェック**: ESLint によるコード品質チェック
+- **ビルドテスト**: 本番環境でのビルド成功確認
+- **セキュリティ監査**: npm audit による脆弱性チェック
+
+### トリガー条件
+
+- Pull Request の作成・更新時
+- main/develop ブランチへの push 時
+
+これにより、コード品質の維持とデプロイの安全性が確保されています。
+
 ## Vercelでのデプロイ
 
 ### 1. Vercelアカウントの作成
