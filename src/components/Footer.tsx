@@ -17,9 +17,13 @@ export function Footer() {
                 height={48}
                 className="w-12 h-12 rounded-full border-2 border-white"
               />
-              <h3 className="text-2xl font-black text-kobe-light-blue">
-                神戸音学祭
-              </h3>
+              <Image
+                src="/images/title_white.png"
+                alt="神戸音学祭"
+                width={120}
+                height={40}
+                className="object-contain object-center"
+              />
             </div>
             <p className="text-gray-300 font-bold">
               学生が作る、学生のための音楽フェスティバル
