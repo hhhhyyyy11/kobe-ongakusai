@@ -416,7 +416,7 @@ function MainComponent() {
                     href={sponsor.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32"
+                    className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
                     title={`${sponsor.name}のホームページを開く`}
                     aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
                   >
@@ -425,7 +425,7 @@ function MainComponent() {
                       alt={sponsor.name}
                       width={150}
                       height={80}
-                      className="max-w-full h-auto object-contain"
+                      className="max-w-full max-h-full h-auto object-contain"
                     />
                   </Link>
                 ))}
