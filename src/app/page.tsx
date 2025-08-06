@@ -8,6 +8,7 @@ import {
   FaMusic,
   FaHandshake,
   FaTicketAlt,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
@@ -147,7 +148,17 @@ function MainComponent() {
               <div className="flex items-center justify-center space-x-3">
                 <FaMapMarkerAlt className="text-3xl" />
                 <div className="text-center">
-                  <div>TOTTEI PARK</div>
+                  <div>
+                    <Link
+                      href="https://www.totteikobe.jp/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-kobe-dark-teal hover:text-kobe-orange underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
+                    >
+                      TOTTEI PARK
+                      <FaExternalLinkAlt className="text-base" />
+                    </Link>
+                  </div>
                   <div className="text-lg">（神戸市中央区）</div>
                 </div>
               </div>
@@ -232,7 +243,17 @@ function MainComponent() {
                   <div className="text-center">
                     <FaMapMarkerAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">会場</h3>
-                    <p className="text-lg font-bold mb-2">TOTTEI PARK</p>
+                    <p className="text-lg font-bold mb-2">
+                      <Link
+                        href="https://www.totteikobe.jp/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white hover:text-kobe-light-blue underline decoration-2 underline-offset-4 transition-colors duration-300 inline-flex items-center gap-2"
+                      >
+                        TOTTEI PARK
+                        <FaExternalLinkAlt className="text-sm" />
+                      </Link>
+                    </p>
                     <p className="text-base font-bold text-gray-300">
                       神戸市中央区新港町2-1
                     </p>
