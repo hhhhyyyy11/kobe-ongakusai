@@ -15,7 +15,7 @@ import { SNSSection } from "@/components/SNSSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { bands } from "@/constants/bands";
-import { sponsors } from "@/constants/sponsors";
+import { sponsors, cooperations } from "@/constants/sponsors";
 
 function MainComponent() {
   const [activeSection, setActiveSection] = React.useState("top");
@@ -409,26 +409,61 @@ function MainComponent() {
               <p className="md:text-lg text-base font-bold text-kobe-dark-teal mb-10">
                 ※ロゴをクリックすると各企業・団体のホームページに移動します
               </p>
-              <div className="flex flex-wrap gap-6 justify-center items-center">
-                {sponsors.map((sponsor, index) => (
-                  <Link
-                    key={index}
-                    href={sponsor.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
-                    title={`${sponsor.name}のホームページを開く`}
-                    aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
-                  >
-                    <Image
-                      src={sponsor.image}
-                      alt={sponsor.name}
-                      width={150}
-                      height={80}
-                      className="max-w-full max-h-full h-auto object-contain"
-                    />
-                  </Link>
-                ))}
+
+              {/* 協賛企業セクション */}
+              <div className="mb-12">
+                <h3 className="text-2xl font-bold text-kobe-dark-teal mb-6 text-center">
+                  協賛
+                </h3>
+                <div className="flex flex-wrap gap-6 justify-center items-center">
+                  {sponsors.map((sponsor, index) => (
+                    <Link
+                      key={`sponsor-${index}`}
+                      href={sponsor.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
+                      title={`${sponsor.name}のホームページを開く`}
+                      aria-label={`${sponsor.name}のホームページ（新しいタブで開きます）`}
+                    >
+                      <Image
+                        src={sponsor.image}
+                        alt={sponsor.name}
+                        width={150}
+                        height={80}
+                        className="max-w-full max-h-full h-auto object-contain"
+                      />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              {/* 協力企業セクション */}
+              <div>
+                <h3 className="text-2xl font-bold text-kobe-dark-teal mb-6 text-center">
+                  協力
+                </h3>
+                <div className="flex flex-wrap gap-6 justify-center items-center">
+                  {cooperations.map((cooperation, index) => (
+                    <Link
+                      key={`cooperation-${index}`}
+                      href={cooperation.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white rounded-2xl p-2 border-3 border-kobe-dark-teal hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 flex items-center justify-center group w-40 h-32 overflow-hidden"
+                      title={`${cooperation.name}のホームページを開く`}
+                      aria-label={`${cooperation.name}のホームページ（新しいタブで開きます）`}
+                    >
+                      <Image
+                        src={cooperation.image}
+                        alt={cooperation.name}
+                        width={150}
+                        height={80}
+                        className="max-w-full max-h-full h-auto object-contain"
+                      />
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
