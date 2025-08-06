@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { FooterContactLinks } from "./FooterContactLinks";
 
 export function Footer() {
@@ -59,7 +60,15 @@ export function Footer() {
               アクセス
             </h4>
             <p className="text-gray-300 font-bold">
-              TOTTEI PARK
+              <Link
+                href="https://www.totteikobe.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-gray-300 hover:text-white transition-colors duration-300 inline-flex items-center gap-1"
+              >
+                TOTTEI PARK
+                <FaExternalLinkAlt className="text-xs" />
+              </Link>
               <br />
               神戸市中央区新港町2-1
               <br />

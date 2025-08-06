@@ -7,7 +7,7 @@ export const sponsors: Array<{
   {
     name: "株式会社One Bright KOBE",
     image: "/images/sponsors/one-bright-kobe.png",
-    link: "https://www.totteikobe.jp/company",
+    link: "https://www.totteikobe.jp/",
   },
   {
     name: "KINGSX",

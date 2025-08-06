@@ -21,7 +21,7 @@ export const bands: Array<{
   },
   {
     name: "神戸大学軽音サークルFreeBeat",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kobe-univ-free-beat.jpg",
   },
   {
     name: "神戸大学軽音サークルMMC",
