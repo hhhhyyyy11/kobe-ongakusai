@@ -64,7 +64,7 @@ export function Footer() {
                 href="https://www.totteikobe.jp/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors duration-300 inline-flex items-center gap-1"
+                className="underline text-gray-300 hover:text-white transition-colors duration-300 inline-flex items-center gap-1"
               >
                 TOTTEI PARK
                 <FaExternalLinkAlt className="text-xs" />
