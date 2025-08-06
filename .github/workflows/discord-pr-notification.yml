@@ -1,0 +1,21 @@
+name: Discord PR Notification
+
+on:
+  pull_request:
+    types: [opened] # PRが作成された時のみ実行
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Discord notification
+        uses: tsickert/discord-webhook@v5.3.0
+        with:
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          content: "新しいプルリクエストが作成されました！レビューをお願いします 🙏"
+          embed-title: "${{ github.event.pull_request.title }} (#${{ github.event.pull_request.number }})"
+          embed-url: "${{ github.event.pull_request.html_url }}"
+          embed-color: "3447003" # 16進数カラーコード
+          embed-author-name: "${{ github.event.pull_request.user.login }}"
+          embed-author-icon-url: "${{ github.event.pull_request.user.avatar_url }}"
+          embed-author-url: "${{ github.event.pull_request.user.html_url }}"
