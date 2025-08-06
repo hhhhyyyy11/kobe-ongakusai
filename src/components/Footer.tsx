@@ -9,7 +9,10 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <Link
+              href="/"
+              className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity"
+            >
               <Image
                 src="/images/logo_transparent.png"
                 alt="Logo"
@@ -24,7 +27,7 @@ export function Footer() {
                 height={40}
                 className="object-contain object-center"
               />
-            </div>
+            </Link>
             <p className="text-gray-300 font-bold">
               学生が作る、学生のための音楽フェスティバル
             </p>
