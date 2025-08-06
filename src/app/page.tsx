@@ -165,7 +165,7 @@ function MainComponent() {
               出演団体を見る
             </button>
             <Link
-              href="/set-list"
+              href="/timetable"
               className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               タイムテーブルを見る

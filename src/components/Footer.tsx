@@ -35,7 +35,7 @@ export function Footer() {
                 ホーム
               </Link>
               <Link
-                href="/set-list"
+                href="/timetable"
                 className="block text-gray-300 hover:text-white font-bold transition-colors"
               >
                 タイムテーブル
