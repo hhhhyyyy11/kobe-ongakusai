@@ -37,7 +37,7 @@ export const bands: Array<{
   },
   {
     name: "立命館大学Hansel&Gretel",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/ritsumeikan-hansel-gretel.jpg",
   },
   {
     name: "立命館大学Jack&Beans",
