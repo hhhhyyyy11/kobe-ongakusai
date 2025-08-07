@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
+import { FlyerSection } from "@/components/FlyerSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { bands } from "@/constants/bands";
@@ -294,6 +295,11 @@ function MainComponent() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* フライヤー・タイムテーブルセクション */}
+        <div className="max-w-6xl mx-auto px-4 mt-12">
+          <FlyerSection isClient={isClient} />
         </div>
       </section>
 
