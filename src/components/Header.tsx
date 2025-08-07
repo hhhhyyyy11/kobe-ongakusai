@@ -47,7 +47,7 @@ export function Header({
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-kobe-dark-teal">
-      <div className="max-w-6xl mx-auto px-4 py-3">
+      <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -56,24 +56,25 @@ export function Header({
             <Image
               src="/images/logo_transparent.png"
               alt="Kobe Ongakusai Logo"
-              width={64}
-              height={64}
-              className="w-16 h-16 rounded-full"
+              width={144}
+              height={144}
+              className="w-18 h-18 rounded-full"
             />
-            <div
-              className="text-xl font-black text-kobe-dark-teal"
-              style={{ fontFamily: "system-ui, -apple-system, sans-serif" }}
-            >
-              神戸音学祭
-            </div>
+            <Image
+              src="/images/title_dark_teal.png"
+              alt="神戸音学祭"
+              width={384}
+              height={128}
+              className="object-contain object-center bg-white w-48 h-16"
+            />
           </Link>
 
-          <div className="hidden lg:flex space-x-6">
+          <div className="hidden lg:flex space-x-3 xl:space-x-6 ml-6">
             {/* スクロールナビゲーション（メインページのみ） */}
             {showScrollNavigation &&
               [
                 { id: "top", label: "TOP" },
-                { id: "ticket", label: "開催概要・入場について" },
+                { id: "ticket", label: "開催概要" },
                 { id: "artist", label: "出演団体" },
               ].map((item) => (
                 <button
@@ -84,7 +85,6 @@ export function Header({
                       ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
                       : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
                   }`}
-                  style={{ borderWidth: "3px" }}
                 >
                   {item.label}
                 </button>
@@ -99,7 +99,6 @@ export function Header({
                     ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
                     : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
                 }`}
-                style={{ borderWidth: "3px" }}
               >
                 ホーム
               </Link>
@@ -112,7 +111,6 @@ export function Header({
                   ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
                   : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
-              style={{ borderWidth: "3px" }}
             >
               タイムテーブル
             </Link>
@@ -123,9 +121,8 @@ export function Header({
                   ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
                   : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
-              style={{ borderWidth: "3px" }}
             >
-              音楽祭について
+              音学祭とは
             </Link>
           </div>
 
@@ -228,7 +225,7 @@ export function Header({
                 }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                音楽祭について
+                神戸音学祭とは
               </Link>
             </div>
           </div>
