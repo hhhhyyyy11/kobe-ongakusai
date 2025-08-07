@@ -47,7 +47,7 @@ export function Header({
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-kobe-dark-teal">
-      <div className="max-w-7xl mx-auto px-4 py-3">
+      <div className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           <Link
             href="/"
@@ -58,14 +58,14 @@ export function Header({
               alt="Kobe Ongakusai Logo"
               width={144}
               height={144}
-              className="w-18 h-18 rounded-full"
+              className="lg:w-18 lg:h-18 w-14 h-14 rounded-full"
             />
             <Image
               src="/images/title_dark_teal.png"
               alt="神戸音学祭"
               width={384}
               height={128}
-              className="object-contain object-center bg-white w-48 h-16"
+              className="object-contain object-center bg-white lg:w-48 lg:h-16 w-36 h-12"
             />
           </Link>
 
