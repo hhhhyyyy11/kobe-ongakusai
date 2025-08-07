@@ -12,10 +12,14 @@ interface PerformanceItem {
 }
 
 const performanceSchedule: PerformanceItem[] = [
-  { time: "10:00~10:30", artist: "レキシ", band: "神戸大学軽音楽部 ROCK" },
+  {
+    time: "10:00~10:30",
+    artist: "THE ORAL CIGARETTES",
+    band: "神戸親和大学軽音楽部",
+  },
   {
     time: "10:30~11:00",
-    artist: "Blue Encount",
+    artist: "BLUE ENCOUNT",
     band: "神戸市外国語大学学部軽音楽部",
   },
   { time: "11:00~11:30", artist: "King Gnu", band: "立命館大学 Hansel&Gretel" },
@@ -26,7 +30,7 @@ const performanceSchedule: PerformanceItem[] = [
   },
   {
     time: "12:00~12:30",
-    artist: "Baby Metal",
+    artist: "BABY METAL",
     band: "同志社大学 Lilac Rainbow",
   },
   { time: "12:30~13:00", artist: "ハヌマーン", band: "神戸大学 MMC" },
@@ -48,18 +52,14 @@ const performanceSchedule: PerformanceItem[] = [
     band: "関西学院大学文化総部軽音楽部",
   },
   { time: "15:30~16:00", artist: "B'z", band: "立命館大学 Jack&Beans" },
-  {
-    time: "16:00~16:30",
-    artist: "The Oral Cigarette",
-    band: "神戸親和大学軽音楽部",
-  },
+  { time: "16:00~16:30", artist: "レキシ", band: "神戸大学軽音楽部 ROCK" },
   {
     time: "16:30~17:00",
     artist: "[Alexandros]",
     band: "神戸市外国語大学学部軽音楽部",
   },
   { time: "17:00~17:30", artist: "rega", band: "立命館大学 Jack&Beans" },
-  { time: "17:30~18:00", artist: "QOOPiE", band: "神戸大学 SoundS" },
+  { time: "17:30~18:00", artist: "QOOPIE", band: "神戸大学 SoundS" },
   {
     time: "18:00~18:30",
     artist: "Homecomings",
@@ -189,7 +189,7 @@ function SetListPage() {
                   <h3 className="text-2xl font-black">19:00〜 主催挨拶</h3>
                 </div>
                 <p className="text-lg font-bold">
-                  神戸音学祭実行委員会からのメッセージ
+                  神戸音学祭実行委員会からのご挨拶
                 </p>
               </div>
             </div>
@@ -209,7 +209,7 @@ function SetListPage() {
                 <p className="text-lg font-bold">
                   メリケンパークにて花火の打ち上げがあります
                 </p>
-                <p className="text-sm mt-2 opacity-90">
+                <p className="text-sm mt-2">
                   ※花火は神戸音学祭とは別のイベントです
                 </p>
               </div>
