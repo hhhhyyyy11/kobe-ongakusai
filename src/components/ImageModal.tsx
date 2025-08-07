@@ -38,12 +38,12 @@ export const ImageModal: React.FC<ImageModalProps> = ({
 
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "hidden"; // スクロールを無効化
+      document.body.classList.add("modal-open"); // スクロールを無効化
     }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "unset"; // スクロールを復元
+      document.body.classList.remove("modal-open"); // スクロールを復元
     };
   }, [isOpen, onClose]);
 

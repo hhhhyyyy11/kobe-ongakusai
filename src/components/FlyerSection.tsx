@@ -23,13 +23,16 @@ export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
   const shareData = {
     title: SHARE_CONFIG.title,
     text: SHARE_CONFIG.text,
-    url: typeof window !== "undefined" ? window.location.href : "",
+    url: SHARE_CONFIG.baseUrl,
     hashtags: SHARE_CONFIG.hashtags,
   };
 
   // SNSシェア関数
   const shareToTwitter = () => {
-    const tweetText = `${shareData.title}\n${shareData.text}\n${shareData.url}\n#${shareData.hashtags.split(",").join(" #")}`;
+    const tweetText = `${shareData.title}\n${shareData.text}\n${shareData.url}\n#${shareData.hashtags
+      .split(",")
+      .map((h) => h.trim())
+      .join(" #")}`;
     const url = `${SHARE_CONFIG.shareUrls.twitter}?text=${encodeURIComponent(tweetText)}`;
     window.open(url, "_blank", "width=600,height=400");
   };
