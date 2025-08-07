@@ -79,7 +79,7 @@ export function Header({
                 <button
                   key={item.id}
                   onClick={() => handleScrollToSection(item.id)}
-                  className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 cursor-pointer ${
                     activeSection === item.id
                       ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
                       : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
