@@ -34,7 +34,7 @@ export const InstagramEmbed: React.FC = () => {
           height="600"
           style={{ border: "none" }}
           scrolling="no"
-          className="w-full"
+          className="w-full h-[480px] lg:h-[600px]"
           title="Instagram Feed"
         />
       </div>
