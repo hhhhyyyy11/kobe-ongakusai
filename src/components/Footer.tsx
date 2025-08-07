@@ -16,16 +16,16 @@ export function Footer() {
               <Image
                 src="/images/logo_transparent.png"
                 alt="Logo"
-                width={48}
-                height={48}
+                width={96}
+                height={96}
                 className="w-12 h-12 rounded-full border-2 border-white"
               />
               <Image
                 src="/images/title_white.png"
                 alt="神戸音学祭"
-                width={120}
-                height={40}
-                className="object-contain object-center"
+                width={240}
+                height={80}
+                className="object-contain object-center w-30"
               />
             </Link>
             <p className="text-gray-300 font-bold">
