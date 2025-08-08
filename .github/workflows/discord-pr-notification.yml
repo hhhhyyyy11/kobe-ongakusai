@@ -3,6 +3,8 @@ name: Discord PR Notification
 on:
   pull_request:
     types: [opened] # PRが作成された時のみ実行
+    branches-ignore:
+      - main # メインブランチへのPRは通知しない
 
 jobs:
   notify:

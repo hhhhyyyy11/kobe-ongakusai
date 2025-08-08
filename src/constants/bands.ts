@@ -5,7 +5,7 @@ export const bands: Array<{
 }> = [
   {
     name: "関西学院大学文化総部軽音楽部",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kwansei-gakuin.jpg",
   },
   {
     name: "神戸市外国語大学学部軽音学部",
@@ -37,7 +37,7 @@ export const bands: Array<{
   },
   {
     name: "立命館大学Hansel&Gretel",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/ritsumeikan-hansel-gretel.jpg",
   },
   {
     name: "立命館大学Jack&Beans",
