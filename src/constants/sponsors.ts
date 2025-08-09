@@ -30,6 +30,18 @@ const SPONSOR_COMPANIES: SponsorCompany[] = [
     link: "https://livebar-roots66.com/",
     kuchisu: 2,
   },
+  {
+    name: "クラブ月世界",
+    image: "/images/sponsors/club-gessekai.png",
+    link: "https://gessekai.net/",
+    kuchisu: 4,
+  },
+  {
+    name: "頃末商店",
+    image: "/images/sponsors/korosue.PNG",
+    link: "https://www.korosue.com/",
+    kuchisu: 5,
+  },
 ];
 
 const COOPERATION_COMPANIES: Company[] = [
