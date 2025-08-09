@@ -6,11 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { BsLine } from "react-icons/bs";
 import { SHARE_CONFIG } from "@/constants/sns";
 
-interface FlyerSectionProps {
-  isClient: boolean;
-}
-
-export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
+export const FlyerSection: React.FC = () => {
   const [isFlyerModalOpen, setIsFlyerModalOpen] = React.useState(false);
   const [isTimetableModalOpen, setIsTimetableModalOpen] = React.useState(false);
 
@@ -73,8 +69,8 @@ export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
                 </div>
               </div>
 
-              {/* フライヤー用フローティングアクションボタン */}
-              <div className="absolute top-2 right-2 flex gap-2">
+              {/* フライヤー用フローティングアクションボタン（デスクトップのみ表示） */}
+              <div className="absolute top-2 right-2 gap-2 hidden lg:flex">
                 <a
                   href="/images/flyer.png"
                   download="神戸音学祭_フライヤー.png"
@@ -83,6 +79,13 @@ export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
                 >
                   <FaDownload className="text-lg" />
                 </a>
+              </div>
+
+              {/* タブレット以下向けの保存案内 */}
+              <div className="absolute bottom-2 left-2 right-2 lg:hidden">
+                <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-lg text-center">
+                  長押しして画像を保存
+                </div>
               </div>
             </div>
 
@@ -103,8 +106,8 @@ export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
                 </div>
               </div>
 
-              {/* タイムテーブル用フローティングアクションボタン */}
-              <div className="absolute top-2 right-2 flex gap-2">
+              {/* タイムテーブル用フローティングアクションボタン（デスクトップのみ表示） */}
+              <div className="absolute top-2 right-2 gap-2 hidden lg:flex">
                 <a
                   href="/images/timetable.jpg"
                   download="神戸音学祭_タイムテーブル.jpg"
@@ -113,6 +116,13 @@ export const FlyerSection: React.FC<FlyerSectionProps> = ({ isClient }) => {
                 >
                   <FaDownload className="text-lg" />
                 </a>
+              </div>
+
+              {/* タブレット以下向けの保存案内 */}
+              <div className="absolute bottom-2 left-2 right-2 lg:hidden">
+                <div className="bg-black/70 text-white text-xs px-2 py-1 rounded-lg text-center">
+                  長押しして画像を保存
+                </div>
               </div>
             </div>
           </div>

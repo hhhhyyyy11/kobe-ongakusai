@@ -299,7 +299,7 @@ function MainComponent() {
 
         {/* フライヤー・タイムテーブルセクション */}
         <div className="max-w-6xl mx-auto px-4 mt-12">
-          <FlyerSection isClient={isClient} />
+          <FlyerSection />
         </div>
       </section>
 
