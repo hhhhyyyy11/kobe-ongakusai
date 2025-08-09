@@ -30,7 +30,7 @@ export const TwitterEmbed: React.FC<TwitterEmbedProps> = ({ isClient }) => {
 
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
         {isClient ? (
-          <div className="h-[400px] flex flex-col">
+          <div className="h-[250px] lg:h-[660px] flex flex-col">
             <div className="p-3 border-b border-gray-200">
               <div className="flex items-center gap-2">
                 <SiX className="text-lg text-black" />
@@ -61,7 +61,7 @@ export const TwitterEmbed: React.FC<TwitterEmbedProps> = ({ isClient }) => {
             </div>
           </div>
         ) : (
-          <div className="flex items-center justify-center h-[400px]">
+          <div className="flex items-center justify-center h-[250px] md:h-[300px] lg:h-[400px]">
             <div className="text-gray-600 font-bold text-sm">
               Loading X feed...
             </div>
