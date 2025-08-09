@@ -260,13 +260,9 @@ function MainComponent() {
                     </p>
                     <div className="mt-4 bg-white/20 rounded-lg p-3">
                       <p className="text-sm font-bold">
-                        JR・阪神元町駅
+                        各線三宮駅
                         <br />
-                        徒歩15分
-                        <br />
-                        地下鉄みなと元町駅
-                        <br />
-                        徒歩8分
+                        徒歩約17分
                       </p>
                     </div>
                   </div>
