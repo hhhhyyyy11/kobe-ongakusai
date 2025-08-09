@@ -10,18 +10,25 @@ export function Footer() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
+            <Link
+              href="/"
+              className="flex items-center space-x-3 mb-4 hover:opacity-80 transition-opacity"
+            >
               <Image
                 src="/images/logo_transparent.png"
                 alt="Logo"
-                width={48}
-                height={48}
+                width={96}
+                height={96}
                 className="w-12 h-12 rounded-full border-2 border-white"
               />
-              <h3 className="text-2xl font-black text-kobe-light-blue">
-                神戸音学祭
-              </h3>
-            </div>
+              <Image
+                src="/images/title_white.png"
+                alt="神戸音学祭"
+                width={240}
+                height={80}
+                className="object-contain object-center w-30"
+              />
+            </Link>
             <p className="text-gray-300 font-bold">
               学生が作る、学生のための音楽フェスティバル
             </p>
