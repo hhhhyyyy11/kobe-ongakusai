@@ -65,7 +65,7 @@ export function Header({
               alt="神戸音学祭"
               width={384}
               height={128}
-              className="object-contain object-center bg-white lg:w-48 lg:h-16 w-36 h-12"
+              className="object-contain object-center lg:w-48 lg:h-16 w-36 h-12"
             />
           </Link>
 
