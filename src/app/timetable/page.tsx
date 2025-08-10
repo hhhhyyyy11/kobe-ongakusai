@@ -1,9 +1,11 @@
 "use client";
 import React from "react";
-import { FaMusic, FaClock, FaStar } from "react-icons/fa";
+import { FaMusic, FaClock, FaStar, FaYoutube, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { bands } from "@/constants/bands";
 
 interface PerformanceItem {
   time: string;
@@ -31,7 +33,7 @@ const performanceSchedule: PerformanceItem[] = [
   {
     time: "12:00~12:30",
     artist: "BABY METAL",
-    band: "同志社大学 Lilac Rainbow",
+    band: "同志社大学 Lilac Rainbows",
   },
   { time: "12:30~13:00", artist: "ハヌマーン", band: "神戸大学 MMC" },
   {
@@ -69,6 +71,16 @@ const performanceSchedule: PerformanceItem[] = [
 ];
 
 function SetListPage() {
+  // バンド名からSNS情報を取得するヘルパー関数
+  const getBandSNSInfo = (bandName: string) => {
+    const band = bands.find((b) => b.name === bandName);
+    return band ? { 
+      youtube: band.youtube, 
+      instagram: band.instagram,
+      xTwitter: band.xTwitter 
+    } : null;
+  };
+
   return (
     <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
@@ -145,33 +157,74 @@ function SetListPage() {
 
           {/* Schedule Grid */}
           <div className="space-y-4 mb-12">
-            {performanceSchedule.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border-4 border-kobe-dark-teal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
-              >
-                <div className="grid md:grid-cols-3 gap-4 items-center">
-                  <div className="text-center md:text-left">
-                    <div className="bg-kobe-orange text-white px-4 py-2 rounded-full inline-block">
-                      <span className="font-black text-lg flex items-center gap-2">
-                        <FaClock />
-                        {item.time}
-                      </span>
+            {performanceSchedule.map((item, index) => {
+              const snsInfo = getBandSNSInfo(item.band);
+              return (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl border-4 border-kobe-dark-teal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 p-6"
+                >
+                  <div className="grid md:grid-cols-3 gap-4 items-center">
+                    <div className="text-center md:text-left">
+                      <div className="bg-kobe-orange text-white px-4 py-2 rounded-full inline-block">
+                        <span className="font-black text-lg flex items-center gap-2">
+                          <FaClock />
+                          {item.time}
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-xl md:text-2xl font-black text-kobe-dark-teal mb-2">
-                      {item.artist}
-                    </h3>
-                  </div>
-                  <div className="text-center md:text-right">
-                    <div className="bg-kobe-dark-teal text-white px-4 py-2 rounded-full inline-block">
-                      <span className="font-bold text-sm">{item.band}</span>
+                    <div className="text-center">
+                      <h3 className="text-xl md:text-2xl font-black text-kobe-dark-teal mb-2">
+                        {item.artist}
+                      </h3>
+                    </div>
+                    <div className="text-center md:text-right">
+                      <div className="bg-kobe-dark-teal text-white px-4 py-2 rounded-full inline-block mb-3">
+                        <span className="font-bold text-sm">{item.band}</span>
+                      </div>
+                      {/* SNSリンク */}
+                      {snsInfo && (snsInfo.youtube || snsInfo.instagram || snsInfo.xTwitter) && (
+                        <div className="flex justify-center md:justify-end space-x-2 mt-2">
+                          {snsInfo.youtube && (
+                            <a
+                              href={snsInfo.youtube}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                              title="YouTube"
+                            >
+                              <FaYoutube className="text-sm" />
+                            </a>
+                          )}
+                          {snsInfo.instagram && (
+                            <a
+                              href={snsInfo.instagram}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white p-2 rounded-full hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                              title="Instagram"
+                            >
+                              <FaInstagram className="text-sm" />
+                            </a>
+                          )}
+                          {snsInfo.xTwitter && (
+                            <a
+                              href={snsInfo.xTwitter}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="bg-black text-white p-2 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                              title="X (旧Twitter)"
+                            >
+                              <FaXTwitter className="text-sm" />
+                            </a>
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Special Events */}

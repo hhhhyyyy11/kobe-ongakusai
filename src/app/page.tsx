@@ -9,7 +9,10 @@ import {
   FaHandshake,
   FaTicketAlt,
   FaExternalLinkAlt,
+  FaYoutube,
+  FaInstagram,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
 import { FlyerSection } from "@/components/FlyerSection";
@@ -358,9 +361,46 @@ function MainComponent() {
                       </div>
                     )}
                   </div>
-                  <h3 className="text-lg font-black text-kobe-dark-teal leading-tight">
+                  <h3 className="text-lg font-black text-kobe-dark-teal leading-tight mb-4">
                     {band.name}
                   </h3>
+
+                  {/* SNSリンク */}
+                  <div className="flex justify-center space-x-4">
+                    {band.youtube && (
+                      <a
+                        href={band.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                        title="YouTube"
+                      >
+                        <FaYoutube className="text-lg" />
+                      </a>
+                    )}
+                    {band.instagram && (
+                      <a
+                        href={band.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white p-3 rounded-full hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                        title="Instagram"
+                      >
+                        <FaInstagram className="text-lg" />
+                      </a>
+                    )}
+                    {band.xTwitter && (
+                      <a
+                        href={band.xTwitter}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                        title="X (旧Twitter)"
+                      >
+                        <FaXTwitter className="text-lg" />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
