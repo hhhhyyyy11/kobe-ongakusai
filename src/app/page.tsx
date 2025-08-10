@@ -222,29 +222,29 @@ function MainComponent() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-6">
                 {/* 日時情報 */}
-                <div className="bg-kobe-orange text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="text-center">
+                <div className="bg-kobe-orange text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
+                  <div className="text-center flex-1">
                     <FaCalendarAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">日時</h3>
                     <p className="text-lg font-bold mb-2">
                       2025年8月22日（金）
                     </p>
                     <p className="text-base font-bold">10:00〜19:00</p>
-                    <div className="mt-4 bg-white/20 rounded-lg p-3">
-                      <p className="text-sm font-bold">
-                        ※イベント後には
-                        <br />
-                        メリケンパークでの
-                        <br />
-                        花火打ち上げあり
-                      </p>
-                    </div>
+                  </div>
+                  <div className="bg-white/20 rounded-lg p-3 mt-4">
+                    <p className="text-sm font-bold text-center">
+                      ※イベント後には
+                      <br />
+                      メリケンパークでの
+                      <br />
+                      花火打ち上げあり
+                    </p>
                   </div>
                 </div>
 
                 {/* 会場情報 */}
-                <div className="bg-kobe-dark-teal text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="text-center">
+                <div className="bg-kobe-dark-teal text-white p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
+                  <div className="text-center flex-1">
                     <FaMapMarkerAlt className="text-4xl mb-4 mx-auto" />
                     <h3 className="text-xl font-black mb-4">会場</h3>
                     <p className="text-lg font-bold mb-2">
@@ -261,23 +261,19 @@ function MainComponent() {
                     <p className="text-base font-bold text-gray-300">
                       神戸市中央区新港町2-1
                     </p>
-                    <div className="mt-4 bg-white/20 rounded-lg p-3">
-                      <p className="text-sm font-bold">
-                        JR・阪神元町駅
-                        <br />
-                        徒歩15分
-                        <br />
-                        地下鉄みなと元町駅
-                        <br />
-                        徒歩8分
-                      </p>
-                    </div>
+                  </div>
+                  <div className="bg-white/20 rounded-lg p-3 mt-4">
+                    <p className="text-sm font-bold text-center">
+                      各線三宮駅から
+                      <br />
+                      徒歩約17分
+                    </p>
                   </div>
                 </div>
 
                 {/* 入場情報 */}
-                <div className="bg-white border-4 border-kobe-light-blue text-kobe-dark-teal p-6 rounded-2xl transform hover:scale-105 transition-all duration-300">
-                  <div className="text-center">
+                <div className="bg-white border-4 border-kobe-light-blue text-kobe-dark-teal p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 flex flex-col h-full">
+                  <div className="text-center flex-1">
                     <FaTicketAlt className="text-4xl mb-4 mx-auto text-kobe-dark-teal" />
                     <h3 className="text-xl font-black mb-4">入場について</h3>
                     <p className="text-lg font-black mb-2">
@@ -286,13 +282,13 @@ function MainComponent() {
                     <p className="text-3xl font-black text-kobe-orange mb-2">
                       無料
                     </p>
-                    <div className="mt-4 bg-kobe-light-blue/20 rounded-lg p-3">
-                      <p className="text-sm font-bold">
-                        気軽にお立ち寄りください
-                        <br />
-                        途中参加・途中退場OK
-                      </p>
-                    </div>
+                  </div>
+                  <div className="bg-kobe-light-blue/20 rounded-lg p-3 mt-4">
+                    <p className="text-sm font-bold text-center">
+                      気軽にお立ち寄りください
+                      <br />
+                      途中参加・途中退場OK
+                    </p>
                   </div>
                 </div>
               </div>
@@ -302,7 +298,7 @@ function MainComponent() {
 
         {/* フライヤー・タイムテーブルセクション */}
         <div className="max-w-6xl mx-auto px-4 mt-12">
-          <FlyerSection isClient={isClient} />
+          <FlyerSection />
         </div>
       </section>
 
