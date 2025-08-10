@@ -72,7 +72,7 @@ export const FlyerSection: React.FC = () => {
               {/* フライヤー用フローティングアクションボタン（デスクトップのみ表示） */}
               <div className="absolute top-2 right-2 gap-2 hidden lg:flex">
                 <a
-                  href="/images/flyer.png"
+                  href="/images/flyer.jpg"
                   download="神戸音学祭_フライヤー.png"
                   className="bg-kobe-dark-teal text-white p-3 rounded-full hover:bg-kobe-orange transition-all duration-300 transform hover:scale-110 shadow-lg"
                   title="フライヤーをダウンロード"
@@ -164,7 +164,7 @@ export const FlyerSection: React.FC = () => {
       <ImageModal
         isOpen={isFlyerModalOpen}
         onClose={closeFlyerModal}
-        imageSrc="/images/flyer.png"
+        imageSrc="/images/flyer.jpg"
         imageAlt="神戸音学祭フライヤー"
         downloadFileName="神戸音学祭_フライヤー.png"
         width={800}
