@@ -78,6 +78,18 @@ npm run type-check
 - **リントチェック**: ESLint によるコード品質チェック
 - **ビルドテスト**: 本番環境でのビルド成功確認
 - **セキュリティ監査**: npm audit による脆弱性チェック
+- **GitHub Copilot レビュー**: 日本語でのコードレビュー自動実行
+
+### GitHub Copilot 日本語レビュー設定
+
+このプロジェクトでは、GitHub Copilot による PR レビューが **日本語** で実行されるように設定されています：
+
+- `.github/copilot-instructions.md`: Copilot への指示ファイル
+- `.github/COPILOT_REVIEW_INSTRUCTIONS.md`: 詳細なレビュー設定
+- `.github/pull_request_template.md`: 日本語レビュー要求テンプレート
+- `.github/workflows/copilot-review-japanese.yml`: 自動レビュー要求ワークフロー
+
+PR 作成時に自動的に GitHub Copilot に日本語でのレビューが要求されます。
 
 ### トリガー条件
 
