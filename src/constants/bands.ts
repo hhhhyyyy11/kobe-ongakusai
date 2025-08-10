@@ -9,15 +9,15 @@ export const bands: Array<{
   },
   {
     name: "神戸市外国語大学学部軽音学部",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kobe-sgf.jpg",
   },
   {
     name: "神戸親和大学軽音学部",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kobe-shinwa.jpg",
   },
   {
     name: "神戸大学軽音楽部ROCK",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/kobe-univ-rock.jpg",
   },
   {
     name: "神戸大学軽音サークルFreeBeat",
@@ -41,7 +41,7 @@ export const bands: Array<{
   },
   {
     name: "立命館大学Jack&Beans",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/ritsumeikan-jack-beans.jpg",
   },
 ];
 
