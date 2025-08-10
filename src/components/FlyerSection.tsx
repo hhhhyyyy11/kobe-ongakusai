@@ -60,7 +60,7 @@ export const FlyerSection: React.FC = () => {
               >
                 <div className="aspect-[3/4] w-64 md:w-72 bg-white rounded-xl flex items-center justify-center overflow-hidden">
                   <Image
-                    src="/images/flyer.png"
+                    src="/images/flyer.jpg"
                     alt="神戸音学祭フライヤー"
                     width={400}
                     height={566}
