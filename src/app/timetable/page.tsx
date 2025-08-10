@@ -1,6 +1,12 @@
 "use client";
 import React from "react";
-import { FaMusic, FaClock, FaStar, FaYoutube, FaInstagram } from "react-icons/fa";
+import {
+  FaMusic,
+  FaClock,
+  FaStar,
+  FaYoutube,
+  FaInstagram,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
@@ -74,11 +80,13 @@ function SetListPage() {
   // バンド名からSNS情報を取得するヘルパー関数
   const getBandSNSInfo = (bandName: string) => {
     const band = bands.find((b) => b.name === bandName);
-    return band ? { 
-      youtube: band.youtube, 
-      instagram: band.instagram,
-      xTwitter: band.xTwitter 
-    } : null;
+    return band
+      ? {
+          youtube: band.youtube,
+          instagram: band.instagram,
+          xTwitter: band.xTwitter,
+        }
+      : null;
   };
 
   return (
@@ -183,43 +191,46 @@ function SetListPage() {
                         <span className="font-bold text-sm">{item.band}</span>
                       </div>
                       {/* SNSリンク */}
-                      {snsInfo && (snsInfo.youtube || snsInfo.instagram || snsInfo.xTwitter) && (
-                        <div className="flex justify-center md:justify-end space-x-2 mt-2">
-                          {snsInfo.youtube && (
-                            <a
-                              href={snsInfo.youtube}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                              title="YouTube"
-                            >
-                              <FaYoutube className="text-sm" />
-                            </a>
-                          )}
-                          {snsInfo.instagram && (
-                            <a
-                              href={snsInfo.instagram}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white p-2 rounded-full hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                              title="Instagram"
-                            >
-                              <FaInstagram className="text-sm" />
-                            </a>
-                          )}
-                          {snsInfo.xTwitter && (
-                            <a
-                              href={snsInfo.xTwitter}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="bg-black text-white p-2 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                              title="X (旧Twitter)"
-                            >
-                              <FaXTwitter className="text-sm" />
-                            </a>
-                          )}
-                        </div>
-                      )}
+                      {snsInfo &&
+                        (snsInfo.youtube ||
+                          snsInfo.instagram ||
+                          snsInfo.xTwitter) && (
+                          <div className="flex justify-center md:justify-end space-x-2 mt-2">
+                            {snsInfo.youtube && (
+                              <a
+                                href={snsInfo.youtube}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-red-600 text-white p-2 rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                title="YouTube"
+                              >
+                                <FaYoutube className="text-sm" />
+                              </a>
+                            )}
+                            {snsInfo.instagram && (
+                              <a
+                                href={snsInfo.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white p-2 rounded-full hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                title="Instagram"
+                              >
+                                <FaInstagram className="text-sm" />
+                              </a>
+                            )}
+                            {snsInfo.xTwitter && (
+                              <a
+                                href={snsInfo.xTwitter}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="bg-black text-white p-2 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
+                                title="X (旧Twitter)"
+                              >
+                                <FaXTwitter className="text-sm" />
+                              </a>
+                            )}
+                          </div>
+                        )}
                     </div>
                   </div>
                 </div>
