@@ -30,6 +30,60 @@ const SPONSOR_COMPANIES: SponsorCompany[] = [
     link: "https://livebar-roots66.com/",
     kuchisu: 2,
   },
+  {
+    name: "クラブ月世界",
+    image: "/images/sponsors/club-gessekai.png",
+    link: "https://gessekai.net/",
+    kuchisu: 4,
+  },
+  {
+    name: "頃末商店",
+    image: "/images/sponsors/korosue.PNG",
+    link: "https://www.korosue.com/",
+    kuchisu: 5,
+  },
+  {
+    name: "神戸 Harbor Studio",
+    image: "/images/sponsors/harbor-studio.png",
+    link: "https://harbor-studio.net/",
+    kuchisu: 4,
+  },
+  {
+    name: "株式会社パインフィールズ",
+    image: "/images/sponsors/pine-fields.png",
+    link: "https://pinefields.jp/",
+    kuchisu: 10,
+  },
+  {
+    name: "エンズリンク株式会社",
+    image: "/images/sponsors/ends-link.png",
+    link: "https://engslink.co.jp/",
+    kuchisu: 5,
+  },
+  {
+    name: "Last Star", //協賛企業はキーリンクルだが、LastStarとして宣伝して欲しいとのこと
+    image: "/images/sponsors/last-star.jpg",
+    link: "https://www.laststarmusic.com/",
+    kuchisu: 5,
+  },
+  {
+    name: "太陽と虎",
+    image: "/images/sponsors/sun-tiger.png",
+    link: "https://taitora.com/",
+    kuchisu: 10,
+  },
+  {
+    name: "株式会社日本ツーリスト",
+    image: "/images/sponsors/japan-tourist.webp",
+    link: "https://www.nihontourist.co.jp/",
+    kuchisu: 5,
+  },
+  {
+    name: "麺やダイニング なおや",
+    image: "/images/sponsors/naoya.webp",
+    link: "https://www.instagram.com/menyadining_naoya/",
+    kuchisu: 5,
+  },
 ];
 
 const COOPERATION_COMPANIES: Company[] = [
@@ -42,6 +96,11 @@ const COOPERATION_COMPANIES: Company[] = [
     name: "ベースオントップ神戸",
     image: "/images/sponsors/bass-on-top.png",
     link: "https://www.bassontop.co.jp/studio_sannomiya/",
+  },
+  {
+    name: "株式会社クリフト",
+    image: "/images/sponsors/crift.webp",
+    link: "https://crift.co.jp/",
   },
 ];
 
