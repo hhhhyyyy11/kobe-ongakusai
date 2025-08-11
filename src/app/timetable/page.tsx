@@ -72,7 +72,7 @@ function SetListPage() {
   return (
     <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
-      <Header showScrollNavigation={false} />
+      <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
@@ -110,6 +110,29 @@ function SetListPage() {
                 <FaClock />
                 <span>10:00開演 - 19:00終演</span>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* パフォーマンス内容説明 */}
+      <section className="py-16 bg-kobe-light-blue">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8">
+            <div className="text-center">
+              <div className="text-6xl mb-4 flex justify-center">
+                <FaMusic className="text-kobe-orange" />
+              </div>
+              <h2 className="text-2xl font-black text-kobe-dark-teal mb-4">
+                多彩なジャンルのコピーバンドライブ
+              </h2>
+              <p className="text-lg font-bold text-kobe-dark-teal leading-relaxed">
+                各団体によるアーティストのコピー曲披露
+                <br />
+                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
+                <br />
+                ジャンルを問わず多様な演奏をお楽しみいただけます
+              </p>
             </div>
           </div>
         </div>
