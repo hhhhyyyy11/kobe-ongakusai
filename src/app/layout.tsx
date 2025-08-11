@@ -187,7 +187,7 @@ export default function RootLayout({
       },
       {
         "@type": "Organization",
-        name: "同志社大学Lilac Rainbow",
+        name: "同志社大学Lilac Rainbows",
       },
       {
         "@type": "Organization",

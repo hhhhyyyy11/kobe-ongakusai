@@ -31,7 +31,7 @@ const performanceSchedule: PerformanceItem[] = [
   {
     time: "12:00~12:30",
     artist: "BABY METAL",
-    band: "同志社大学 Lilac Rainbow",
+    band: "同志社大学 Lilac Rainbows",
   },
   { time: "12:30~13:00", artist: "ハヌマーン", band: "神戸大学 MMC" },
   {
