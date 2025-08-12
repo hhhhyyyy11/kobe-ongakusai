@@ -81,6 +81,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "15:00~15:30",
     artist: "BUMP OF CHICKEN",
     band: "関西学院大学文化総部軽音楽部",
+    introductionReel:
+      "https://www.instagram.com/reel/DNQPXhRz_pf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "15:30~16:00",
