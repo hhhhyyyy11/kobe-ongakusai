@@ -123,9 +123,29 @@ const performanceSchedule: PerformanceItem[] = [
   },
 ];
 
+// 安全なInstagram URLかどうかを検証する関数
+const isValidInstagramUrl = (url: string): boolean => {
+  try {
+    const urlObj = new URL(url);
+    // Instagram ドメインのみ許可
+    const allowedDomains = ["instagram.com", "www.instagram.com"];
+    return (
+      allowedDomains.includes(urlObj.hostname) &&
+      (urlObj.protocol === "https:" || urlObj.protocol === "http:")
+    );
+  } catch {
+    return false;
+  }
+};
+
 // 紹介リールを開く関数
 const openIntroductionReel = (introductionReel: string) => {
-  window.open(introductionReel, "_blank");
+  if (isValidInstagramUrl(introductionReel)) {
+    window.open(introductionReel, "_blank", "noopener,noreferrer");
+  } else {
+    console.warn("Invalid Instagram URL:", introductionReel);
+    // 必要に応じてユーザーにエラーメッセージを表示
+  }
 };
 
 function SetListPage() {
