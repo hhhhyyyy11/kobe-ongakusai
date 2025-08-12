@@ -5,17 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBars } from "react-icons/fa";
 
-interface CommonHeaderProps {
-  activeSection?: string;
-  scrollToSection?: (sectionId: string) => void;
-  showScrollNavigation?: boolean;
-}
-
-export function Header({
-  activeSection = "",
-  scrollToSection,
-  showScrollNavigation = false,
-}: CommonHeaderProps) {
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
@@ -37,13 +27,6 @@ export function Header({
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
-
-  const handleScrollToSection = (sectionId: string) => {
-    if (scrollToSection) {
-      scrollToSection(sectionId);
-    }
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-lg border-b-4 border-kobe-dark-teal">
@@ -70,40 +53,27 @@ export function Header({
           </Link>
 
           <div className="hidden lg:flex space-x-3 xl:space-x-6 ml-6">
-            {/* スクロールナビゲーション（メインページのみ） */}
-            {showScrollNavigation &&
-              [
-                { id: "top", label: "TOP" },
-                { id: "ticket", label: "開催概要" },
-                { id: "artist", label: "出演団体" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => handleScrollToSection(item.id)}
-                  className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 cursor-pointer ${
-                    activeSection === item.id
-                      ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                      : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-
-            {/* 外部ページリンク */}
-            {!showScrollNavigation && (
-              <Link
-                href="/"
-                className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
-                  isActive("/")
-                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
-                    : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
-                }`}
-              >
-                ホーム
-              </Link>
-            )}
-
+            {/* 全てページ遷移のナビゲーション */}
+            <Link
+              href="/"
+              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+                isActive("/")
+                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+              }`}
+            >
+              TOP
+            </Link>
+            <Link
+              href="/artists"
+              className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
+                isActive("/artists")
+                  ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg transform scale-105"
+                  : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
+              }`}
+            >
+              出演団体
+            </Link>
             <Link
               href="/timetable"
               className={`px-6 py-3 rounded-full font-black text-lg border-3 transition-all duration-300 ${
@@ -122,7 +92,7 @@ export function Header({
                   : "text-kobe-dark-teal hover:bg-kobe-orange hover:text-white border-kobe-dark-teal hover:shadow-lg"
               }`}
             >
-              音学祭とは
+              神戸音学祭とは
             </Link>
           </div>
 
@@ -157,46 +127,31 @@ export function Header({
                   : "-translate-y-4 opacity-0"
               }`}
             >
-              {/* スクロールナビゲーション（メインページのみ） */}
-              {showScrollNavigation &&
-                [
-                  { id: "top", label: "TOP" },
-                  { id: "ticket", label: "開催概要・入場について" },
-                  { id: "artist", label: "出演団体" },
-                ].map((item, index) => (
-                  <button
-                    key={item.id}
-                    onClick={() => handleScrollToSection(item.id)}
-                    className={`w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
-                      activeSection === item.id
-                        ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                        : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
-                    }`}
-                    style={{
-                      borderWidth: "3px",
-                      animationDelay: `${index * 100}ms`,
-                    }}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-
-              {/* 外部ページリンク（モバイル） */}
-              {!showScrollNavigation && (
-                <Link
-                  href="/"
-                  className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
-                    isActive("/")
-                      ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
-                      : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
-                  }`}
-                  style={{ borderWidth: "3px" }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  ホーム
-                </Link>
-              )}
-
+              {/* 全てページ遷移のナビゲーション（モバイル） */}
+              <Link
+                href="/"
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                  isActive("/")
+                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                }`}
+                style={{ borderWidth: "3px" }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                TOP
+              </Link>
+              <Link
+                href="/artists"
+                className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
+                  isActive("/artists")
+                    ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
+                    : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
+                }`}
+                style={{ borderWidth: "3px", animationDelay: "100ms" }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                出演団体
+              </Link>
               <Link
                 href="/timetable"
                 className={`block w-full px-4 py-3 rounded-2xl font-black text-lg border-3 transition-all duration-300 text-center transform hover:scale-105 ${
@@ -204,10 +159,7 @@ export function Header({
                     ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
                     : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                 }`}
-                style={{
-                  borderWidth: "3px",
-                  animationDelay: `${showScrollNavigation ? 300 : 100}ms`,
-                }}
+                style={{ borderWidth: "3px", animationDelay: "200ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 タイムテーブル
@@ -219,10 +171,7 @@ export function Header({
                     ? "bg-kobe-orange text-white border-kobe-dark-teal shadow-lg"
                     : "text-kobe-dark-teal bg-white/50 border-kobe-dark-teal hover:bg-kobe-orange hover:text-white"
                 }`}
-                style={{
-                  borderWidth: "3px",
-                  animationDelay: `${showScrollNavigation ? 400 : 200}ms`,
-                }}
+                style={{ borderWidth: "3px", animationDelay: "300ms" }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 神戸音学祭とは

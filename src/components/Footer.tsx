@@ -43,6 +43,12 @@ export function Footer() {
                 ホーム
               </Link>
               <Link
+                href="/artists"
+                className="block text-gray-300 hover:text-white font-bold transition-colors"
+              >
+                出演団体
+              </Link>
+              <Link
                 href="/timetable"
                 className="block text-gray-300 hover:text-white font-bold transition-colors"
               >
