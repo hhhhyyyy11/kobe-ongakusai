@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaMusic, FaClock, FaStar, FaInstagram } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
@@ -129,6 +129,23 @@ const openIntroductionReel = (introductionReel: string) => {
 };
 
 function SetListPage() {
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024);
+    };
+
+    // 初回チェック
+    checkScreenSize();
+
+    // リサイズイベントリスナーを追加
+    window.addEventListener("resize", checkScreenSize);
+
+    // クリーンアップ
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
@@ -252,7 +269,7 @@ function SetListPage() {
                   }`}
                   onClick={() => {
                     // PC画面サイズでクリックした場合のみリールを開く
-                    if (hasIntroductionReel && window.innerWidth >= 1024) {
+                    if (hasIntroductionReel && isLargeScreen) {
                       openIntroductionReel(item.introductionReel!);
                     }
                   }}
