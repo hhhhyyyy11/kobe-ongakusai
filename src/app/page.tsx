@@ -5,83 +5,28 @@ import Link from "next/link";
 import {
   FaCalendarAlt,
   FaMapMarkerAlt,
-  FaMusic,
   FaHandshake,
   FaTicketAlt,
   FaExternalLinkAlt,
-  FaYoutube,
-  FaInstagram,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 import { BsMusicNote } from "react-icons/bs";
 import { SNSSection } from "@/components/SNSSection";
 import { FlyerSection } from "@/components/FlyerSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { bands } from "@/constants/bands";
 import { sponsors, cooperations } from "@/constants/sponsors";
 
 function MainComponent() {
-  const [activeSection, setActiveSection] = React.useState("top");
   const [isClient, setIsClient] = React.useState(false);
 
   React.useEffect(() => {
     setIsClient(true);
-
-    // スクロール時のアクティブセクション自動検出
-    const handleScroll = () => {
-      const sections = ["top", "ticket", "artist"];
-      const scrollPosition = window.scrollY + 150; // ヘッダーの高さを考慮
-
-      for (const sectionId of sections) {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(sectionId);
-            break;
-          }
-        }
-      }
-    };
-
-    // モバイルメニュー外部クリック時の閉じる処理
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
-      if (!target.closest("nav")) {
-        // モバイルメニューの処理は CommonHeader で管理
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    document.addEventListener("click", handleClickOutside);
-
-    // 初期状態でアクティブセクションを設定
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      document.removeEventListener("click", handleClickOutside);
-    };
   }, []);
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-kobe-light-blue font-sans">
       {/* Navigation Bar */}
-      <Header
-        activeSection={activeSection}
-        scrollToSection={scrollToSection}
-        showScrollNavigation={true}
-      />
+      <Header />
 
       {/* Main Visual Section */}
       <section
@@ -173,12 +118,12 @@ function MainComponent() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => scrollToSection("artist")}
+            <Link
+              href="/artists"
               className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl"
             >
               出演団体を見る
-            </button>
+            </Link>
             <Link
               href="/timetable"
               className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl"
@@ -299,127 +244,6 @@ function MainComponent() {
         {/* フライヤー・タイムテーブルセクション */}
         <div className="max-w-6xl mx-auto px-4 mt-12">
           <FlyerSection />
-        </div>
-      </section>
-
-      {/* Artist Section */}
-      <section id="artist" className="py-20 bg-white relative">
-        {/* Wave Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-16 bg-kobe-orange">
-          <svg
-            viewBox="0 0 1200 120"
-            className="w-full h-full"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 C200,0 400,120 600,60 C800,0 1000,120 1200,60 L1200,120 L0,120 Z"
-              fill="white"
-            />
-          </svg>
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 pt-16">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-kobe-orange text-white px-8 py-4 rounded-full border-4 border-kobe-dark-teal mb-6">
-              <h2 className="text-4xl md:text-5xl font-black">出演団体</h2>
-            </div>
-            <p className="text-xl font-bold text-kobe-dark-teal mb-8">
-              関西圏6大学10団体から出演
-            </p>
-          </div>
-
-          {/* 出演団体一覧 */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {bands.map((band, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl border-4 border-kobe-dark-teal shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6"
-              >
-                <div className="text-center">
-                  {/* 団体写真 */}
-                  <div className="mb-4 h-48 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
-                    {band.image ? (
-                      <Image
-                        src={band.image}
-                        alt={band.name}
-                        width={200}
-                        height={150}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <div className="flex flex-col items-center justify-center h-full">
-                        <div className="text-4xl mb-2 text-gray-400">
-                          <FaMusic />
-                        </div>
-                        <p className="text-sm font-bold text-gray-500">
-                          Coming Soon
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                  <h3 className="text-lg font-black text-kobe-dark-teal leading-tight mb-4">
-                    {band.name}
-                  </h3>
-
-                  {/* SNSリンク */}
-                  <div className="flex justify-center space-x-4">
-                    {band.youtube && (
-                      <a
-                        href={band.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                        title="YouTube"
-                      >
-                        <FaYoutube className="text-lg" />
-                      </a>
-                    )}
-                    {band.instagram && (
-                      <a
-                        href={band.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white p-3 rounded-full hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                        title="Instagram"
-                      >
-                        <FaInstagram className="text-lg" />
-                      </a>
-                    )}
-                    {band.xTwitter && (
-                      <a
-                        href={band.xTwitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-black text-white p-3 rounded-full hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg"
-                        title="X (旧Twitter)"
-                      >
-                        <FaXTwitter className="text-lg" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* パフォーマンス内容説明 */}
-          <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-xl p-8 mb-8">
-            <div className="text-center mb-6">
-              <div className="text-6xl mb-4 flex justify-center">
-                <FaMusic className="text-kobe-orange" />
-              </div>
-              <h3 className="text-2xl font-black text-kobe-dark-teal mb-4">
-                多彩なジャンルのコピーバンドライブ
-              </h3>
-              <p className="text-lg font-bold text-kobe-gray leading-relaxed">
-                各団体によるアーティストのコピー曲披露
-                <br />
-                多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
-                <br />
-                ジャンルを問わず多様な演奏をお楽しみいただけます
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
