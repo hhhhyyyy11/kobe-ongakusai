@@ -241,6 +241,36 @@ function MainComponent() {
           </div>
         </div>
 
+        {/* クラウドファンディングセクション　*/}
+        <div>
+          <div className="max-w-6xl mx-auto px-4 mt-12">
+            <div className="bg-white rounded-3xl border-6 border-kobe-dark-teal shadow-2xl p-8 md:p-12 text-center">
+              <h3 className="text-3xl md:text-4xl font-black text-kobe-dark-teal mb-6">
+                クラウドファンディング実施中！
+              </h3>
+              <p className="text-lg md:text-xl font-bold text-kobe-gray mb-6">
+                皆様のご支援が、より素晴らしい音楽祭を実現します。
+              </p>
+              <Image
+                src="/images/crowd-fundings/funding.jpg"
+                alt="クラウドファンディングバナー"
+                width={500}
+                height={100}
+                className="rounded-2xl mb-6 mx-auto"
+              />
+              <Link
+                href="https://camp-fire.jp/projects/875206/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-kobe-orange text-white px-8 py-4 rounded-full text-xl font-black hover:bg-kobe-dark-teal transition-colors duration-300 inline-flex items-center gap-2"
+              >
+                クラウドファンディングページへ
+                <FaExternalLinkAlt className="text-base" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* フライヤー・タイムテーブルセクション */}
         <div className="max-w-6xl mx-auto px-4 mt-12">
           <FlyerSection />
