@@ -269,7 +269,7 @@ function MainComponent() {
                 className="bg-kobe-orange text-white px-8 py-4 rounded-full text-xl font-black hover:bg-kobe-dark-teal transition-colors duration-300 inline-flex items-center gap-2"
               >
                 クラウドファンディングページへ
-                <FaExternalLinkAlt className="text-base" />
+                <FaExternalLinkAlt className="text-base flex-none" />
               </Link>
             </div>
           </div>
