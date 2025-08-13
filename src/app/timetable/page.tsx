@@ -62,6 +62,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "13:30~14:00",
     artist: "東京事変",
     band: "神戸大学 MMC",
+    introductionReel:
+      "https://www.instagram.com/reel/DNQnuDgzG5n/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "14:00~14:30",
