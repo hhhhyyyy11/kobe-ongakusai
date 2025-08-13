@@ -241,6 +241,40 @@ function MainComponent() {
           </div>
         </div>
 
+        {/* クラウドファンディングセクション */}
+        <div>
+          <div className="max-w-6xl mx-auto px-4 mt-12">
+            <div className="bg-white rounded-3xl border-4 border-kobe-dark-teal shadow-2xl p-8 md:p-12 text-center">
+              <h3 className="text-3xl md:text-4xl font-black text-kobe-dark-teal mb-6">
+                神戸音学祭 クラウドファンディングのご案内
+              </h3>
+              <p className="text-lg md:text-xl font-bold text-kobe-gray mb-6">
+                神戸音学祭は、関西の大学軽音サークル・軽音学部の学生が作り上げる入場料無料の屋外音楽フェスです。
+                <br />
+                このフェスの大きな特徴として、「出演料無料」の実現を目指しています。機材費・運営費の確保のため、どうか皆様にご支援いただけないでしょうか。
+                <br />
+                ご支援と、このプロジェクトの拡散へのご協力を心からお願いいたします。
+              </p>
+              <Image
+                src="/images/crowd-fundings/funding.jpg"
+                alt="クラウドファンディングバナー"
+                width={500}
+                height={100}
+                className="rounded-2xl mb-6 mx-auto"
+              />
+              <Link
+                href="https://camp-fire.jp/projects/875206/view"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-kobe-orange text-white px-8 py-4 rounded-full text-xl font-black hover:bg-kobe-dark-teal transition-colors duration-300 inline-flex items-center gap-2"
+              >
+                クラウドファンディングページへ
+                <FaExternalLinkAlt className="text-base" />
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* フライヤー・タイムテーブルセクション */}
         <div className="max-w-6xl mx-auto px-4 mt-12">
           <FlyerSection />
