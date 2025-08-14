@@ -57,7 +57,7 @@ export const bands: Array<{
   },
   {
     name: "同志社大学Lilac Rainbows",
-    image: null, // TODO: 写真追加予定
+    image: "/images/artists/doshisha-lilac-rainbows.jpg",
     youtube: "https://www.youtube.com/@lilacrainbows",
     instagram: "https://www.instagram.com/lilac_rainbows/",
     xTwitter: "https://x.com/lilacrainbows",
