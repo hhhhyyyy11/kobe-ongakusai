@@ -95,6 +95,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "16:00~16:30",
     artist: "レキシ",
     band: "神戸大学軽音楽部 ROCK",
+    introductionReel:
+      "https://www.instagram.com/reel/DNVICDeRIdq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "16:30~17:00",
