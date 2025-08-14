@@ -14,7 +14,7 @@ export const bands: Array<{
     xTwitter: "https://x.com/KGLMC",
   },
   {
-    name: "神戸市外国語大学学部軽音学部",
+    name: "神戸市外国語大学学部軽音楽部",
     image: "/images/artists/kobe-sgf.jpg",
     youtube:
       "https://www.youtube.com/@%E7%A5%9E%E6%88%B8%E5%B8%82%E5%A4%96%E5%A4%A7%E5%AD%A6%E9%83%A8%E8%BB%BD%E9%9F%B3%E6%A5%BD",
@@ -22,7 +22,7 @@ export const bands: Array<{
     xTwitter: "https://x.com/rock_the_k_on",
   },
   {
-    name: "神戸親和大学軽音学部",
+    name: "神戸親和大学軽音楽部",
     image: "/images/artists/kobe-shinwa.jpg",
     instagram: "https://www.instagram.com/keionshinwa_gram/?hl=ja",
     xTwitter: "https://x.com/botshinwa",
