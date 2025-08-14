@@ -110,6 +110,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "17:30~18:00",
     artist: "QOOPIE",
     band: "神戸大学 SoundS",
+    introductionReel:
+      "https://www.instagram.com/reel/DNTXMUqTH13/?igsh=ZWpucjZ3eHVkM3d6",
   },
   {
     time: "18:00~18:30",
