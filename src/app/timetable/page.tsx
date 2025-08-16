@@ -4,6 +4,7 @@ import { FaMusic, FaClock, FaStar, FaInstagram } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 
 interface PerformanceItem {
   time: string;
@@ -216,6 +217,8 @@ function SetListPage() {
                 <span>10:00開演 - 19:00終演</span>
               </div>
             </div>
+
+            <YouTubeLiveLink size="small" className="mt-6" />
           </div>
         </div>
       </section>
