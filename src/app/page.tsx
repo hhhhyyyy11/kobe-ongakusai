@@ -14,6 +14,7 @@ import { SNSSection } from "@/components/SNSSection";
 import { FlyerSection } from "@/components/FlyerSection";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 import { sponsors, cooperations } from "@/constants/sponsors";
 
 function MainComponent() {
@@ -117,16 +118,39 @@ function MainComponent() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* PC版: YouTubeリンクが上、他のボタンが下 */}
+          <div className="hidden sm:block">
+            <div className="flex justify-center mb-6">
+              <YouTubeLiveLink size="large" />
+            </div>
+            <div className="flex flex-row gap-4 justify-center">
+              <Link
+                href="/artists"
+                className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                出演団体を見る
+              </Link>
+              <Link
+                href="/timetable"
+                className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl"
+              >
+                タイムテーブルを見る
+              </Link>
+            </div>
+          </div>
+
+          {/* スマホ版: 3つのボタンが縦に同じ幅で並ぶ */}
+          <div className="flex flex-col gap-4 sm:hidden">
+            <YouTubeLiveLink size="large" />
             <Link
               href="/artists"
-              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-kobe-dark-teal text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-orange hover:bg-kobe-orange hover:border-kobe-dark-teal transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
             >
               出演団体を見る
             </Link>
             <Link
               href="/timetable"
-              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl"
+              className="bg-kobe-orange text-white px-10 py-5 rounded-full text-2xl font-black border-4 border-kobe-dark-teal hover:bg-kobe-dark-teal hover:border-kobe-orange transition-all duration-300 transform hover:scale-105 shadow-xl text-center"
             >
               タイムテーブルを見る
             </Link>
