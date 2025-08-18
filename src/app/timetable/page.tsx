@@ -57,6 +57,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "13:00~13:30",
     artist: "さよならポエジー",
     band: "立命館大学 Hansel&Gretel",
+    introductionReel:
+      "https://www.instagram.com/reel/DNcz9P0Rz2I/?utm_source=ig_web_copy_link",
   },
   {
     time: "13:30~14:00",
