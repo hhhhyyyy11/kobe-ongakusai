@@ -104,6 +104,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "16:30~17:00",
     artist: "[Alexandros]",
     band: "神戸市外国語大学学部軽音楽部",
+    introductionReel:
+      "https://www.instagram.com/reel/DNe1Ot1R-BM/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "17:00~17:30",
