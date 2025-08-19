@@ -92,6 +92,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "15:30~16:00",
     artist: "B'z",
     band: "立命館大学 Jack&Beans",
+    introductionReel:
+      "https://www.instagram.com/reel/DNiIZtTx9mq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "16:00~16:30",
@@ -111,6 +113,8 @@ const performanceSchedule: PerformanceItem[] = [
     time: "17:00~17:30",
     artist: "rega",
     band: "立命館大学 Jack&Beans",
+    introductionReel:
+      "https://www.instagram.com/reel/DNiemubzb7D/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
   },
   {
     time: "17:30~18:00",
