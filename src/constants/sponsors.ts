@@ -84,13 +84,18 @@ const SPONSOR_COMPANIES: SponsorCompany[] = [
     link: "https://www.instagram.com/menyadining_naoya/",
     kuchisu: 5,
   },
-  // TODO:口数未定のため一時的にコメント化
-  // {
-  //   name: "株式会社クリフト",
-  //   image: "/images/sponsors/crift.webp",
-  //   link: "https://crift.co.jp/",
-  //   kuchisu: 未定,
-  // },
+  {
+    name: "株式会社クリフト",
+    image: "/images/sponsors/crift.webp",
+    link: "https://crift.co.jp/",
+    kuchisu: 5,
+  },
+  {
+    name: "Studio246WEST",
+    image: "/images/sponsors/wide-windows.png",
+    link: "https://widewindows.com/studios/stud-west/",
+    kuchisu: 1,
+  },
 ];
 
 const COOPERATION_COMPANIES: Company[] = [
