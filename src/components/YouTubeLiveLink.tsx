@@ -20,7 +20,7 @@ export function YouTubeLiveLink({
         target="_blank"
         rel="noopener noreferrer"
         className={`bg-red-600 text-white rounded-full font-black border-4 border-white hover:bg-red-700 hover:border-red-200 transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center justify-center gap-3 ${
-          isLarge ? "px-10 py-5 text-xl w-full" : "px-6 py-3 text-lg"
+          isLarge ? "px-10 py-5 text-xl max-w-md" : "px-6 py-3 text-lg"
         }`}
       >
         <FaYoutube className={isLarge ? "text-2xl" : "text-xl"} />
