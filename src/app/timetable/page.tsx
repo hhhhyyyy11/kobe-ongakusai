@@ -4,6 +4,7 @@ import { FaMusic, FaClock, FaStar, FaInstagram } from "react-icons/fa";
 import { BsMusicNote } from "react-icons/bs";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { YouTubeLiveLink } from "@/components/YouTubeLiveLink";
 
 interface PerformanceItem {
   time: string;
@@ -239,13 +240,14 @@ function SetListPage() {
               <h2 className="text-2xl font-black text-kobe-dark-teal mb-4">
                 多彩なジャンルのコピーバンドライブ
               </h2>
-              <p className="text-lg font-bold text-kobe-dark-teal leading-relaxed">
+              <p className="text-lg font-bold text-kobe-dark-teal leading-relaxed mb-6">
                 各団体によるアーティストのコピー曲披露
                 <br />
                 多くの人が知っているようなアーティストから、ニッチな音楽に至るまで
                 <br />
                 ジャンルを問わず多様な演奏をお楽しみいただけます
               </p>
+              <YouTubeLiveLink size="small" />
             </div>
           </div>
         </div>
