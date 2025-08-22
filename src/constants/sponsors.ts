@@ -96,6 +96,18 @@ const SPONSOR_COMPANIES: SponsorCompany[] = [
     link: "https://widewindows.com/studios/stud-west/",
     kuchisu: 1,
   },
+  {
+    name: "ヤングリゾート",
+    image: "/images/sponsors/young-resort.webp",
+    link: "https://www.young-resort.co.jp/",
+    kuchisu: 1,
+  },
+  {
+    name: "KOBE108",
+    image: "/images/sponsors/108.webp",
+    link: "https://livehouse108.net/",
+    kuchisu: 2,
+  },
 ];
 
 const COOPERATION_COMPANIES: Company[] = [
