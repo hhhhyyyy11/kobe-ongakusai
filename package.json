@@ -33,6 +33,9 @@
     "glob": "^10.4.5",
     "rimraf": "^6.0.1",
     "inflight": "^1.0.6",
-    "minimatch": "^9.0.5"
+    "minimatch": "^10.2.1",
+    "cross-spawn": "^7.0.6",
+    "nanoid": "^3.3.8",
+    "ajv": "^8.17.1"
   }
 }
