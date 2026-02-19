@@ -31,7 +31,6 @@
   },
   "overrides": {
     "cross-spawn": "^7.0.6",
-    "nanoid": "^3.3.8",
-    "ajv": "^8.18.0"
+    "nanoid": "^3.3.8"
   }
 }
