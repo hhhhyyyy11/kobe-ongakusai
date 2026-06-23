@@ -105,14 +105,11 @@ export const metadata: Metadata = {
     images: ["https://kobe-ongakusai.vercel.app/images/logo_main.jpg"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
     googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      index: false,
+      follow: false,
     },
   },
   other: {
@@ -129,94 +126,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "MusicEvent",
-    name: "神戸音学祭 2025",
-    description: "関西圏6大学10団体が出演する学生主催の野外音楽フェス",
-    image: "https://kobe-ongakusai.vercel.app/images/logo_main.jpg",
-    startDate: "2025-08-22T10:00:00+09:00",
-    endDate: "2025-08-22T19:00:00+09:00",
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: "TOTTEI PARK",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "新港町2-1",
-        addressLocality: "神戸市中央区",
-        addressRegion: "兵庫県",
-        addressCountry: "JP",
-      },
-    },
-    organizer: {
-      "@type": "Organization",
-      name: "神戸音学祭実行委員会",
-      url: "https://kobe-ongakusai.vercel.app",
-      description: "17大学のメンバーから構成される実行委員会",
-    },
-    performer: [
-      {
-        "@type": "Organization",
-        name: "関西学院大学文化総部軽音楽部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸市外国語大学学部軽音学部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸親和大学軽音学部",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音楽部ROCK",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルFreeBeat",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルMMC",
-      },
-      {
-        "@type": "Organization",
-        name: "神戸大学軽音サークルSoundS",
-      },
-      {
-        "@type": "Organization",
-        name: "同志社大学Lilac Rainbows",
-      },
-      {
-        "@type": "Organization",
-        name: "立命館大学Hansel&Gretel",
-      },
-      {
-        "@type": "Organization",
-        name: "立命館大学Jack&Beans",
-      },
-    ],
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "JPY",
-      availability: "https://schema.org/InStock",
-      url: "https://kobe-ongakusai.vercel.app",
-      validFrom: "2025-01-01T00:00:00+09:00",
-      description: "入場無料・入退場自由",
-    },
-  };
-
   return (
     <html lang="ja">
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
+      <head />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning={true}
