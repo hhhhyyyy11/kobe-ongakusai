@@ -1,5 +1,2 @@
 User-agent: *
 Allow: /
-
-# Sitemap
-Sitemap: https://kobe-ongakusai.vercel.app/sitemap.xml
